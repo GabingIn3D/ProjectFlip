@@ -5,15 +5,16 @@ using Cinemachine;
 
 public class Photography : MonoBehaviour
 {
-    Camera snapCam;
-    CinemachineVirtualCamera photographyCamera;
+    Camera snapCam; // the camera parent separate from the main game's camera
+    CinemachineVirtualCamera photographyCamera; // the Cinemachine Vcam that will be used for the capture
 
-    int resWidth = 1600; // 2 megapixels (Razr 2 v9x photo quality)
-    int resHeight = 1200;  // 2 megapixels (Razr 2 v9x photo quality)
+    int resWidth = 1600; // currently set to 2 megapixels (Razr 2 v9x photo quality)
+    int resHeight = 1200;  // currently set to 2 megapixels (Razr 2 v9x photo quality)
 
     void Awake()
     {
         snapCam = GetComponent<Camera>();
+        photographyCamera = GetComponentInChildren<CinemachineVirtualCamera>();
         if (snapCam.targetTexture == null)
         {
             snapCam.targetTexture = new RenderTexture(resWidth, resHeight, 24);
@@ -23,7 +24,8 @@ public class Photography : MonoBehaviour
             resWidth = snapCam.targetTexture.width;
             resHeight = snapCam.targetTexture.height;
         }
-        snapCam.gameObject.SetActive(false);
+        photographyCamera.Priority = 0;
+
     }
 
     // Update is called once per frame
@@ -34,22 +36,22 @@ public class Photography : MonoBehaviour
 
     public void CallTakeSnapshot()
     {
-        snapCam.gameObject.SetActive(true);
+        photographyCamera.Priority = 10;
     }
 
     public void LateUpdate() // we want the photo to be taken after the other stuff (updates) are done (the camera becomes active)
     {
-        if (snapCam.gameObject.activeInHierarchy) // if 'snapCam' and all of its parents are on, we can take a picture
+        if (photographyCamera.Priority == 10) // render/capture the screenshot:
         {
             Texture2D snapshot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false); // RGB 24 is the RGB colour depth, we like that. the final argument is mipmapping which is 'false')
             snapCam.Render();
             RenderTexture.active = snapCam.targetTexture;
             snapshot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0); // controls the space captured by the snapped pic
-            byte[] bytes = snapshot.EncodeToPNG();
+            byte[] bytes = snapshot.EncodeToPNG(); // creates a byte array to store the existence of captured image
             string fileName = SnapshotName(); // naming the output PNG
-            System.IO.File.WriteAllBytes(fileName, bytes);
+            System.IO.File.WriteAllBytes(fileName, bytes); // writing the file to disk
             Debug.Log("Snapshot taken! Uwu");
-            snapCam.gameObject.SetActive(false);
+            photographyCamera.Priority = 0; // Photography camera finishes its job
         }
     }
 
