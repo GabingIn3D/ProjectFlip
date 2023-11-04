@@ -45,6 +45,9 @@ public class Photography : MonoBehaviour
         {
             Texture2D snapshot = new Texture2D(resWidth, resHeight, TextureFormat.RGB24, false); // RGB 24 is the RGB colour depth, we like that. the final argument is mipmapping which is 'false')
             snapCam.Render();
+
+            RenderTexture currentActive = RenderTexture.active;
+
             RenderTexture.active = snapCam.targetTexture;
             snapshot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0); // controls the space captured by the snapped pic
             byte[] bytes = snapshot.EncodeToPNG(); // creates a byte array to store the existence of captured image
@@ -52,6 +55,8 @@ public class Photography : MonoBehaviour
             System.IO.File.WriteAllBytes(fileName, bytes); // writing the file to disk
             Debug.Log("Snapshot taken! Uwu");
             photographyCamera.Priority = 0; // Photography camera finishes its job
+
+            RenderTexture.active = currentActive;
         }
     }
 
