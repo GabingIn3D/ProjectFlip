@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PhotographyInput : MonoBehaviour
 {
-    public Photography snapCam;
+    // public Photography snapCam;
+    public CaptureScreen captureScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,8 @@ public class PhotographyInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            snapCam.CallTakeSnapshot();
+            // snapCam.CallTakeSnapshot();
+            captureScreen.Capture();
         }
     }
 }
