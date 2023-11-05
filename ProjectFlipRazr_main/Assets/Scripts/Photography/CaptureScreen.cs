@@ -10,6 +10,7 @@ public class CaptureScreen : MonoBehaviour
 {
     public static CaptureScreen instance;
     public string filePath;
+    public string photoNameVariable;
 
     public int snapResWidth = 1600;
     public int snapResHeight = 1200;
@@ -66,8 +67,9 @@ public class CaptureScreen : MonoBehaviour
         }
         // create texture and save as png using datetime
         var dateTime = DateTime.Now;
-        var dateTimeString = dateTime.ToString("-yyyy-MM-dd_") + dateTime.Hour + "h-" + dateTime.Minute + "m";
+        var dateTimeString = photoNameVariable + dateTime.ToString("-yyyy-MM-dd_") + dateTime.Hour + "h-" + dateTime.Minute + "m";
         File.WriteAllBytes(Application.dataPath + filePath + dateTimeString + ".png", ImageConversion.EncodeToPNG(texture));
+        //capture the information from (string path) above, send it to the entry in the class for fileLocation/fileName)
         Debug.Log("Capture written! To " + filePath);
         Destroy(texture);
     }

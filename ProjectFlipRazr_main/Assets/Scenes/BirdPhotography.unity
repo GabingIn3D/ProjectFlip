@@ -457,7 +457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc8c5f76135c23429f1fa76d7324361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filePath: /Resources/
+  filePath: /Resources/Snapshots/
+  photoNameVariable: WhateverYouWant
   snapResWidth: 1600
   snapResHeight: 1200
 --- !u!1 &628082097
