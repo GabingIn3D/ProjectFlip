@@ -8,7 +8,7 @@ public class PopulateGallery : MonoBehaviour
     public string resourcePath; // Folder containing PNGs
     public GameObject imagePrefab; // Prefab for displaying sprites
 
-    public void Awake()
+    public void Start()
     {
 
         Texture2D[] textures = Resources.LoadAll<Texture2D>(resourcePath);
