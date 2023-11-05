@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class Photography : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class Photography : MonoBehaviour
             System.IO.File.WriteAllBytes(fileName, bytes); // writing the file to disk
             Debug.Log("Snapshot taken! Uwu");
             photographyCamera.Priority = 0; // Photography camera finishes its job
-
+            RecordPhotoInfo();
             RenderTexture.active = currentActive;
         }
     }
@@ -67,5 +68,16 @@ public class Photography : MonoBehaviour
             resWidth,
             resHeight,
             System.DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss"));
+    }
+
+    public void RecordPhotoInfo() // Adds a PhotoInfo to the list in the database with the info inside
+    {
+        PhotoInfo photoInfo = new PhotoInfo();
+        //Record gameLocation
+        if (SceneManager.GetActiveScene().name == "House") { photoInfo.gameLocation = PhotoInfo.Location.House; }
+        else if (SceneManager.GetActiveScene().name == "Warehouse") { photoInfo.gameLocation = PhotoInfo.Location.Warehouse; }
+        else { photoInfo.gameLocation = PhotoInfo.Location.Unknown; }
+        FindAnyObjectByType<PhotoInfoDatabase>().AddPhoto(photoInfo);
+        Debug.Log("Oh Yeah it's runnin");
     }
 }
