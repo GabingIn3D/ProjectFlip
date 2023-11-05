@@ -4,18 +4,21 @@ using System.Collections.Generic;
 
 public class PopulateGallery : MonoBehaviour
 {
-    public Transform gridParent; // Reference to the UI Grid parent
-    public string resourcePath = "/Resources"; // Path to the Resources folder containing .png files
+    public Transform gridParent; // UI Grid parent
+    public string resourcePath; // Folder containing PNGs
     public GameObject imagePrefab; // Prefab for displaying sprites
 
-    private void Start()
+    public void Awake()
     {
-        // Load all .png files from the Resources folder
-        Sprite[] sprites = Resources.LoadAll<Sprite>(Application.dataPath + resourcePath);
 
-        // Create UI Image objects for each sprite and add them to the grid
-        foreach (Sprite sprite in sprites)
+        Texture2D[] textures = Resources.LoadAll<Texture2D>(resourcePath);
+
+        foreach (Texture2D texture in textures)
         {
+            // Convert Texture2D to Sprite
+            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one * 0.5f);
+
+            // Create UI Image object and add it to the grid
             GameObject imageObject = Instantiate(imagePrefab, gridParent);
             Image image = imageObject.GetComponent<Image>();
             image.sprite = sprite;

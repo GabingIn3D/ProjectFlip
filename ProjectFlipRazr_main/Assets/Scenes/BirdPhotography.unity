@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridParent: {fileID: 2126134223}
-  resourcePath: /Resources
+  resourcePath: 
   imagePrefab: {fileID: 8075350193142619058, guid: f62f029b1453efc4d9310aa891100c75, type: 3}
 --- !u!1001 &8736656314148709875
 PrefabInstance:
