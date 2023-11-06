@@ -12,6 +12,7 @@ public class CaptureScreen : MonoBehaviour
     public static CaptureScreen instance;
     public string filePath;
     public string photoNameVariable;
+    public bool isBuild;
 
     public int snapResWidth = 1600;
     public int snapResHeight = 1200;
@@ -36,6 +37,7 @@ public class CaptureScreen : MonoBehaviour
         ScreenCapture.CaptureScreenshotIntoRenderTexture(rt);
         AsyncGPUReadback.Request(rt, 0, TextureFormat.RGBA32, OnCompleteReadback);
         RenderTexture.ReleaseTemporary(rt);
+
     }
 
     void OnCompleteReadback(AsyncGPUReadbackRequest asyncGPUReadbackRequest)
@@ -70,8 +72,17 @@ public class CaptureScreen : MonoBehaviour
         }
         // create texture and save as png using datetime
         var dateTime = DateTime.Now;
-		dateTimeString = photoNameVariable + dateTime.ToString("-yyyy-MM-dd_") + dateTime.Hour + "h-" + dateTime.Minute + "m";
-        File.WriteAllBytes(Application.dataPath + filePath + dateTimeString + ".png", ImageConversion.EncodeToPNG(texture));
+		dateTimeString = photoNameVariable + dateTime.ToString("-yyyy-MM-dd_") + dateTime.Hour + "h-" + dateTime.Minute + "m" + dateTime.Second + "s";
+        if (isBuild)
+        {
+            File.WriteAllBytes(Application.persistentDataPath + filePath + dateTimeString + ".png", ImageConversion.EncodeToPNG(texture));
+            Debug.Log("BUILD: Capture written! To " + Application.persistentDataPath + filePath + dateTimeString + ".png");
+        }
+        else
+        {
+            File.WriteAllBytes(Application.dataPath + filePath + dateTimeString + ".png", ImageConversion.EncodeToPNG(texture));
+            Debug.Log("EDITOR: Capture written! To " + Application.dataPath + filePath + dateTimeString + ".png");
+        }
         //capture the information from (string path) above, send it to the entry in the class for fileLocation/fileName)
         Debug.Log("Capture written! To " + filePath);
         Destroy(texture);

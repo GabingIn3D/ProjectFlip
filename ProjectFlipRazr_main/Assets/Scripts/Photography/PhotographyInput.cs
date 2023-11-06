@@ -6,6 +6,7 @@ public class PhotographyInput : MonoBehaviour
 {
     // public Photography snapCam;
     public CaptureScreen captureScreen;
+    public PopulateGallery populateGallery;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class PhotographyInput : MonoBehaviour
         {
             // snapCam.CallTakeSnapshot();
             captureScreen.Capture();
+            populateGallery.RefreshGallery();
         }
     }
 }
