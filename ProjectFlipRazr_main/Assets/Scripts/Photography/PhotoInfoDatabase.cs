@@ -75,12 +75,14 @@ public class PhotoInfoDatabase : MonoBehaviour
     public void Load()
     {
         List<PhotoInfo> data = SaveSystem.LoadPhotos();
-        RemoveAllPhoto();
+        //RemoveAllPhoto();
 
         foreach (PhotoInfo photo in data)
         {
+            if (photo == null) Debug.Log("*burp* i messed up :)");
             photos.Add(photo);
         }
         Debug.Log("PhotosLoaded");
+        FindAnyObjectByType<PopulateGallery>().ReloadImagesInGallery();
     }
 }

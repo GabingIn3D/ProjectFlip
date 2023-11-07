@@ -70,9 +70,55 @@ public class PopulateGallery : MonoBehaviour
                 // make a new one
             }
         }
+        //        foreach (Texture2D texture in textures)
+        //        {
+        // Convert Texture2D to Sprite
+
+        int last_el = photoDatabase.photos.Count - 1;
+        if (last_el >= 0)
+        {
+            Sprite sprite = Sprite.Create(textures[last_el], new Rect(0, 0, textures[last_el].width, textures[last_el].height), Vector2.one * 0.5f);
+
+            // Create UI Image object and add it to the grid
+            GameObject imageObject = Instantiate(imagePrefab, gridParent);
+            Image image = imageObject.GetComponent<Image>();
+            image.sprite = sprite;
+        }
+            
+//        }
+
+
+
+    }
+
+    public void ReloadImagesInGallery()
+    {
+        textures = new Texture2D[photoDatabase.photos.Count];
+        photoDatabase = FindAnyObjectByType<PhotoInfoDatabase>();
+        for (int i = 0; i < photoDatabase.photos.Count; i++)
+        {
+            imagePath = Path.Combine(Application.persistentDataPath, snapshotSavePath, photoDatabase.photos[i].photoName);
+            if (File.Exists(imagePath))
+            {
+                // Load the image as a Texture2D
+                byte[] fileData = File.ReadAllBytes(imagePath);
+                Texture2D loadedTexture = new Texture2D(128, 128); // Create an empty Texture2D
+                loadedTexture.LoadImage(fileData); // Load the image data into the Texture2D
+                textures[i] = loadedTexture;
+            }
+            else
+            {
+                Debug.LogError("Image file not found: " + imagePath);
+                // make a new one
+            }
+        }
+
         foreach (Texture2D texture in textures)
         {
             // Convert Texture2D to Sprite
+
+            Debug.Log("Texture here plz :)");
+            Debug.Log(texture);
             Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one * 0.5f);
 
             // Create UI Image object and add it to the grid

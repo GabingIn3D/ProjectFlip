@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filePath: /Resources/Snapshots/
   photoNameVariable: 
-  isBuild: 0
+  isBuild: 1
   snapResWidth: 1600
   snapResHeight: 1200
 --- !u!1 &628082097
@@ -1206,8 +1206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3805fc3f444d1b9419ca75cf77d5e484, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  captureScreen: {fileID: 0}
-  populateGallery: {fileID: 0}
+  captureScreen: {fileID: 479920324}
+  populateGallery: {fileID: 2126134228}
 --- !u!1 &1425511591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,7 +1904,7 @@ MonoBehaviour:
   imagePrefab: {fileID: 8075350193142619058, guid: f62f029b1453efc4d9310aa891100c75, type: 3}
   textures: []
   photoDatabase: {fileID: 0}
-  whichPath: 0
+  whichPath: 1
   imagePath: 
   snapshotSavePath: Resources/Snapshots
 --- !u!1001 &8736656314148709875
