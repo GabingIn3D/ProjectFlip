@@ -37,10 +37,19 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Look"",
+                    ""name"": ""LookX"",
                     ""type"": ""PassThrough"",
                     ""id"": ""766b226e-8bd1-42c1-8ed7-aa2747e4b733"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LookY"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""811bf8c1-0c2c-44e8-bb19-08e405589f39"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -61,7 +70,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""WASD"",
                     ""id"": ""e4ded81e-f551-40fd-a7d5-ceb35115d8b0"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -116,11 +125,22 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3d431aa2-2265-4465-ad46-4415e506efa1"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""path"": ""<Mouse>/delta/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""MKB"",
-                    ""action"": ""Look"",
+                    ""action"": ""LookX"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6fb6a569-1afd-46da-86f2-1fdcac16eb6e"",
+                    ""path"": ""<Mouse>/delta/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MKB"",
+                    ""action"": ""LookY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -160,7 +180,8 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
-        m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
+        m_Player_LookX = m_Player.FindAction("LookX", throwIfNotFound: true);
+        m_Player_LookY = m_Player.FindAction("LookY", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -223,13 +244,15 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Movement;
-    private readonly InputAction m_Player_Look;
+    private readonly InputAction m_Player_LookX;
+    private readonly InputAction m_Player_LookY;
     public struct PlayerActions
     {
         private @DefaultControls m_Wrapper;
         public PlayerActions(@DefaultControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
-        public InputAction @Look => m_Wrapper.m_Player_Look;
+        public InputAction @LookX => m_Wrapper.m_Player_LookX;
+        public InputAction @LookY => m_Wrapper.m_Player_LookY;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -242,9 +265,12 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @Look.started += instance.OnLook;
-            @Look.performed += instance.OnLook;
-            @Look.canceled += instance.OnLook;
+            @LookX.started += instance.OnLookX;
+            @LookX.performed += instance.OnLookX;
+            @LookX.canceled += instance.OnLookX;
+            @LookY.started += instance.OnLookY;
+            @LookY.performed += instance.OnLookY;
+            @LookY.canceled += instance.OnLookY;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -252,9 +278,12 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @Look.started -= instance.OnLook;
-            @Look.performed -= instance.OnLook;
-            @Look.canceled -= instance.OnLook;
+            @LookX.started -= instance.OnLookX;
+            @LookX.performed -= instance.OnLookX;
+            @LookX.canceled -= instance.OnLookX;
+            @LookY.started -= instance.OnLookY;
+            @LookY.performed -= instance.OnLookY;
+            @LookY.canceled -= instance.OnLookY;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -293,6 +322,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnLook(InputAction.CallbackContext context);
+        void OnLookX(InputAction.CallbackContext context);
+        void OnLookY(InputAction.CallbackContext context);
     }
 }
