@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Photography : MonoBehaviour
 {
     Camera snapCam; // the camera parent separate from the main game's camera
-    CinemachineVirtualCamera photographyCamera; // the Cinemachine Vcam that will be used for the capture
+    public CinemachineVirtualCamera photographyCamera; // the Cinemachine Vcam that will be used for the capture
 
     int resWidth = 1600; // currently set to 2 megapixels (Razr 2 v9x photo quality)
     int resHeight = 1200;  // currently set to 2 megapixels (Razr 2 v9x photo quality)
@@ -15,7 +15,6 @@ public class Photography : MonoBehaviour
     void Awake()
     {
         snapCam = GetComponent<Camera>();
-        photographyCamera = GetComponentInChildren<CinemachineVirtualCamera>();
         if (snapCam.targetTexture == null)
         {
             snapCam.targetTexture = new RenderTexture(resWidth, resHeight, 24);
