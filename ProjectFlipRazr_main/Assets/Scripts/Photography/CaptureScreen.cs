@@ -37,7 +37,6 @@ public class CaptureScreen : MonoBehaviour
         ScreenCapture.CaptureScreenshotIntoRenderTexture(rt);
         AsyncGPUReadback.Request(rt, 0, TextureFormat.RGBA32, OnCompleteReadback);
         RenderTexture.ReleaseTemporary(rt);
-
     }
 
     void OnCompleteReadback(AsyncGPUReadbackRequest asyncGPUReadbackRequest)
@@ -87,6 +86,7 @@ public class CaptureScreen : MonoBehaviour
         Debug.Log("Capture written! To " + filePath);
         Destroy(texture);
         RecordPhotoInfo();
+        FindAnyObjectByType<PopulateGallery>().RefreshGallery();
     }
 
     public void RecordPhotoInfo() // Adds a PhotoInfo to the list in the database with the info inside

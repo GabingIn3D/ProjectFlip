@@ -84,11 +84,6 @@ public class PopulateGallery : MonoBehaviour
             Image image = imageObject.GetComponent<Image>();
             image.sprite = sprite;
         }
-            
-//        }
-
-
-
     }
 
     public void ReloadImagesInGallery()
@@ -126,8 +121,5 @@ public class PopulateGallery : MonoBehaviour
             Image image = imageObject.GetComponent<Image>();
             image.sprite = sprite;
         }
-
-
-
     }
 }

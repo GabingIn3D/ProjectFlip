@@ -20,7 +20,6 @@ public class PhotographyInput : MonoBehaviour
         {
             // snapCam.CallTakeSnapshot();
             captureScreen.Capture();
-            populateGallery.RefreshGallery();
         }
     }
 }
