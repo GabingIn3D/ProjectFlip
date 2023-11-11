@@ -640,7 +640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filePath: /Resources/Snapshots/
   photoNameVariable: 
-  isBuild: 0
+  isBuild: 1
   snapResWidth: 1600
   snapResHeight: 1200
 --- !u!1 &628082097
@@ -1858,7 +1858,7 @@ MonoBehaviour:
   imagePrefab: {fileID: 8075350193142619058, guid: f62f029b1453efc4d9310aa891100c75, type: 3}
   textures: []
   photoDatabase: {fileID: 0}
-  whichPath: 0
+  whichPath: 1
   imagePath: 
   snapshotSavePath: Resources/Snapshots
 --- !u!1001 &8736656314148709875
