@@ -53,6 +53,15 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LookXY"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""f818974a-75ad-4846-bc81-9c34ea04f1db"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -70,7 +79,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""WASD"",
                     ""id"": ""e4ded81e-f551-40fd-a7d5-ceb35115d8b0"",
-                    ""path"": ""2DVector(mode=2)"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -143,6 +152,17 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                     ""action"": ""LookY"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3739356-db43-4507-b0f7-91a9df700336"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MKB"",
+                    ""action"": ""LookXY"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -182,6 +202,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_LookX = m_Player.FindAction("LookX", throwIfNotFound: true);
         m_Player_LookY = m_Player.FindAction("LookY", throwIfNotFound: true);
+        m_Player_LookXY = m_Player.FindAction("LookXY", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -246,6 +267,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_LookX;
     private readonly InputAction m_Player_LookY;
+    private readonly InputAction m_Player_LookXY;
     public struct PlayerActions
     {
         private @DefaultControls m_Wrapper;
@@ -253,6 +275,7 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @LookX => m_Wrapper.m_Player_LookX;
         public InputAction @LookY => m_Wrapper.m_Player_LookY;
+        public InputAction @LookXY => m_Wrapper.m_Player_LookXY;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -271,6 +294,9 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
             @LookY.started += instance.OnLookY;
             @LookY.performed += instance.OnLookY;
             @LookY.canceled += instance.OnLookY;
+            @LookXY.started += instance.OnLookXY;
+            @LookXY.performed += instance.OnLookXY;
+            @LookXY.canceled += instance.OnLookXY;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -284,6 +310,9 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
             @LookY.started -= instance.OnLookY;
             @LookY.performed -= instance.OnLookY;
             @LookY.canceled -= instance.OnLookY;
+            @LookXY.started -= instance.OnLookXY;
+            @LookXY.performed -= instance.OnLookXY;
+            @LookXY.canceled -= instance.OnLookXY;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -324,5 +353,6 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnLookX(InputAction.CallbackContext context);
         void OnLookY(InputAction.CallbackContext context);
+        void OnLookXY(InputAction.CallbackContext context);
     }
 }

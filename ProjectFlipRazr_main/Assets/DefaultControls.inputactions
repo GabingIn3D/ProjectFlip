@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LookXY",
+                    "type": "PassThrough",
+                    "id": "f818974a-75ad-4846-bc81-9c34ea04f1db",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -48,7 +57,7 @@
                 {
                     "name": "WASD",
                     "id": "e4ded81e-f551-40fd-a7d5-ceb35115d8b0",
-                    "path": "2DVector(mode=2)",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -119,6 +128,17 @@
                     "processors": "",
                     "groups": "MKB",
                     "action": "LookY",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e3739356-db43-4507-b0f7-91a9df700336",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MKB",
+                    "action": "LookXY",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
