@@ -17,11 +17,15 @@ public class CaptureScreen : MonoBehaviour
     public int snapResWidth = 1600;
     public int snapResHeight = 1200;
 
-    private string dateTimeString;
+    private string newID;
+
+    public PopulateGallery populateGallery;
 
     void Awake()
     {
         instance = this;
+
+        populateGallery = FindAnyObjectByType<PopulateGallery>();
     }
 
     public void Capture()
@@ -69,24 +73,23 @@ public class CaptureScreen : MonoBehaviour
             processedData[i + 2] = rawData[flippedIndex * 4 + 2];
             processedData[i + 3] = rawData[flippedIndex * 4 + 3];
         }
-        // create texture and save as png using datetime
-        var dateTime = DateTime.Now;
-		dateTimeString = photoNameVariable + dateTime.ToString("-yyyy-MM-dd_") + dateTime.Hour + "h-" + dateTime.Minute + "m" + dateTime.Second + "s";
+        // create texture and save as png using Guid as name
+		newID = photoNameVariable + Guid.NewGuid().ToString();
         if (isBuild)
         {
-            File.WriteAllBytes(Application.persistentDataPath + filePath + dateTimeString + ".png", ImageConversion.EncodeToPNG(texture));
-            Debug.Log("BUILD: Capture written! To " + Application.persistentDataPath + filePath + dateTimeString + ".png");
+            File.WriteAllBytes(Application.persistentDataPath + filePath + newID + ".png", ImageConversion.EncodeToPNG(texture));
+            Debug.Log("BUILD: Capture written! To " + Application.persistentDataPath + filePath + newID + ".png");
         }
         else
         {
-            File.WriteAllBytes(Application.dataPath + filePath + dateTimeString + ".png", ImageConversion.EncodeToPNG(texture));
-            Debug.Log("EDITOR: Capture written! To " + Application.dataPath + filePath + dateTimeString + ".png");
+            File.WriteAllBytes(Application.dataPath + filePath + newID + ".png", ImageConversion.EncodeToPNG(texture));
+            Debug.Log("EDITOR: Capture written! To " + Application.dataPath + filePath + newID + ".png");
         }
         //capture the information from (string path) above, send it to the entry in the class for fileLocation/fileName)
         Debug.Log("Capture written! To " + filePath);
         Destroy(texture);
         RecordPhotoInfo();
-        FindAnyObjectByType<PopulateGallery>().RefreshGallery();
+        populateGallery.RefreshGallery();
     }
 
     public void RecordPhotoInfo() // Adds a PhotoInfo to the list in the database with the info inside
@@ -94,7 +97,7 @@ public class CaptureScreen : MonoBehaviour
         PhotoInfo photoInfo = new PhotoInfo();
 
         //Record photoName
-        photoInfo.photoName = dateTimeString + ".png";
+        photoInfo.photoName = newID + ".png";
 
         //Record fileLocation
         photoInfo.fileLocation = Application.dataPath.ToString() + filePath.ToString();
