@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 306758574}
   - component: {fileID: 306758573}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Picture?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 339404367}
   - component: {fileID: 339404369}
   - component: {fileID: 339404368}
+  - component: {fileID: 339404370}
   m_Layer: 5
   m_Name: Comment box
   m_TagString: Untagged
@@ -276,6 +277,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339404366}
   m_CullTransparentMesh: 1
+--- !u!114 &339404370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339404366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56d62d2b268abc44bbdc82908c0fd71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textValue: EGG
+  textElement: {fileID: 1624269028}
+  genericComments: []
 --- !u!1 &393798926
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -167.5}
+  m_AnchoredPosition: {x: 400, y: -150}
   m_SizeDelta: {x: 800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919217722
@@ -766,7 +782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -67.5}
+  m_AnchoredPosition: {x: 400, y: -50}
   m_SizeDelta: {x: 800, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1624269028
