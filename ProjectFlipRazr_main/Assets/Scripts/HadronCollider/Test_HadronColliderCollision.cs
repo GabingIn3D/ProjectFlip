@@ -40,7 +40,7 @@ public class Test_HadronColliderCollision : MonoBehaviour
             }
             triggerCount++;
 
-            Debug.Log("Collision Count: " + triggerCount);
+            //Debug.Log("Collision Count: " + triggerCount);
         }
     }
 }

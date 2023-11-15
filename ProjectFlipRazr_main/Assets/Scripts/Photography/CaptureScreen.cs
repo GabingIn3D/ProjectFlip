@@ -21,6 +21,13 @@ public class CaptureScreen : MonoBehaviour
 
     public PopulateGallery populateGallery;
 
+    //Changes the angle of where the photo item needs to be to be accepted as an item
+    public float photoItemAngleCheckX = 20;
+    public float photoItemAngleCheckY = 20;
+
+    public Transform directionReference;
+    public List<GameObject> photoItemsInRange;
+
     void Awake()
     {
         instance = this;
@@ -30,6 +37,7 @@ public class CaptureScreen : MonoBehaviour
 
     public void Capture()
     {
+        CheckItemsInPhoto();
         StartCoroutine(AsyncCapture());
     }
 
@@ -117,5 +125,43 @@ public class CaptureScreen : MonoBehaviour
         //Add Photo
         FindAnyObjectByType<PhotoInfoDatabase>().AddPhoto(photoInfo);
         Debug.Log("PhotoInfo added to list");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        photoItemsInRange.Add(other.gameObject);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        photoItemsInRange.Remove(other.gameObject);
+    }
+
+    public void CheckItemsInPhoto()
+    {
+        if (photoItemsInRange.Count > 0)
+        {
+            foreach (GameObject item in photoItemsInRange)
+            {
+                directionReference.LookAt(item.transform);
+                if (directionReference.localEulerAngles.y <= photoItemAngleCheckY || directionReference.localEulerAngles.y >= 360 - photoItemAngleCheckY)
+                {
+                    Debug.Log("Y is clear");
+                    if (transform.eulerAngles.x <= directionReference.eulerAngles.x + photoItemAngleCheckX || transform.eulerAngles.x >= directionReference.eulerAngles.x - photoItemAngleCheckX)
+                    {
+                        Debug.Log("X is clear");
+
+                        Ray ray = new Ray(transform.position, (item.transform.position - transform.position).normalized);
+                        if (Physics.Raycast(ray, out RaycastHit hit))
+                        {
+                            if (hit.collider.gameObject == item.gameObject)
+                            {
+                                Debug.Log("PhotoItem Accepted");
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
