@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 34883210}
   - component: {fileID: 34883209}
   - component: {fileID: 34883208}
+  - component: {fileID: 34883212}
   m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
@@ -228,6 +229,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34883212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34883207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c627b993fc631d441b630460126f14a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photoItem: 2
 --- !u!1 &42969967
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +286,7 @@ GameObject:
   - component: {fileID: 104388686}
   - component: {fileID: 104388685}
   - component: {fileID: 104388684}
+  - component: {fileID: 104388688}
   m_Layer: 10
   m_Name: Sphere
   m_TagString: Untagged
@@ -365,6 +380,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &104388688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104388683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c627b993fc631d441b630460126f14a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photoItem: 3
 --- !u!1 &163690480
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +993,7 @@ MonoBehaviour:
   photoItemAngleCheckY: 20
   directionReference: {fileID: 1472200155}
   photoItemsInRange: []
+  photoItemsToRecord: 
 --- !u!135 &479920325
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2070,6 +2099,7 @@ GameObject:
   - component: {fileID: 1590466583}
   - component: {fileID: 1590466581}
   - component: {fileID: 1590466584}
+  - component: {fileID: 1590466585}
   m_Layer: 10
   m_Name: Particle2
   m_TagString: HadronParticle
@@ -2238,6 +2268,19 @@ MonoBehaviour:
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0
+--- !u!114 &1590466585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590466574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a6aeaa71fbf2345b0f9a354ac1d89b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hadronSphere: {fileID: 1590466581}
 --- !u!1 &1681335811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,6 +2327,7 @@ GameObject:
   - component: {fileID: 1750964927}
   - component: {fileID: 1750964926}
   - component: {fileID: 1750964925}
+  - component: {fileID: 1750964932}
   m_Layer: 10
   m_Name: Particle1
   m_TagString: HadronParticle
@@ -2452,6 +2496,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1750964932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750964924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a6aeaa71fbf2345b0f9a354ac1d89b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hadronSphere: {fileID: 1750964926}
 --- !u!1 &1863077702
 GameObject:
   m_ObjectHideFlags: 0
@@ -3600,8 +3657,8 @@ SceneRoots:
   - {fileID: 1411925205}
   - {fileID: 1995303130}
   - {fileID: 935685642}
-  - {fileID: 1590466580}
   - {fileID: 1750964931}
+  - {fileID: 1590466580}
   - {fileID: 1863077704}
   - {fileID: 1910770043}
   - {fileID: 34883211}

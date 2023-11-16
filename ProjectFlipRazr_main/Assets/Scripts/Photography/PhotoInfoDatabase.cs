@@ -57,7 +57,14 @@ public class PhotoInfoDatabase : MonoBehaviour
         {
             foreach (PhotoInfo photo in photos)
             {
-                Debug.Log(photo.fileLocation + " " + photo.photoName + " " + photo.gameLocation + " " + photo.photoItems + " " + photo.photoTime);
+                Debug.Log(photo.fileLocation + " " + photo.photoName + " " + photo.gameLocation + " " + photo.photoItems.Length + " " + photo.photoTime);
+                if (photo.photoItems.Length > 0)
+                {
+                    for (int i = 0; i < photo.photoItems.Length; i++)
+                    {
+                        Debug.Log(photo.photoItems[i]);
+                    }
+                }
             }
         }
         else

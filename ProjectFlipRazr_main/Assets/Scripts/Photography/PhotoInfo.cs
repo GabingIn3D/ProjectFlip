@@ -11,12 +11,19 @@ public class PhotoInfo
         Unknown,
         House,
         Warehouse,
+        Studio,
+        Villas,
     }
 
     public enum PhotoItem
     {
         Knife,
         FamilyPortrait,
+        Cube,
+        Sphere,
+        HadronPointOfInterest1,
+        HadronPointOfInterest2,
+        HadronPointOfInterest3,
     }
 
     public string photoName {  get; set; }

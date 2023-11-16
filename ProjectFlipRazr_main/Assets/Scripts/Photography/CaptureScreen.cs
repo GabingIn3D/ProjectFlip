@@ -27,6 +27,7 @@ public class CaptureScreen : MonoBehaviour
 
     public Transform directionReference;
     public List<GameObject> photoItemsInRange;
+    public List<PhotoInfo.PhotoItem> photoItemsToRecord;
 
     void Awake()
     {
@@ -113,11 +114,12 @@ public class CaptureScreen : MonoBehaviour
         //Record gameLocation
         if (SceneManager.GetActiveScene().name == "House") { photoInfo.gameLocation = PhotoInfo.Location.House; }
         else if (SceneManager.GetActiveScene().name == "Warehouse") { photoInfo.gameLocation = PhotoInfo.Location.Warehouse; }
+        else if (SceneManager.GetActiveScene().name == "Studio") { photoInfo.gameLocation = PhotoInfo.Location.Studio; }
+        else if (SceneManager.GetActiveScene().name == "Villas") { photoInfo.gameLocation = PhotoInfo.Location.Villas; }
         else { photoInfo.gameLocation = PhotoInfo.Location.Unknown; }
 
         //Record photoItems
-        photoInfo.photoItems = new PhotoInfo.PhotoItem[1];
-        photoInfo.photoItems[0] = PhotoInfo.PhotoItem.Knife;
+        photoInfo.photoItems = photoItemsToRecord.ToArray();
 
         //Record photoTime
         photoInfo.photoTime = DateTime.Now;
@@ -139,6 +141,7 @@ public class CaptureScreen : MonoBehaviour
 
     public void CheckItemsInPhoto()
     {
+        photoItemsToRecord.Clear();
         if (photoItemsInRange.Count > 0)
         {
             foreach (GameObject item in photoItemsInRange)
@@ -156,7 +159,11 @@ public class CaptureScreen : MonoBehaviour
                         {
                             if (hit.collider.gameObject == item.gameObject)
                             {
-                                Debug.Log("PhotoItem Accepted");
+                                if (item.GetComponent<PhotoItem>() != null)
+                                {
+                                    photoItemsToRecord.Add(item.GetComponent<PhotoItem>().photoItem);
+                                    Debug.Log("PhotoItem Accepted");
+                                }
                             }
                         }
                     }
