@@ -9,8 +9,18 @@ public class MoveInputManager : MonoBehaviour
     DefaultControls inputActions;
     DefaultControls.PlayerActions groundMovement;
 
+
     Vector2 horizontalInput;
     Vector2 lookInput;
+
+    //adding in values for third person on the input manager
+    [Header("Third Person Values")]
+    ThirdPersonControls thirdPersonControls;
+
+    public Vector2 movementInput;
+    public float inputHorizontal;
+    public float inputVertical;
+
 
     private void Awake()
     {
@@ -30,10 +40,34 @@ public class MoveInputManager : MonoBehaviour
     private void OnEnable()
     {
         inputActions.Enable();
+
+        //checking for third person
+        if(thirdPersonControls == null)
+        {
+            thirdPersonControls = new ThirdPersonControls();
+
+            thirdPersonControls.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
+        }
+
+        thirdPersonControls.Enable();
     }
 
     private void OnDisable()
     {
         inputActions.Disable();
+        thirdPersonControls.Disable();
+    }
+
+    void HandleThirdPersonInput()
+    {
+        inputVertical = movementInput.y;
+        inputHorizontal = movementInput.x;
+    }
+
+    public void HandleAllInputs()
+    {
+        HandleThirdPersonInput();
+        //HandleJumpInput();
+        //HandleActionInput();
     }
 }
