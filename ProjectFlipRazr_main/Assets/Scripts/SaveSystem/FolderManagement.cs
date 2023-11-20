@@ -37,7 +37,7 @@ public class FolderManagement : MonoBehaviour
         if (!Directory.Exists(folderPath2))
         {
             Directory.CreateDirectory(folderPath2);
-            Debug.Log("Folder created at: " + folderPath + "/" + folderPath2);
+            Debug.Log("Folder created at: " + folderPath);
         }
         else
         {

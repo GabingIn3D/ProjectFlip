@@ -165,6 +165,168 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""ThirdPersonPlayer"",
+            ""id"": ""14bf190c-7f19-41b8-a91a-53e5cf29b7c5"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""0b69e9db-9c12-4594-9ed3-647e80c3121c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4a926a3f-4ab1-4f12-b49a-03034c15e85e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""PhoneNavigation"",
+            ""id"": ""9610f2d8-43cc-4022-8a1f-91abe890de14"",
+            ""actions"": [
+                {
+                    ""name"": ""Navigation"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""301f4798-b1cb-41f6-bb78-838e4da5e337"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Confirm"",
+                    ""type"": ""Button"",
+                    ""id"": ""6b7b5a5e-95ae-4c79-a9db-bf8fddb8073f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cancel"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6f1e674-9e9a-4872-b072-f1d98d4c9bfa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""eb5ff6c1-aca5-49bb-9044-f4feeb930eff"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Navigation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""15d4a140-ff15-4896-ab5e-8987f3ed70dc"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MKB"",
+                    ""action"": ""Navigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""4a48d1fb-71c1-4d36-a2a4-690c75722a83"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MKB"",
+                    ""action"": ""Navigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""dc62aff4-1588-40de-959c-2640bd2b30ed"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MKB"",
+                    ""action"": ""Navigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""9c3133ea-afd6-4064-961d-9ab516b8f38f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MKB"",
+                    ""action"": ""Navigation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""011c2fcc-3e08-4c3c-8c21-e1a860ee8688"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""47464688-467e-4687-ab61-afc004adfd67"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MKB"",
+                    ""action"": ""Confirm"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5f517282-aa49-4aa0-8dff-3492ceae7100"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6191d9a-427e-44bd-bbc9-8bbd39c57c95"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MKB"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -203,6 +365,14 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
         m_Player_LookX = m_Player.FindAction("LookX", throwIfNotFound: true);
         m_Player_LookY = m_Player.FindAction("LookY", throwIfNotFound: true);
         m_Player_LookXY = m_Player.FindAction("LookXY", throwIfNotFound: true);
+        // ThirdPersonPlayer
+        m_ThirdPersonPlayer = asset.FindActionMap("ThirdPersonPlayer", throwIfNotFound: true);
+        m_ThirdPersonPlayer_Newaction = m_ThirdPersonPlayer.FindAction("New action", throwIfNotFound: true);
+        // PhoneNavigation
+        m_PhoneNavigation = asset.FindActionMap("PhoneNavigation", throwIfNotFound: true);
+        m_PhoneNavigation_Navigation = m_PhoneNavigation.FindAction("Navigation", throwIfNotFound: true);
+        m_PhoneNavigation_Confirm = m_PhoneNavigation.FindAction("Confirm", throwIfNotFound: true);
+        m_PhoneNavigation_Cancel = m_PhoneNavigation.FindAction("Cancel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -330,6 +500,114 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // ThirdPersonPlayer
+    private readonly InputActionMap m_ThirdPersonPlayer;
+    private List<IThirdPersonPlayerActions> m_ThirdPersonPlayerActionsCallbackInterfaces = new List<IThirdPersonPlayerActions>();
+    private readonly InputAction m_ThirdPersonPlayer_Newaction;
+    public struct ThirdPersonPlayerActions
+    {
+        private @DefaultControls m_Wrapper;
+        public ThirdPersonPlayerActions(@DefaultControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Newaction => m_Wrapper.m_ThirdPersonPlayer_Newaction;
+        public InputActionMap Get() { return m_Wrapper.m_ThirdPersonPlayer; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(ThirdPersonPlayerActions set) { return set.Get(); }
+        public void AddCallbacks(IThirdPersonPlayerActions instance)
+        {
+            if (instance == null || m_Wrapper.m_ThirdPersonPlayerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_ThirdPersonPlayerActionsCallbackInterfaces.Add(instance);
+            @Newaction.started += instance.OnNewaction;
+            @Newaction.performed += instance.OnNewaction;
+            @Newaction.canceled += instance.OnNewaction;
+        }
+
+        private void UnregisterCallbacks(IThirdPersonPlayerActions instance)
+        {
+            @Newaction.started -= instance.OnNewaction;
+            @Newaction.performed -= instance.OnNewaction;
+            @Newaction.canceled -= instance.OnNewaction;
+        }
+
+        public void RemoveCallbacks(IThirdPersonPlayerActions instance)
+        {
+            if (m_Wrapper.m_ThirdPersonPlayerActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IThirdPersonPlayerActions instance)
+        {
+            foreach (var item in m_Wrapper.m_ThirdPersonPlayerActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_ThirdPersonPlayerActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public ThirdPersonPlayerActions @ThirdPersonPlayer => new ThirdPersonPlayerActions(this);
+
+    // PhoneNavigation
+    private readonly InputActionMap m_PhoneNavigation;
+    private List<IPhoneNavigationActions> m_PhoneNavigationActionsCallbackInterfaces = new List<IPhoneNavigationActions>();
+    private readonly InputAction m_PhoneNavigation_Navigation;
+    private readonly InputAction m_PhoneNavigation_Confirm;
+    private readonly InputAction m_PhoneNavigation_Cancel;
+    public struct PhoneNavigationActions
+    {
+        private @DefaultControls m_Wrapper;
+        public PhoneNavigationActions(@DefaultControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Navigation => m_Wrapper.m_PhoneNavigation_Navigation;
+        public InputAction @Confirm => m_Wrapper.m_PhoneNavigation_Confirm;
+        public InputAction @Cancel => m_Wrapper.m_PhoneNavigation_Cancel;
+        public InputActionMap Get() { return m_Wrapper.m_PhoneNavigation; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PhoneNavigationActions set) { return set.Get(); }
+        public void AddCallbacks(IPhoneNavigationActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PhoneNavigationActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PhoneNavigationActionsCallbackInterfaces.Add(instance);
+            @Navigation.started += instance.OnNavigation;
+            @Navigation.performed += instance.OnNavigation;
+            @Navigation.canceled += instance.OnNavigation;
+            @Confirm.started += instance.OnConfirm;
+            @Confirm.performed += instance.OnConfirm;
+            @Confirm.canceled += instance.OnConfirm;
+            @Cancel.started += instance.OnCancel;
+            @Cancel.performed += instance.OnCancel;
+            @Cancel.canceled += instance.OnCancel;
+        }
+
+        private void UnregisterCallbacks(IPhoneNavigationActions instance)
+        {
+            @Navigation.started -= instance.OnNavigation;
+            @Navigation.performed -= instance.OnNavigation;
+            @Navigation.canceled -= instance.OnNavigation;
+            @Confirm.started -= instance.OnConfirm;
+            @Confirm.performed -= instance.OnConfirm;
+            @Confirm.canceled -= instance.OnConfirm;
+            @Cancel.started -= instance.OnCancel;
+            @Cancel.performed -= instance.OnCancel;
+            @Cancel.canceled -= instance.OnCancel;
+        }
+
+        public void RemoveCallbacks(IPhoneNavigationActions instance)
+        {
+            if (m_Wrapper.m_PhoneNavigationActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPhoneNavigationActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PhoneNavigationActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PhoneNavigationActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PhoneNavigationActions @PhoneNavigation => new PhoneNavigationActions(this);
     private int m_MKBSchemeIndex = -1;
     public InputControlScheme MKBScheme
     {
@@ -354,5 +632,15 @@ public partial class @DefaultControls: IInputActionCollection2, IDisposable
         void OnLookX(InputAction.CallbackContext context);
         void OnLookY(InputAction.CallbackContext context);
         void OnLookXY(InputAction.CallbackContext context);
+    }
+    public interface IThirdPersonPlayerActions
+    {
+        void OnNewaction(InputAction.CallbackContext context);
+    }
+    public interface IPhoneNavigationActions
+    {
+        void OnNavigation(InputAction.CallbackContext context);
+        void OnConfirm(InputAction.CallbackContext context);
+        void OnCancel(InputAction.CallbackContext context);
     }
 }

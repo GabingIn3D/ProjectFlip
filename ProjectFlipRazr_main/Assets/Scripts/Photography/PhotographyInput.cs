@@ -5,7 +5,8 @@ using UnityEngine;
 public class PhotographyInput : MonoBehaviour
 {
     // public Photography snapCam;
-    public CaptureScreen captureScreen;
+    //public CaptureScreen captureScreen;
+    public CaptureScreen2 captureScreen;
     public PopulateGallery populateGallery;
     // Start is called before the first frame update
     void Start()

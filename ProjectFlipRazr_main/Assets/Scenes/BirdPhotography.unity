@@ -774,14 +774,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   filePath: /Resources/Snapshots/
   photoNameVariable: 
-  isBuild: 0
+  isBuild: 1
   snapResWidth: 1600
   snapResHeight: 1200
   populateGallery: {fileID: 0}
   photoItemAngleCheckX: 20
   photoItemAngleCheckY: 20
-  directionReference: {fileID: 0}
+  directionReference: {fileID: 1418989624}
   photoItemsInRange: []
+  photoItemsToRecord: 
 --- !u!135 &479920325
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2661,7 +2662,7 @@ MonoBehaviour:
   imagePrefab: {fileID: 8075350193142619058, guid: f62f029b1453efc4d9310aa891100c75, type: 3}
   textures: []
   photoDatabase: {fileID: 0}
-  whichPath: 0
+  whichPath: 1
   imagePath: 
   snapshotSavePath: Resources/Snapshots
   currentPage: 1

@@ -87,6 +87,7 @@ public class PopulateGallery : MonoBehaviour
             case WhichPath.Build:
                 textures = new Texture2D[photoDatabase.photoMemoryCount];
                 RefreshGallery();
+                ShowImagesInAlbum();
                 break;
         }
 
@@ -153,6 +154,7 @@ public class PopulateGallery : MonoBehaviour
             image.sprite = sprite;
  
         }
+
     }
 
 
@@ -178,20 +180,7 @@ public class PopulateGallery : MonoBehaviour
             }
         }
 
-        foreach (Texture2D texture in textures)
-        {
-
-            // Convert Texture2D to Sprite
-
-            Debug.Log("Texture here plz :)");
-            Debug.Log(texture);
-            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one * 0.5f);
-
-            // Create UI Image object and add it to the grid
-            GameObject imageObject = Instantiate(imagePrefab, gridParent);
-            Image image = imageObject.GetComponent<Image>();
-            image.sprite = sprite;
-        }
+        ShowImagesInAlbum();
     }
 
 
@@ -223,7 +212,7 @@ public class PopulateGallery : MonoBehaviour
         }
 
 
-        textures = Resources.LoadAll<Texture2D>(resourcePath);
+        //textures = Resources.LoadAll<Texture2D>(resourcePath);
 
         int slotNumber = 0;
 
