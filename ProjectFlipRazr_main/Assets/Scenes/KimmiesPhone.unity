@@ -3597,10 +3597,10 @@ MonoBehaviour:
       - m_Target: {fileID: 995722592}
         m_TargetAssemblyTypeName: PhoneNavi, Assembly-CSharp
         m_MethodName: ClickNaviButton
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1570255712}
+          m_ObjectArgumentAssemblyTypeName: FlipPhoneManager, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3656,6 +3656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6491bcfa1d119bf4ebde44acb141d0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flipPhone: {fileID: 1570255712}
   button: 1
 --- !u!1 &1026350165
 GameObject:
@@ -5563,10 +5564,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1730992256}
         m_TargetAssemblyTypeName: PhoneNavi, Assembly-CSharp
         m_MethodName: ClickNaviButton
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1570255712}
+          m_ObjectArgumentAssemblyTypeName: FlipPhoneManager, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5622,6 +5623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6491bcfa1d119bf4ebde44acb141d0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flipPhone: {fileID: 1570255712}
   button: 0
 --- !u!1 &1784232118
 GameObject:

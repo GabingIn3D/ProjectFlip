@@ -7,7 +7,7 @@ using TMPro;
 
 public class FlipPhoneManager : MonoBehaviour
 {
-    FlipPhone_BaseState currentState;
+    public FlipPhone_BaseState currentState;
 
     //Phone pages
     //public GameObject home;
@@ -72,7 +72,7 @@ public class FlipPhoneManager : MonoBehaviour
     }
 
     // Method to get a GameObject by name from the dictionary
-    private GameObject GetObject(string name)
+    public GameObject GetObject(string name)
     {
         if (phonePages.ContainsKey(name))
         {

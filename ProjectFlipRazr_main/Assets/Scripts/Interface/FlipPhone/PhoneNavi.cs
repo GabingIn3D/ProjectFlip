@@ -9,6 +9,9 @@ public class PhoneNavi : MonoBehaviour
 {
     [SerializeField]
     private FlipPhoneManager flipPhone;
+    FlipPhone_BaseState flipPhoneState;
+
+
     // Phone controls:
     // ARROW KEYS (or point and click for now), CONFIRM, CANCEL (BACK)
     //
@@ -53,6 +56,8 @@ public class PhoneNavi : MonoBehaviour
 
     void Awake()
     {
+        flipPhone = FindObjectOfType<FlipPhoneManager>();
+        flipPhoneState = flipPhone.currentState;
         var buttontext = GetComponentInChildren<TextMeshProUGUI>();
 
         switch (button)
@@ -78,7 +83,7 @@ public class PhoneNavi : MonoBehaviour
 
     }
 
-    public void ClickNaviButton(FlipPhoneManager state)
+    public void ClickNaviButton(FlipPhoneManager flipPhone)
     {
         switch (button)
         {
@@ -88,18 +93,27 @@ public class PhoneNavi : MonoBehaviour
                 break;
             case whichNaviButton.MainMenu:
                 Debug.Log("you clicked on 'Main Menu'");
-                flipPhone.SwitchState(state.mainMenuState);
+                flipPhone.SwitchState(flipPhone.mainMenuState);
                 break;
             case whichNaviButton.Back:
                 Debug.Log("you clicked on 'Back'");
-                //if flipPhone state != mainMenuState
+                flipPhoneState = flipPhone.currentState;
+                if (flipPhoneState != flipPhone.mainMenuState)
+                {
+                    Debug.Log("I like sushi");
+                    flipPhone.SwitchState(flipPhone.mainMenuState);
+                }
+                else
+                {
+                    flipPhone.SwitchState(flipPhone.homeScreenState);
+                }
+
                 //      if options is active
                 //      { 
                 //          hide options;
                 //      }
                 // else
                 // {
-                flipPhone.SwitchState(state.homeScreenState);
                 break;
             case whichNaviButton.Save:
                 Debug.Log("You clicked on 'Save'");

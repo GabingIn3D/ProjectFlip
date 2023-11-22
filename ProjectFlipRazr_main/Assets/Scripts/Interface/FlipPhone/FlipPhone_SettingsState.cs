@@ -8,12 +8,21 @@ public class FlipPhone_SettingsState : FlipPhone_BaseState
 
     public override void EnterState(FlipPhoneManager flipPhone)
     {
+        //Sets every phone page except THIS one to inactive
         IEnumerable<GameObject> objectsExceptOne = flipPhone.GetObjectsExceptOne(pageBelongingToState);
         foreach (GameObject obj in objectsExceptOne)
         {
             obj.SetActive(false);
         }
+
+        //Gets rid of the Options context menu if it's open
         flipPhone.options.SetActive(false);
+
+        //Sets this phone page as active
+        flipPhone.GetObject(pageBelongingToState).SetActive(true);
+
+        // L Button: "Options"
+        // R Button: "Back"
     }
 
     public override void UpdateState(FlipPhoneManager flipPhone)
