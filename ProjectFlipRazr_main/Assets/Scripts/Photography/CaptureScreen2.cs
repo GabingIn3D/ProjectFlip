@@ -20,6 +20,7 @@ public class CaptureScreen2 : MonoBehaviour
     private string newID;
 
     public PopulateGallery populateGallery;
+    public ControllerManager controllerManager;
 
     //Changes the angle of where the photo item needs to be to be accepted as an item
     public float photoItemAngleCheckX = 20;
@@ -38,8 +39,11 @@ public class CaptureScreen2 : MonoBehaviour
 
     public void Capture()
     {
-        CheckItemsInPhoto();
-        StartCoroutine(AsyncCapture());
+        if (controllerManager.isFirstPersonMode == true)
+        {
+            CheckItemsInPhoto();
+            StartCoroutine(AsyncCapture());
+        }
     }
 
     IEnumerator AsyncCapture()

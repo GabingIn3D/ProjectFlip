@@ -16,10 +16,17 @@ public class ControllerManager : MonoBehaviour
 
     public bool isFirstPersonMode;
 
+    private float thirdPPlayerSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Start as third person controller
+        thirdPController.enabled = true;
+        thirdPCam.Priority = 15;
+        firstPController.enabled = false;
+        firstPCam.Priority = 10;
+        isFirstPersonMode = false;
     }
 
     // Update is called once per frame
@@ -35,7 +42,10 @@ public class ControllerManager : MonoBehaviour
     {
         if (isFirstPersonMode == false)
         {
+            //Switching to first person controller
             thirdPController.enabled = false;
+            thirdPController.movementInput.x = 0;
+            thirdPController.movementInput.y = 0;
             thirdPCam.Priority = 10;
             firstPController.enabled = true;
             firstPCam.Priority = 15;
@@ -43,6 +53,7 @@ public class ControllerManager : MonoBehaviour
         }
         else if (isFirstPersonMode == true)
         {
+            //Switching to third person controller
             thirdPController.enabled = true;
             thirdPCam.Priority = 15;
             firstPController.enabled = false;
