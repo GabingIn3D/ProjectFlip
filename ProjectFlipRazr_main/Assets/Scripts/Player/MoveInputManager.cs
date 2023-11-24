@@ -34,8 +34,9 @@ public class MoveInputManager : MonoBehaviour
 
     private void Update()
     {
-        movement.ReceiveInput(horizontalInput);
-        cameraLook.ReceiveInput(lookInput);
+        //I COMMENTED THIS OUT SINCE IT WOULD GIVE ME AN ERROR
+        //movement.ReceiveInput(horizontalInput);
+        //cameraLook.ReceiveInput(lookInput);
     }
     private void OnEnable()
     {

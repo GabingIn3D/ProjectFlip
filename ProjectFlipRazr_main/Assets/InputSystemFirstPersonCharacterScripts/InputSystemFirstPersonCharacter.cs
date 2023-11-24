@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class InputSystemFirstPersonCharacter : MonoBehaviour
     private CharacterController controller;
     
     [SerializeField] private Camera cam;
+    [SerializeField] private GameObject firstPersonVcam;
     [SerializeField] private float movementSpeed = 2.0f;
     [SerializeField] public float lookSensitivity = 1.0f;
     
@@ -64,8 +66,8 @@ public class InputSystemFirstPersonCharacter : MonoBehaviour
 
         xRotation -= lookY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        
-        cam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+        firstPersonVcam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         
         transform.Rotate(Vector3.up * lookX);
     }
