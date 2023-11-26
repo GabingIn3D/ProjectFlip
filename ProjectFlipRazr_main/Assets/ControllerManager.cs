@@ -7,6 +7,7 @@ using UnityEngine;
 public class ControllerManager : MonoBehaviour
 {
     //First person mode references
+    public GameObject firstPersonPlayer;
     public InputSystemFirstPersonCharacter firstPController;
     public CinemachineVirtualCamera firstPCam;
 
@@ -15,6 +16,8 @@ public class ControllerManager : MonoBehaviour
     public CinemachineFreeLook thirdPCam;
 
     public bool isFirstPersonMode;
+    public Transform PhotoRealmToHere;
+    public Transform EmptyPhotoRealm;
 
     private float thirdPPlayerSpeed;
 
@@ -51,6 +54,14 @@ public class ControllerManager : MonoBehaviour
         if (isFirstPersonMode == false)
         {
             //Switching to first person controller
+            if (PhotoRealmToHere != null)
+            {
+                firstPersonPlayer.transform.position = PhotoRealmToHere.transform.position;
+            }
+            else
+            {
+                firstPersonPlayer.transform.position = EmptyPhotoRealm.transform.position;
+            }
             thirdPController.enabled = false;
             thirdPController.movementInput.x = 0;
             thirdPController.movementInput.y = 0;
@@ -98,5 +109,15 @@ public class ControllerManager : MonoBehaviour
             //Unfreeze first person
             firstPController.enabled = true;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        PhotoRealmToHere = other.gameObject.transform.GetChild(0);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        PhotoRealmToHere = null;
     }
 }
