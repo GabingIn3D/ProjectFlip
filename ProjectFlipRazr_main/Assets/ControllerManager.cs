@@ -36,6 +36,14 @@ public class ControllerManager : MonoBehaviour
         {
             SwitchControllerMode();
         }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            FreezeMovement();
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            UnFreezeMovement();
+        }
     }
 
     void SwitchControllerMode()
@@ -59,6 +67,38 @@ public class ControllerManager : MonoBehaviour
             firstPController.enabled = false;
             firstPCam.Priority = 10;
             isFirstPersonMode = false;
+        }
+    }
+
+    void FreezeMovement()
+    {
+        if (isFirstPersonMode == false)
+        {
+            //Freeze third person
+            thirdPController.enabled = false;
+            thirdPController.movementInput.x = 0;
+            thirdPController.movementInput.y = 0;
+        }
+        else if (isFirstPersonMode == true)
+        {
+            //Freeze first person
+            firstPController.enabled = false;
+        }
+    }
+
+    void UnFreezeMovement()
+    {
+        if (isFirstPersonMode == false)
+        {
+            //Unfreeze third person
+            thirdPController.enabled = true;
+            thirdPController.movementInput.x = 0;
+            thirdPController.movementInput.y = 0;
+        }
+        else if (isFirstPersonMode == true)
+        {
+            //Unfreeze first person
+            firstPController.enabled = true;
         }
     }
 }
