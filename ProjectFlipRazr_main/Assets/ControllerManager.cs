@@ -92,8 +92,6 @@ public class ControllerManager : MonoBehaviour
         {
             //Unfreeze third person
             thirdPController.enabled = true;
-            thirdPController.movementInput.x = 0;
-            thirdPController.movementInput.y = 0;
         }
         else if (isFirstPersonMode == true)
         {
