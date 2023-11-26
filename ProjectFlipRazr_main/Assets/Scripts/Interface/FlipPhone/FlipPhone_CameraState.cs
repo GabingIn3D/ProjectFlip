@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static OptionsContextMenu;
 
 
 public class FlipPhone_CameraState : FlipPhone_BaseState 
@@ -15,19 +16,43 @@ public class FlipPhone_CameraState : FlipPhone_BaseState
         {
             obj.SetActive(false);
         }
-
+        ///////
+        if (flipPhone.options != null)
+        {
+            var contextMenu = flipPhone.options.GetComponentInChildren<OptionsContextMenu>();
+            if (contextMenu != null)
+            {
+                contextMenu.currentButtonType = ButtonType.Nothing;
+            }
+            else
+            {
+                Debug.LogError("OptionsContextMenu component not found on flipPhone.options");
+            }
+        }
+        else
+        {
+            Debug.LogError("flipPhone.options is null");
+        }
+        //////////////
         //Gets rid of the Options context menu if it's open
         flipPhone.options.SetActive(false);
 
         //Sets this phone page as active
         flipPhone.GetObject(pageBelongingToState).SetActive(true);
 
+        flipPhone.NavigationButton_L(PhoneNavi.whichNaviButton.Options);
+        flipPhone.NavigationButton_R(PhoneNavi.whichNaviButton.Back);
         // L Button: "Options"
         // R Button: "Back"
     }
 
     public override void UpdateState(FlipPhoneManager flipPhone)
     {
-        throw new System.NotImplementedException();
+
+    }
+
+    public override void ExitState(FlipPhoneManager flipPhone)
+    {
+
     }
 }

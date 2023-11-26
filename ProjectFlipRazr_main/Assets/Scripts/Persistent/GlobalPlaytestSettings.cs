@@ -7,7 +7,25 @@ public class GlobalPlaytestSettings : MonoBehaviour
     // Start is called before the first frame update
     public static GlobalPlaytestSettings instance;
 
-    private void Awake()
+    [Header("PhoneApps")]
+    // PHONE APPS
+    public bool hasCamera;
+    public bool hasGallery;
+    public bool hasMap;
+    public bool hasSettings;
+    public bool hasSocialMedia;
+    public bool hasSaveQuit;
+
+    [Header("Locations")]
+    // LOCATIONS
+    public bool hasKimmiesHouse;
+    public bool hasStudio;
+    public bool hasVillas;
+
+    [Header("Public Strings")]
+    public string currentLocation;
+
+    public void Awake()
     {
         if (instance != null && instance != this)
         {

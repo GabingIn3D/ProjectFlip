@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
 
 public class PhoneNavi : MonoBehaviour
 {
     [SerializeField]
     private FlipPhoneManager flipPhone;
     FlipPhone_BaseState flipPhoneState;
+
+    [SerializeField]
+    TextMeshProUGUI buttonText;
 
 
     // Phone controls:
@@ -58,29 +60,27 @@ public class PhoneNavi : MonoBehaviour
     {
         flipPhone = FindObjectOfType<FlipPhoneManager>();
         flipPhoneState = flipPhone.currentState;
-        var buttontext = GetComponentInChildren<TextMeshProUGUI>();
 
-        switch (button)
-        {
-            case whichNaviButton.Options:
-                buttontext.text = "Options";
-                break;
-            case whichNaviButton.MainMenu:
-                buttontext.text = "Main Menu";
-                break;
-            case whichNaviButton.Back:
-                buttontext.text = "Back";
-                break;
-            case whichNaviButton.Save:
-                buttontext.text = "Save";
-                break;
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        switch (button)
+        {
+            case whichNaviButton.Options:
+                buttonText.text = "Options";
+                break;
+            case whichNaviButton.MainMenu:
+                buttonText.text = "Main Menu";
+                break;
+            case whichNaviButton.Back:
+                buttonText.text = "Back";
+                break;
+            case whichNaviButton.Save:
+                buttonText.text = "Save";
+                break;
+        }
     }
 
     public void ClickNaviButton(FlipPhoneManager flipPhone)
@@ -89,7 +89,15 @@ public class PhoneNavi : MonoBehaviour
         {
             case whichNaviButton.Options:
                 Debug.Log("you clicked on 'Options'");
-                flipPhone.options.SetActive(true);
+               // if the Options context menu is already open and player hits the button again, it will be set to inactive
+                if(flipPhone.options.activeSelf)
+                {
+                    flipPhone.options.SetActive(false);
+                }
+                else
+                {
+                    flipPhone.options.SetActive(true);
+                }
                 break;
             case whichNaviButton.MainMenu:
                 Debug.Log("you clicked on 'Main Menu'");
@@ -98,17 +106,18 @@ public class PhoneNavi : MonoBehaviour
             case whichNaviButton.Back:
                 Debug.Log("you clicked on 'Back'");
                 flipPhoneState = flipPhone.currentState;
-                if (flipPhoneState != flipPhone.mainMenuState)
+                Debug.Log("current state recorded is " + flipPhone.currentState);
+                if (flipPhoneState == flipPhone.mainMenuState)
                 {
-                    Debug.Log("I like sushi");
-                    flipPhone.SwitchState(flipPhone.mainMenuState);
+                    //if(flipPhoneState == flipPhone.photoIndividualState) { flipPhone.SwitchState(flipPhone.galleryState);
+                    flipPhone.SwitchState(flipPhone.homeScreenState);
                 }
                 else
                 {
-                    flipPhone.SwitchState(flipPhone.homeScreenState);
+                    flipPhone.SwitchState(flipPhone.mainMenuState);
                 }
 
-                //      if options is active
+
                 //      { 
                 //          hide options;
                 //      }

@@ -20,12 +20,19 @@ public class FlipPhone_GalleryState : FlipPhone_BaseState
 
         //Sets this phone page as active
         flipPhone.GetObject(pageBelongingToState).SetActive(true);
+        flipPhone.NavigationButton_L(PhoneNavi.whichNaviButton.Options);
+        flipPhone.NavigationButton_R(PhoneNavi.whichNaviButton.Back);
         // L Button: "Options"
         // R Button: "Back"
     }
 
     public override void UpdateState(FlipPhoneManager flipPhone)
     {
-        throw new System.NotImplementedException();
+
+    }
+
+    public override void ExitState(FlipPhoneManager flipPhone)
+    {
+
     }
 }

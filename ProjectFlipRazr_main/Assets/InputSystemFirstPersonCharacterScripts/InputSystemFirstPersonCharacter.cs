@@ -40,7 +40,7 @@ public class InputSystemFirstPersonCharacter : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         initHeight = controller.height;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
         SetBaseFOV(cam.fieldOfView);
     }
