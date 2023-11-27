@@ -86,6 +86,7 @@ public class PopulateGallery : MonoBehaviour
 
             case WhichPath.Build:
                 textures = new Texture2D[photoDatabase.photoMemoryCount];
+                photoDatabase = FindAnyObjectByType<PhotoInfoDatabase>();
                 RefreshGallery();
                 ShowImagesInAlbum();
                 break;
@@ -115,7 +116,6 @@ public class PopulateGallery : MonoBehaviour
     public void RefreshGallery()
     {
         textures = new Texture2D[photoDatabase.photoMemoryCount];
-        photoDatabase = FindAnyObjectByType<PhotoInfoDatabase>();
 
         for (int i = 0; i < photoDatabase.photos.Count; i++)
         {
@@ -136,30 +136,34 @@ public class PopulateGallery : MonoBehaviour
                 // make a new one
             }
 
-        }
+        
         //        foreach (Texture2D texture in textures)
         //        {
         // Convert Texture2D to Sprite
 
 
-        int last_el = photoDatabase.photos.Count - 1;
-        if (last_el >= 0)
-        {
-            Sprite sprite = Sprite.Create(textures[last_el], new Rect(0, 0, textures[last_el].width, textures[last_el].height), Vector2.one * 0.5f);
+        //int last_el = photoDatabase.photos.Count - 1;
+        //if (last_el >= 0)
+        //{
+        //    Sprite sprite = Sprite.Create(textures[last_el], new Rect(0, 0, textures[last_el].width, textures[last_el].height), Vector2.one * 0.5f);
 
-            // Create UI Image object and add it to the grid
+        //   // Create UI Image object and add it to the grid
 
-            GameObject imageObject = Instantiate(imagePrefab, gridParent);
-            Image image = imageObject.GetComponent<Image>();
-            image.sprite = sprite;
- 
+        //    GameObject imageObject = Instantiate(imagePrefab, gridParent);
+        //    Image image = imageObject.GetComponent<Image>();
+        //    image.sprite = sprite;
+
+        ShowImagesInAlbum();
+
         }
+
 
     }
 
 
     public void ReloadImagesInGallery()
     {
+
         textures = new Texture2D[photoDatabase.photos.Count];
         photoDatabase = FindAnyObjectByType<PhotoInfoDatabase>();
         for (int i = 0; i < photoDatabase.photos.Count; i++)
@@ -182,9 +186,6 @@ public class PopulateGallery : MonoBehaviour
 
         ShowImagesInAlbum();
     }
-
-
-
 
 
 
@@ -211,8 +212,12 @@ public class PopulateGallery : MonoBehaviour
             Object.Destroy(gridParent.GetChild(i).gameObject);
         }
 
+        if (whichPath == WhichPath.Editor) textures = Resources.LoadAll<Texture2D>(resourcePath);
+        else textures = new Texture2D[photoDatabase.photoMemoryCount];
 
         //textures = Resources.LoadAll<Texture2D>(resourcePath);
+
+        textures = Resources.LoadAll<Texture2D>(resourcePath);
 
         int slotNumber = 0;
 

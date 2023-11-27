@@ -36,11 +36,11 @@ public class OptionsContextMenu : MonoBehaviour
 
     public void Awake()
     {
-        CollectButtons();
+        //CollectButtons();
     }
     public void OnEnable()
     {
-
+        CollectButtons();
         SetButtonsVisibility();
         foreach (Button button in buttons)
         {
@@ -54,7 +54,7 @@ public class OptionsContextMenu : MonoBehaviour
     public void OnDisable()
     {
         // Array.Clear(buttons, 0, buttons.Length);
-        CollectButtons();
+        //CollectButtons();
     }
 
     void CollectButtons()
@@ -62,16 +62,23 @@ public class OptionsContextMenu : MonoBehaviour
         // Assuming buttons are direct children of this GameObject
         // Array.Clear(buttons, 0, buttons.Length);
         buttons = GetComponentsInChildren<Button>();
+        
+
+
     }
 
     // Update is called once per frame
-    void SetButtonsVisibility()
+    public void SetButtonsVisibility()
     {
+
+
+
         // Set all buttons inactive initially
-        foreach (Button button in buttons)
-        {
-            button.gameObject.SetActive(false);
-        }
+        //foreach (Button button in buttons)
+        //{
+        //    button.gameObject.SetActive(false);
+        //}
+
 
         // Activate a certain quantity of buttons based on the currentButtonType
         switch (currentButtonType)
@@ -80,7 +87,21 @@ public class OptionsContextMenu : MonoBehaviour
                 Debug.Log("Nothing is selected");
                 activeButtonCount = 0;
                 ActivateButtons(0, 0);
+                if (activeButtonCount == 0)
+                {
+                    var thisButton = buttons[0].gameObject.GetComponent<OptionButtonBehaviour>();
+                    thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.Null;
+                    thisButton = buttons[1].gameObject.GetComponent<OptionButtonBehaviour>();
+                    thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.Null;
+                    thisButton = buttons[2].gameObject.GetComponent<OptionButtonBehaviour>();
+                    thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.Null;
+                    thisButton = buttons[3].gameObject.GetComponent<OptionButtonBehaviour>();
+                    thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.Null;
+                }
+
                 break;
+
+
             case ButtonType.Location:
                 Debug.Log("Successfully picking up that this should show options relevant to a Location.");
                 if (LocationListTargetBehaviour != null && LocationListTargetBehaviour.currentlySelected != null)
@@ -93,6 +114,10 @@ public class OptionsContextMenu : MonoBehaviour
                     Debug.Log("You are viewing the button to travel to " +  selectedLocation);
                 }
                 break;
+
+
+
+
             case ButtonType.Photo:
                 Debug.Log("Successfully picking up that this should show options relevant to a Photo.");
                 if (PhotoListTargetBehaviour != null && PhotoListTargetBehaviour.currentlySelected != null)
@@ -100,6 +125,9 @@ public class OptionsContextMenu : MonoBehaviour
                     ActivateButtons(1, activeButtonCount);
                 }
                 break;
+
+
+
             case ButtonType.Settings:
                 Debug.Log("Successfully picking up that this should show options relevant to a Setting.");
                 if (SettingsListTargetBehaviour != null && SettingsListTargetBehaviour.currentlySelected != null)
@@ -131,6 +159,8 @@ public class OptionsContextMenu : MonoBehaviour
                 //     buttons[0].FunctionToRunOnClick(FunctionToRunOnClick);
                 // 
                 break;
+
+
             case ButtonType.SaveQuit:
                 Debug.Log("Successfully picking up that this should show options relevant to a SaveQuit button.");
                 if (SaveQuitListTargetBehaviour != null && SaveQuitListTargetBehaviour.currentlySelected != null)
@@ -138,6 +168,9 @@ public class OptionsContextMenu : MonoBehaviour
                     ActivateButtons(3, activeButtonCount);
                 }
                 break;
+
+
+
             case ButtonType.HomeScreen:
                 Debug.Log("Successfully picking up that this should show options relevant to the Home Screen.");
                 
@@ -149,6 +182,9 @@ public class OptionsContextMenu : MonoBehaviour
                     thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.ChangeWallpaper;
                 }
                 break;
+
+
+
             default:
                 Debug.LogError("Invalid ButtonType");
                 break;
@@ -157,11 +193,8 @@ public class OptionsContextMenu : MonoBehaviour
 
     void ActivateButtons(int startIndex, int count)
     {
-        // Activate the specified quantity of buttons starting from the startIndex
-        for (int i = startIndex; i < startIndex + count && i < buttons.Length; i++)
-        {
-            buttons[i].gameObject.SetActive(true);
-        }
+
+        return;
     }
 
 

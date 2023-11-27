@@ -12,6 +12,9 @@ public class OptionButtonBehaviour : MonoBehaviour
     //Possible buttons
     public enum buttonFunction
     {
+
+        Null,
+
         //Location
         Travel,
 
@@ -57,6 +60,9 @@ public class OptionButtonBehaviour : MonoBehaviour
     {
         switch (buttonfunction)
         {
+            case buttonFunction.Null:
+                break;
+
             //Location
             case buttonFunction.Travel:
                 var contextMenu = FindObjectOfType<OptionsContextMenu>();
@@ -120,6 +126,12 @@ public class OptionButtonBehaviour : MonoBehaviour
         Button button = GetComponent<Button>();
         switch (buttonfunction)
         {
+
+            case buttonFunction.Null:
+                displayedText.text = "";
+                // this is where you set the button's hoverability to be inactive
+                break;
+
             //Location
             case buttonFunction.Travel:
                 displayedText.text = "Travel";
@@ -153,13 +165,13 @@ public class OptionButtonBehaviour : MonoBehaviour
                 if(homeScreen != null)
                 {
                     homeScreen.GetComponent<HomeScreenBehaviour>();
+                    string stringToDisplay = homeScreen.homeScreenOptions[0];
+                    displayedText.text = stringToDisplay;
                 }
                 else
                 {
                     Debug.LogWarning("homeScreenis NULLLLLLL");
                 }
-                string stringToDisplay = homeScreen.homeScreenOptions[0];
-                displayedText.text = stringToDisplay;
                 break;
         }
     }

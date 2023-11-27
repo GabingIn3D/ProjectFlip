@@ -8,9 +8,9 @@ public class HomeScreenBehaviour : MonoBehaviour
     public OptionsContextMenu optionsMenu;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        
+        optionsMenu.currentButtonType = OptionsContextMenu.ButtonType.HomeScreen;
     }
 
     private void OnEnable()

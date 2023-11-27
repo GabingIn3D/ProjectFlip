@@ -16,6 +16,9 @@ public class FlipPhone_MapState : FlipPhone_BaseState
             obj.SetActive(false);
         }
         ///////
+        ///
+
+        /*
         if (flipPhone.options != null)
         {
             var contextMenu = flipPhone.options.GetComponentInChildren<OptionsContextMenu>();
@@ -32,6 +35,8 @@ public class FlipPhone_MapState : FlipPhone_BaseState
         {
             Debug.LogError("flipPhone.options is null");
         }
+        */
+
         //////////////
         //Gets rid of the Options context menu if it's open
         flipPhone.options.SetActive(false);
