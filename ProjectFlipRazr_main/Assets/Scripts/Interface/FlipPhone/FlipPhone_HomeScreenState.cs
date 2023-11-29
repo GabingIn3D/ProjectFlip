@@ -11,9 +11,11 @@ public class FlipPhone_HomeScreenState : FlipPhone_BaseState
     public override void EnterState(FlipPhoneManager flipPhone)
     {
         //Sets every phone page except THIS one to inactive
+        Debug.Log("----------You are in Home Screen State: " + pageBelongingToState + " is active.");
         IEnumerable<GameObject> objectsExceptOne = flipPhone.GetObjectsExceptOne(pageBelongingToState);
         foreach (GameObject obj in objectsExceptOne)
         {
+            Debug.Log(obj.name + " is being hidden");
             obj.SetActive(false);
         }
         ///////

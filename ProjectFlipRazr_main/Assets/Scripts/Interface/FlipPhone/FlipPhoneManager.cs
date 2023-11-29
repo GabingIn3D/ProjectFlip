@@ -133,6 +133,7 @@ public class FlipPhoneManager : MonoBehaviour
         // Check if the state name exists in the dictionary
         if (stateMap.ContainsKey(stateName))
         {
+            Debug.Log("weewoo " + stateName + " is the statename being pulled into ChangeStates()");
             // Get the type from the dictionary
             Type stateType = stateMap[stateName];
 
@@ -149,6 +150,7 @@ public class FlipPhoneManager : MonoBehaviour
                     // Invoke the EnterState method with the FlipPhoneManager parameter
                     enterMethod.Invoke(newState, new object[] { flipPhone });
                     currentState = newState;
+                    Debug.Log("currentState is " + currentState + " and newState is " + newState);
                 }
                 else
                 {

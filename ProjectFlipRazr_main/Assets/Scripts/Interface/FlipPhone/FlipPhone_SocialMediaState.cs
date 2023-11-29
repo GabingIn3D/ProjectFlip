@@ -9,6 +9,7 @@ public class FlipPhone_SocialMediaState : FlipPhone_BaseState
 
     public override void EnterState(FlipPhoneManager flipPhone)
     {
+        Debug.Log("----------You are in Social Media State: " + pageBelongingToState + " is active.");
         //Sets every phone page except THIS one to inactive
         IEnumerable<GameObject> objectsExceptOne = flipPhone.GetObjectsExceptOne(pageBelongingToState);
         foreach (GameObject obj in objectsExceptOne)

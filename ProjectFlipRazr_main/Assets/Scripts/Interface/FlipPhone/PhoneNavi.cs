@@ -106,7 +106,7 @@ public class PhoneNavi : MonoBehaviour
             case whichNaviButton.Back:
                 Debug.Log("you clicked on 'Back'");
                 flipPhoneState = flipPhone.currentState;
-                Debug.Log("current state recorded is " + flipPhone.currentState);
+                Debug.Log("previous state recorded is " + flipPhone.currentState);
                 if (flipPhoneState == flipPhone.mainMenuState)
                 {
                     //if(flipPhoneState == flipPhone.photoIndividualState) { flipPhone.SwitchState(flipPhone.galleryState);

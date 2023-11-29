@@ -19,7 +19,7 @@ public class CaptureScreen2 : MonoBehaviour
 
     private string newID;
 
-    public PopulateGallery populateGallery;
+    //public PopulateGallery populateGallery;
     public ControllerManager controllerManager;
 
     //Changes the angle of where the photo item needs to be to be accepted as an item
@@ -34,7 +34,7 @@ public class CaptureScreen2 : MonoBehaviour
     {
         instance = this;
 
-        populateGallery = FindAnyObjectByType<PopulateGallery>();
+        // populateGallery = FindAnyObjectByType<PopulateGallery>();
     }
 
     public void Capture()
@@ -102,7 +102,8 @@ public class CaptureScreen2 : MonoBehaviour
         Debug.Log("Capture written! To " + filePath);
         Destroy(texture);
         RecordPhotoInfo();
-        populateGallery.RefreshGallery();
+        //populateGallery.RefreshGallery();
+        // gameObject.SendMessage("RefreshGallery", SendMessageOptions.DontRequireReceiver);
     }
 
     public void RecordPhotoInfo() // Adds a PhotoInfo to the list in the database with the info inside
