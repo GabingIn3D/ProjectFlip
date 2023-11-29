@@ -81,8 +81,8 @@ public class PhotoInfoDatabase : MonoBehaviour
 
     public void Load()
     {
+        RemoveAllPhoto();
         List<PhotoInfo> data = SaveSystem.LoadPhotos();
-        //RemoveAllPhoto();
 
         foreach (PhotoInfo photo in data)
         {

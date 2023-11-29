@@ -87,8 +87,7 @@ public class PopulateGallery : MonoBehaviour
             case WhichPath.Build:
                 textures = new Texture2D[photoDatabase.photoMemoryCount];
                 photoDatabase = FindAnyObjectByType<PhotoInfoDatabase>();
-                RefreshGallery();
-                ShowImagesInAlbum();
+                photoDatabase.Load();
                 break;
         }
 
