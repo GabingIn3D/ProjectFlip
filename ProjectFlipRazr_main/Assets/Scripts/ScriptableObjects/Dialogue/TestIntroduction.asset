@@ -19,41 +19,40 @@ MonoBehaviour:
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 0
-    portrait: {fileID: 21300000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
   - id: 1
     speakerName: Kafka
     text: Look at this place. The product of a devoted few's efforts.
     durationInSeconds: 2.7
     hideDelay: 1.1
     manualClick: 0
-    portrait: {fileID: 21300000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
   - id: 2
     speakerName: Kafka
     text: I'm actually quite impressed. It's been a while since my last visit.
     durationInSeconds: 2.1
     hideDelay: 1.1
     manualClick: 0
-    portrait: {fileID: 21300000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
   - id: 3
     speakerName: Kafka
     text: One suggestion, though...
     durationInSeconds: 2.1
     hideDelay: 1.1
     manualClick: 0
-    portrait: {fileID: 21300000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
   - id: 4
     speakerName: Kafka
     text: Don't you think it might be worth cracking open a window?
     durationInSeconds: 3
     hideDelay: 2
     manualClick: 0
-    portrait: {fileID: 21300000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
   - id: 5
     speakerName: Kafka
     text: Regardless, don't linger around here too long. There's a lot of work to
       be done. I'll be rooting for you.
     durationInSeconds: 3.2
     hideDelay: 1.2
-    manualClick: 1
-    portrait: {fileID: 21300000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
-  lineCount: []
+    manualClick: 0
+    portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}

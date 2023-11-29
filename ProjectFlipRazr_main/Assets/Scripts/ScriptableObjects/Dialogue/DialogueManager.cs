@@ -11,10 +11,18 @@ public class DialogueManager : MonoBehaviour
     public float delayBeforePrinting;
     public DialogueStartHere dialogueSystem;
     public TextMeshProUGUI dialogueText;
-    public Image dialogueImage; // Assuming this is the Image component for the Sprite
+    public RawImage dialogueImage; // Assuming this is the RawImage component for the Sprite
     public bool manualClick;
-    public float fadeInTime = 1f;
-    public float fadeOutTime = 1f;
+
+    // TextMeshPro fade times
+    public float textMeshProFadeInTime;
+    public float textMeshProFadeOutTime;
+
+    // Sprite fade times
+    public float rawImageFadeInTime;
+    public float rawImageFadeOutTime;
+
+
 
     private DefaultControls controls;
     private InputAction confirmAction;
@@ -50,13 +58,14 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(DisplayDialogue());
     }
 
+    private void Update()
+    {
+       
+    }
+
     IEnumerator DisplayDialogue()
     {
         yield return new WaitForSeconds(delayBeforePrinting);
-
-
-        var actionMap = new UnityEngine.InputSystem.InputActionMap("PhoneNavigation");
-        confirmAction = actionMap.FindAction("Confirm");
 
         for (int i = 0; i < dialogueSystem.GetDialogueLineCount(); i++)
         {
@@ -65,72 +74,48 @@ public class DialogueManager : MonoBehaviour
             // Load and set the Sprite for portrait
             if (dialogueLine.portrait != null)
             {
-                dialogueImage.sprite = dialogueLine.portrait;
+                dialogueImage.texture = dialogueLine.portrait;
             }
 
-            // Set UI sprite alpha to 0
-            Color spriteColor = dialogueImage.color;
-            spriteColor.a = 0f;
-            dialogueImage.color = spriteColor;
+            // Set UI Sprite RawImage alpha to 0
+            Color rawImageColor = dialogueImage.color;
+            //rawImageColor.a = 0f;
+            //desiredAlpha = 0f;
+            dialogueImage.color = rawImageColor;
 
             // Set UI text
             dialogueText.text = $"{dialogueLine.speakerName}: {dialogueLine.text}";
 
+            // Fade in TextMeshPro and Sprite independently
 
-            Debug.Log("manual click is received as " + dialogueLine.manualClick);
+            yield return StartCoroutine(FadeIn(dialogueImage, rawImageFadeInTime));
+            yield return StartCoroutine(FadeIn(dialogueText, textMeshProFadeInTime));
 
-            // Fade in TextMeshPro and Sprite
-            float elapsedTime = 0f;
-            while (elapsedTime < fadeInTime)
-            {
-                float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeInTime);
-
-                // Set UI text alpha
-                Color textColor = dialogueText.color;
-                textColor.a = alpha;
-                dialogueText.color = textColor;
-
-                // Set UI sprite alpha
-                spriteColor.a = alpha;
-                dialogueImage.color = spriteColor;
-
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-            Debug.Log("alpha is " + spriteColor.a);
 
             // Wait for the specified duration
             yield return new WaitForSeconds(dialogueLine.durationInSeconds);
+
             // Detect whether this line will require a manual click from the scriptable object's declaration
             manualClick = dialogueLine.manualClick;
-            // If "Manual Click" book is true, you will have to press the Confirm button to move to the next line.
+
+            // If "Manual Click" is true, you will have to press the Confirm button to move to the next line.
             if (manualClick)
             {
-                yield return new WaitUntil(() => confirmAction.triggered);
+                if (confirmAction == null)
+                {
+                    Debug.LogError("confirmAction is null. Manual click won't work!");
+                    yield break; // exit the coroutine to avoid further issues
+                }
 
-                // Code here will execute after the Confirm button is pressed
+                Debug.Log("Waiting for Confirm button press...");
+                yield return new WaitUntil(() => confirmAction.triggered);
                 Debug.Log("Confirm button pressed. Continuing...");
             }
 
-            // Fade out TextMeshPro and Sprite
-            elapsedTime = 0f;
-            while (elapsedTime < fadeOutTime)
-            {
-                float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeOutTime);
+            // Fade out TextMeshPro and Sprite independently
+            yield return StartCoroutine(FadeOut(dialogueImage, rawImageFadeOutTime));
+            yield return StartCoroutine(FadeOut(dialogueText, textMeshProFadeOutTime));
 
-                // Set UI text alpha
-                Color textColor = dialogueText.color;
-                textColor.a = alpha;
-                dialogueText.color = textColor;
-
-                // Set UI sprite alpha
-                spriteColor.a = alpha;
-                dialogueImage.color = spriteColor;
-
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-            Debug.Log("alpha is " + spriteColor.a);
 
             // Clear the UI text
             dialogueText.text = "";
@@ -144,6 +129,69 @@ public class DialogueManager : MonoBehaviour
         ClearDialogue();
     }
 
+    IEnumerator FadeIn(Graphic graphic, float fadeInTime)
+    {
+        float elapsedTime = 0f;
+        Color startColor = graphic.color;
+        float targetAlpha = 1f; // Set the target alpha
+
+        while (startColor.a < targetAlpha)
+        {
+            float alpha = Mathf.Lerp(0f, targetAlpha, elapsedTime / fadeInTime);
+            startColor.a = alpha;
+            graphic.color = startColor;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeIn(RawImage rawImage, float fadeInTime)
+    {
+        float elapsedTime = 0f;
+        Color startColor = rawImage.color;
+        float targetAlpha = 1f; // Set the target alpha
+
+        while (startColor.a < targetAlpha)
+        {
+            float alpha = Mathf.Lerp(0f, targetAlpha, elapsedTime / fadeInTime);
+            startColor.a = alpha;
+            rawImage.color = startColor;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeOut(Graphic graphic, float fadeOutTime)
+    {
+        float elapsedTime = 0f;
+        Color startColor = graphic.color;
+        float targetAlpha = 0f; // Set the target alpha
+
+        while (startColor.a > targetAlpha)
+        {
+            float alpha = Mathf.Lerp(1f, targetAlpha, elapsedTime / fadeOutTime);
+            startColor.a = alpha;
+            graphic.color = startColor;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeOut(RawImage rawImage, float fadeOutTime)
+    {
+        float elapsedTime = 0f;
+        Color startColor = rawImage.color;
+        float targetAlpha = 0f; // Set the target alpha
+
+        while (startColor.a > targetAlpha)
+        {
+            float alpha = Mathf.Lerp(1f, targetAlpha, elapsedTime / fadeOutTime);
+            startColor.a = alpha;
+            rawImage.color = startColor;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
 
     public void ClearDialogue()
     {

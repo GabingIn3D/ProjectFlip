@@ -14,7 +14,7 @@ public class DialogueStartHere : ScriptableObject
         public float durationInSeconds;
         public float hideDelay;
         public bool manualClick;
-        public Sprite portrait;
+        public Texture portrait;
     }
 
     public DialogueLine[] dialogueLines;
