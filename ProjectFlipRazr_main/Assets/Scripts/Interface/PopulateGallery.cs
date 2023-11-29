@@ -15,16 +15,14 @@ public class PopulateGallery : MonoBehaviour
     public string resourcePath; // Folder containing PNGs
     public string persistentResourcePath; // Folder containing PNGs (in build version)
     public GameObject imagePrefab; // Prefab for displaying sprites
-    public Texture2D[] textures;
+    public TextureHolder textureHolder;
     public PhotoInfoDatabase photoDatabase;
     public WhichPath whichPath;
     public string imagePath;
     public string snapshotSavePath;
 
     public int currentPage = 1;
-    int maxSlots = 6;
-
-
+    int maxSlots = 16;
 
     public GameObject nextPageButton;
     public GameObject previousPageButton;
@@ -36,15 +34,16 @@ public class PopulateGallery : MonoBehaviour
 
 
 
-    public void Start()
+    public void Awake()
     {
-
+        textureHolder = FindAnyObjectByType<TextureHolder>();
         photoDatabase = FindAnyObjectByType<PhotoInfoDatabase>();
+        ShowImagesInAlbum();
         switch (whichPath)
         {
             case WhichPath.Editor:
 
-                textures = Resources.LoadAll<Texture2D>(resourcePath);
+                textureHolder.textures = Resources.LoadAll<Texture2D>(resourcePath);
 
                 int slotNumber = 0;
 
@@ -58,21 +57,21 @@ public class PopulateGallery : MonoBehaviour
                 
                 int amountOfSlots = slotNumber;
 
-                for (int i = slotNumber; i < textures.Length; i++)
+                for (int i = slotNumber; i < textureHolder.textures.Length; i++)
                 {
                     amountOfSlots += 1;
 
                     if (amountOfSlots > (maxSlots * currentPage))
                     {
-                        // Perhaps check the count of textures[] to ensure that this nextPageButton should exist, so that at least one texture would appear on the next page.
+                        // Perhaps check the count of textureHolder.textures[] to ensure that this nextPageButton should exist, so that at least one texture would appear on the next page.
                         nextPageButton.SetActive(true);
                         nextPageActive = true;
                         break;
                     }
 
-                    if (textures[i] == null) break;
+                    if (textureHolder.textures[i] == null) break;
                     
-                    Sprite sprite = Sprite.Create(textures[i], new Rect(0, 0, textures[i].width, textures[i].height), Vector2.one * 0.5f);
+                    Sprite sprite = Sprite.Create(textureHolder.textures[i], new Rect(0, 0, textureHolder.textures[i].width, textureHolder.textures[i].height), Vector2.one * 0.5f);
 
                     // Create UI Image object and add it to the grid
                     GameObject imageObject = Instantiate(imagePrefab, gridParent);
@@ -85,9 +84,8 @@ public class PopulateGallery : MonoBehaviour
 
 
             case WhichPath.Build:
-                textures = new Texture2D[photoDatabase.photoMemoryCount];
-                photoDatabase = FindAnyObjectByType<PhotoInfoDatabase>();
-                photoDatabase.Load();
+                
+
                 break;
         }
 
@@ -107,86 +105,6 @@ public class PopulateGallery : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow)) PreviousPage();
         }
     }
-
-
-
-
-
-    public void RefreshGallery()
-    {
-        textures = new Texture2D[photoDatabase.photoMemoryCount];
-
-        for (int i = 0; i < photoDatabase.photos.Count; i++)
-        {
-            imagePath = Path.Combine(Application.persistentDataPath, snapshotSavePath, photoDatabase.photos[i].photoName);
-            if (File.Exists(imagePath))
-            {
-                // Load the image as a Texture2D
-                byte[] fileData = File.ReadAllBytes(imagePath);
-                Texture2D loadedTexture = new Texture2D(128, 128); // Create an empty Texture2D
-                loadedTexture.LoadImage(fileData); // Load the image data into the Texture2D
-                textures[i] = loadedTexture;
-
-
-            }
-            else
-            {
-                Debug.LogError("Image file not found: " + imagePath);
-                // make a new one
-            }
-
-        
-        //        foreach (Texture2D texture in textures)
-        //        {
-        // Convert Texture2D to Sprite
-
-
-        //int last_el = photoDatabase.photos.Count - 1;
-        //if (last_el >= 0)
-        //{
-        //    Sprite sprite = Sprite.Create(textures[last_el], new Rect(0, 0, textures[last_el].width, textures[last_el].height), Vector2.one * 0.5f);
-
-        //   // Create UI Image object and add it to the grid
-
-        //    GameObject imageObject = Instantiate(imagePrefab, gridParent);
-        //    Image image = imageObject.GetComponent<Image>();
-        //    image.sprite = sprite;
-
-        ShowImagesInAlbum();
-
-        }
-
-
-    }
-
-
-    public void ReloadImagesInGallery()
-    {
-
-        textures = new Texture2D[photoDatabase.photos.Count];
-        photoDatabase = FindAnyObjectByType<PhotoInfoDatabase>();
-        for (int i = 0; i < photoDatabase.photos.Count; i++)
-        {
-            imagePath = Path.Combine(Application.persistentDataPath, snapshotSavePath, photoDatabase.photos[i].photoName);
-            if (File.Exists(imagePath))
-            {
-                // Load the image as a Texture2D
-                byte[] fileData = File.ReadAllBytes(imagePath);
-                Texture2D loadedTexture = new Texture2D(128, 128); // Create an empty Texture2D
-                loadedTexture.LoadImage(fileData); // Load the image data into the Texture2D
-                textures[i] = loadedTexture;
-            }
-            else
-            {
-                Debug.LogError("Image file not found: " + imagePath);
-                // make a new one
-            }
-        }
-
-        ShowImagesInAlbum();
-    }
-
-
 
     public void NextPage()
     {
@@ -211,12 +129,12 @@ public class PopulateGallery : MonoBehaviour
             Object.Destroy(gridParent.GetChild(i).gameObject);
         }
 
-        if (whichPath == WhichPath.Editor) textures = Resources.LoadAll<Texture2D>(resourcePath);
-        else textures = new Texture2D[photoDatabase.photoMemoryCount];
+        if (whichPath == WhichPath.Editor) textureHolder.textures = Resources.LoadAll<Texture2D>(resourcePath);
+        // else textureHolder.textures = new Texture2D[photoDatabase.photoMemoryCount];
 
-        //textures = Resources.LoadAll<Texture2D>(resourcePath);
+        //textureHolder.textures = Resources.LoadAll<Texture2D>(resourcePath);
 
-        textures = Resources.LoadAll<Texture2D>(resourcePath);
+        // textureHolder.textures = Resources.LoadAll<Texture2D>(resourcePath);
 
         int slotNumber = 0;
 
@@ -240,21 +158,21 @@ public class PopulateGallery : MonoBehaviour
 
         int amountOfSlots = slotNumber;
 
-        for (int i = slotNumber; i < textures.Length; i++)
+        for (int i = slotNumber; i < textureHolder.textures.Length; i++)
         {
             amountOfSlots += 1;
 
             if (amountOfSlots > (maxSlots * currentPage))
             {
-                // Perhaps check the count of textures[] to ensure that this nextPageButton should exist, so that at least one texture would appear on the next page.
+                // Perhaps check the count of textureHolder.textures[] to ensure that this nextPageButton should exist, so that at least one texture would appear on the next page.
                 nextPageButton.SetActive(true);
                 nextPageActive = true;
                 break;
             }
 
-            if (textures[i] == null) break;
+            if (textureHolder.textures[i] == null) break;
 
-            Sprite sprite = Sprite.Create(textures[i], new Rect(0, 0, textures[i].width, textures[i].height), Vector2.one * 0.5f);
+            Sprite sprite = Sprite.Create(textureHolder.textures[i], new Rect(0, 0, textureHolder.textures[i].width, textureHolder.textures[i].height), Vector2.one * 0.5f);
 
             // Create UI Image object and add it to the grid
             GameObject imageObject = Instantiate(imagePrefab, gridParent);

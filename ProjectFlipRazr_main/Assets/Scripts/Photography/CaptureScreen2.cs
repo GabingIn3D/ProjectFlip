@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 public class CaptureScreen2 : MonoBehaviour
 {
     public static CaptureScreen2 instance;
+    public TextureHolder textureHolder;
     public string filePath;
     public string photoNameVariable;
     public bool isBuild;
@@ -102,7 +103,8 @@ public class CaptureScreen2 : MonoBehaviour
         Debug.Log("Capture written! To " + filePath);
         Destroy(texture);
         RecordPhotoInfo();
-        //populateGallery.RefreshGallery();
+
+        textureHolder.RefreshGallery();
         // gameObject.SendMessage("RefreshGallery", SendMessageOptions.DontRequireReceiver);
     }
 

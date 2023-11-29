@@ -90,6 +90,6 @@ public class PhotoInfoDatabase : MonoBehaviour
             photos.Add(photo);
         }
         Debug.Log("PhotosLoaded");
-        FindAnyObjectByType<PopulateGallery>().ReloadImagesInGallery();
+        FindAnyObjectByType<TextureHolder>().ReloadImagesInGallery();
     }
 }

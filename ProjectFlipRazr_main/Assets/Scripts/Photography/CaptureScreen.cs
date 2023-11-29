@@ -19,7 +19,7 @@ public class CaptureScreen : MonoBehaviour
 
     private string newID;
 
-    public PopulateGallery populateGallery;
+    //public PopulateGallery populateGallery;
 
     //Changes the angle of where the photo item needs to be to be accepted as an item
     public float photoItemAngleCheckX = 20;
@@ -33,7 +33,7 @@ public class CaptureScreen : MonoBehaviour
     {
         instance = this;
 
-        populateGallery = FindAnyObjectByType<PopulateGallery>();
+        //populateGallery = FindAnyObjectByType<PopulateGallery>();
     }
 
     public void Capture()
@@ -98,7 +98,7 @@ public class CaptureScreen : MonoBehaviour
         Debug.Log("Capture written! To " + filePath);
         Destroy(texture);
         RecordPhotoInfo();
-        populateGallery.RefreshGallery();
+        //populateGallery.RefreshGallery();
     }
 
     public void RecordPhotoInfo() // Adds a PhotoInfo to the list in the database with the info inside
