@@ -4,20 +4,18 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 
-public class StickyButton : MonoBehaviour
+public class PhotoStickyButton : MonoBehaviour
 {
     bool selected = false;
     bool alreadySelected = false;
     public Button btn;
     public Color normalColor = Color.white;
     public Color selectedColor = Color.grey;
-    public ListTargetBehaviour targetBehaviour;
+    public GalleryListBehaviour targetBehaviour;
     public OptionsContextMenu optionsMenu;
     public PhotoInfo containedPhotoInfo;
 
     private FlipPhoneManager flipPhone;
-
-
 
     private ColorBlock colors;
 
@@ -46,7 +44,7 @@ public class StickyButton : MonoBehaviour
             // makes all buttons selectable again after clicking the already-selected button
             if(targetBehaviour != null)
             {
-                targetBehaviour.ResetButtonBehaviour();
+                targetBehaviour.ResetGameObjectBehaviour();
                 targetBehaviour.currentlySelected = null;
             }
             else

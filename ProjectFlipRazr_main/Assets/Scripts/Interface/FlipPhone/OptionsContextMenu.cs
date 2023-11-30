@@ -122,7 +122,12 @@ public class OptionsContextMenu : MonoBehaviour
                 Debug.Log("Successfully picking up that this should show options relevant to a Photo.");
                 if (PhotoListTargetBehaviour != null && PhotoListTargetBehaviour.currentlySelected != null)
                 {
-                    ActivateButtons(1, activeButtonCount);
+                    activeButtonCount = 2;
+                    ActivateButtons(0, activeButtonCount);
+                    var thisButton = buttons[0].gameObject.GetComponent<OptionButtonBehaviour>();
+                    thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.Expand;
+                    thisButton = buttons[1].gameObject.GetComponent<OptionButtonBehaviour>();
+                    thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.Delete;
                 }
                 break;
 

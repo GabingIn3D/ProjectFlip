@@ -45,6 +45,11 @@ public class PopulateGallery : MonoBehaviour
 
                 textureHolder.textures = Resources.LoadAll<Texture2D>(resourcePath);
 
+                break;
+
+
+            case WhichPath.Build:
+
                 int slotNumber = 0;
 
                 pageNumber.text = ("Page" + (currentPage.ToString()));
@@ -54,7 +59,7 @@ public class PopulateGallery : MonoBehaviour
                 {
                     slotNumber = i - maxSlots;
                 }
-                
+
                 int amountOfSlots = slotNumber;
 
                 for (int i = slotNumber; i < textureHolder.textures.Length; i++)
@@ -68,23 +73,7 @@ public class PopulateGallery : MonoBehaviour
                         nextPageActive = true;
                         break;
                     }
-
-                    if (textureHolder.textures[i] == null) break;
-                    
-                    Sprite sprite = Sprite.Create(textureHolder.textures[i], new Rect(0, 0, textureHolder.textures[i].width, textureHolder.textures[i].height), Vector2.one * 0.5f);
-
-                    // Create UI Image object and add it to the grid
-                    GameObject imageObject = Instantiate(imagePrefab, gridParent);
-                    Image image = imageObject.GetComponent<Image>();
-                    image.sprite = sprite;
-
                 }
-
-                break;
-
-
-            case WhichPath.Build:
-                
 
                 break;
         }
@@ -120,7 +109,7 @@ public class PopulateGallery : MonoBehaviour
 
     public void ShowImagesInAlbum()
     {
-
+        Debug.Log("MaxSlots is " + maxSlots + ", ");
         pageNumber.text = ("Page" + (currentPage.ToString()));
 
         // Destroy all from current grid before re-showing only the necessary ones, to simulate a new page.
@@ -129,70 +118,27 @@ public class PopulateGallery : MonoBehaviour
             Object.Destroy(gridParent.GetChild(i).gameObject);
         }
 
-        if (whichPath == WhichPath.Editor) textureHolder.textures = Resources.LoadAll<Texture2D>(resourcePath);
+        if (whichPath == WhichPath.Editor)
+            textureHolder.textures = Resources.LoadAll<Texture2D>(resourcePath);
         // else textureHolder.textures = new Texture2D[photoDatabase.photoMemoryCount];
 
-        //textureHolder.textures = Resources.LoadAll<Texture2D>(resourcePath);
+        int startIdx = (currentPage - 1) * maxSlots;
+        int endIdx = Mathf.Min(currentPage * maxSlots, textureHolder.textures.Length);
 
-        // textureHolder.textures = Resources.LoadAll<Texture2D>(resourcePath);
-
-        int slotNumber = 0;
-
-        if (currentPage > 1)
+        for (int i = startIdx; i < endIdx; i++)
         {
-            previousPageButton.SetActive(true);
-            previousPageActive = true;
-        }
-        else
-        {
-            previousPageButton.SetActive(false);
-            previousPageActive = false;
-        } 
-
-
-        // Calculate the slot number
-        for (int i = 0; i <= (maxSlots * currentPage); i++)
-        {
-            slotNumber = i - maxSlots;
-        }
-
-        int amountOfSlots = slotNumber;
-
-        for (int i = slotNumber; i < textureHolder.textures.Length; i++)
-        {
-            amountOfSlots += 1;
-
-            if (amountOfSlots > (maxSlots * currentPage))
-            {
-                // Perhaps check the count of textureHolder.textures[] to ensure that this nextPageButton should exist, so that at least one texture would appear on the next page.
-                nextPageButton.SetActive(true);
-                nextPageActive = true;
-                break;
-            }
-
-            if (textureHolder.textures[i] == null) break;
-
             Sprite sprite = Sprite.Create(textureHolder.textures[i], new Rect(0, 0, textureHolder.textures[i].width, textureHolder.textures[i].height), Vector2.one * 0.5f);
 
             // Create UI Image object and add it to the grid
             GameObject imageObject = Instantiate(imagePrefab, gridParent);
             Image image = imageObject.GetComponent<Image>();
             image.sprite = sprite;
-
         }
 
-        if (amountOfSlots <= (maxSlots * currentPage))
-        {
-            nextPageActive = false;
-            nextPageButton.SetActive(false);
-        }
-
+        previousPageActive = currentPage > 1;
+        nextPageActive = endIdx < textureHolder.textures.Length; // Check if there are more images
+        nextPageButton.SetActive(nextPageActive);
+        previousPageButton.SetActive(previousPageActive);
     }
-
-
-
-
-
-
 
 }
