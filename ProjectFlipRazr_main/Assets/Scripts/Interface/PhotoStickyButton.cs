@@ -125,7 +125,7 @@ public class PhotoStickyButton : MonoBehaviour
     {
         optionsMenu.SetButtonsVisibility();
         flipPhone.options.SetActive(false);
-        flipPhone.options.SetActive(true);
+        //flipPhone.options.SetActive(true);
     }
 
 }

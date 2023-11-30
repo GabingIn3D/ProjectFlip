@@ -20,7 +20,6 @@ public class GalleryListBehaviour : MonoBehaviour
         listItemCount = ListTargetEntries.Count();
         LogDictionaryItems(ListTargetEntries);
         ResetGameObjectBehaviour();
-
     }
 
     // Update is called once per frame

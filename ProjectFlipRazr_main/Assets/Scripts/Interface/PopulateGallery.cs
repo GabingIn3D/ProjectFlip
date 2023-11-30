@@ -17,6 +17,7 @@ public class PopulateGallery : MonoBehaviour
     public GameObject imagePrefab; // Prefab for displaying sprites
     public TextureHolder textureHolder;
     public PhotoInfoDatabase photoDatabase;
+    public GalleryListBehaviour galleryListBehaviour;
     public WhichPath whichPath;
     public string imagePath;
     public string snapshotSavePath;
@@ -38,6 +39,7 @@ public class PopulateGallery : MonoBehaviour
     {
         textureHolder = FindAnyObjectByType<TextureHolder>();
         photoDatabase = FindAnyObjectByType<PhotoInfoDatabase>();
+        galleryListBehaviour = FindAnyObjectByType<GalleryListBehaviour>();
         ShowImagesInAlbum();
         switch (whichPath)
         {
@@ -133,7 +135,48 @@ public class PopulateGallery : MonoBehaviour
             GameObject imageObject = Instantiate(imagePrefab, gridParent);
             Image image = imageObject.GetComponent<Image>();
             image.sprite = sprite;
+
+            // Assuming the GameObjects are named "GalleryHoleOfficial1" to "GalleryHoleOfficial16"
+            string gameObjectName = $"GalleryHoleOfficial{i + 1}";
+
+            // Assuming ListTargetEntries is a Dictionary<string, GameObject>
+            if (galleryListBehaviour.ListTargetEntries.TryGetValue(gameObjectName, out GameObject gameObject))
+            {
+                // Get the PhotoStickyButton component from the GameObject
+                PhotoStickyButton photoStickyButton = gameObject.GetComponent<PhotoStickyButton>();
+
+                if (photoStickyButton != null)
+                {
+                    photoStickyButton.containedPhotoInfo = photoDatabase.photos[i];
+                }
+                else
+                {
+                    Debug.LogError($"Could not find PhotoStickyButton component on {gameObjectName}.");
+                }
+            }
+            else
+            {
+                Debug.LogError($"Could not find {gameObjectName} in ListTargetEntries.");
+            }
         }
+
+
+        //for (int i = startIdx; i < endIdx; i++)
+        //{
+        //    Sprite sprite = Sprite.Create(textureHolder.textures[i], new Rect(0, 0, textureHolder.textures[i].width, textureHolder.textures[i].height), Vector2.one * 0.5f);
+
+        //    // Create UI Image object and add it to the grid
+        //    GameObject imageObject = Instantiate(imagePrefab, gridParent);
+        //    Image image = imageObject.GetComponent<Image>();
+        //    image.sprite = sprite;
+
+        //    // the new thing
+        //   galleryListBehaviour.ListTargetEntries
+        //        //take photoinfodatabase.photos[i] 
+        //        //ListTargetEntries: get component PhotoStickyButton and PhotoStickyButton.containedPhotoInfo
+        //        //photoStickyButton.containedPhotoInfo = photoInfoDatabase.photos[i];
+        //        //
+        //}
 
         previousPageActive = currentPage > 1;
         nextPageActive = endIdx < textureHolder.textures.Length; // Check if there are more images

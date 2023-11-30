@@ -30,7 +30,7 @@ public class OptionsContextMenu : MonoBehaviour
     public HomeScreenBehaviour HomeListTargetBehaviour;
     public AppList AppListBehaviour;
     public ListTargetBehaviour LocationListTargetBehaviour;
-    public ListTargetBehaviour PhotoListTargetBehaviour;
+    public GalleryListBehaviour PhotoListTargetBehaviour;
     public ListTargetBehaviour SettingsListTargetBehaviour;
     public ListTargetBehaviour SaveQuitListTargetBehaviour;
 

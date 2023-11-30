@@ -9,6 +9,10 @@ using UnityEngine.SceneManagement;
 public class OptionButtonBehaviour : MonoBehaviour
 {
     private TextMeshProUGUI displayedText;
+    public OptionsContextMenu contextMenu;
+    private GameObject ListBehaviourSelected;
+    private PhotoInfo selectedPhotoInfo;
+    public PhotoInfoDatabase photoInfoDatabase;
     //Possible buttons
     public enum buttonFunction
     {
@@ -39,15 +43,20 @@ public class OptionButtonBehaviour : MonoBehaviour
     public buttonFunction buttonfunction;
 
     // Start is called before the first frame update
-
-    public void OnEnable()
+    public void Awake()
     {
         Button button = GetComponent<Button>();
-        displayedText = GetComponentInChildren<TextMeshProUGUI>();
         if (button != null)
         {
             button.onClick.AddListener(OnClick);
         }
+    }
+    public void OnEnable()
+    {
+        contextMenu = FindObjectOfType<OptionsContextMenu>();
+
+        displayedText = GetComponentInChildren<TextMeshProUGUI>();
+ 
         SetText();
     }
 
@@ -65,7 +74,6 @@ public class OptionButtonBehaviour : MonoBehaviour
 
             //Location
             case buttonFunction.Travel:
-                var contextMenu = FindObjectOfType<OptionsContextMenu>();
                 string selectedLocation = contextMenu.selectedLocation; 
                 if (string.IsNullOrEmpty(selectedLocation))
                 {
@@ -81,11 +89,28 @@ public class OptionButtonBehaviour : MonoBehaviour
 
             //Photo
             case buttonFunction.Expand:
+                ListBehaviourSelected = GameObject.Find(contextMenu.PhotoListTargetBehaviour.currentlySelected);
+                selectedPhotoInfo = ListBehaviourSelected.GetComponent<PhotoStickyButton>().containedPhotoInfo;
+                Debug.Log(selectedPhotoInfo.photoName + " " + selectedPhotoInfo.gameLocation);
+                for (int i = 0; i < selectedPhotoInfo.photoItems.Length; i++)
+                {
+                    Debug.Log(selectedPhotoInfo.photoItems[i]);
+                }
                 //Insert FlipPhoneStateManager reference, change phone state to FlipPhone_PhotoIndividualState
                 //      show selected gallery image but bigger + with metadata displayed in text for the player to read
                 break;
 
             case buttonFunction.Delete:
+                ListBehaviourSelected = GameObject.Find(contextMenu.PhotoListTargetBehaviour.currentlySelected);
+                selectedPhotoInfo = ListBehaviourSelected.GetComponent<PhotoStickyButton>().containedPhotoInfo;
+                photoInfoDatabase.photos.Remove(selectedPhotoInfo);
+                FindAnyObjectByType<TextureHolder>().RefreshGallery();
+                FindAnyObjectByType<PopulateGallery>().ShowImagesInAlbum();
+                //if (PhotoInfoDatabase.photos contains selectedPhotoInfo) {
+                // append selectedPhotoInfo from List PhotoInfoDatabase
+                //}
+                
+
                 //Insert FlipPhoneStateManager reference, change phone state to FlipPhone_PhotoIndividualState
                 //      show selected gallery image but bigger + with metadata displayed in text for the player to read,
                 //      overlayed with "Delete pic? Yes/No" pop-up, then handle accordingly in a DeletePhoto function
