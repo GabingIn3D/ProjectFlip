@@ -18,7 +18,9 @@ public class PhotoInfo
     public enum PhotoItem
     {
         Knife,
-        FamilyPortrait,
+        DirectorPhotoFrame,
+        OfficeKey,
+        RingImprint,
         Cube,
         Sphere,
         HadronPointOfInterest1,

@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 moveDirection;
 
-    Transform cameraObject;
+    public Transform cameraObject;
     public Transform playerObject;
 
     Rigidbody playerRigid;
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moveInputManager = GetComponent<MoveInputManager>();
         playerRigid = GetComponent<Rigidbody>();
-        cameraObject = Camera.main.transform;
+        //cameraObject = Camera.main.transform;
     }
     private void ControlMovement()
     {
