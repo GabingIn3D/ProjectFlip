@@ -59,31 +59,31 @@ public class MapList : MonoBehaviour
         //Checks Progression for Kimmie's House unlock boolean
         if(progressionSingleton.hasKimmiesHouse && progressionSingleton.currentLocation != "Kimmie's House")
         {
-            ActivateLocationOption("Location1");
+            ActivateLocationOption("House");
         }
         else
         {
-            DeactivateLocationOption("Location1");
+            DeactivateLocationOption("House");
         }
 
         //Checks Progression for Studio unlock boolean
-        if (progressionSingleton.hasStudio && progressionSingleton.currentLocation != "Studio")
+        if (progressionSingleton.hasStudio && progressionSingleton.currentLocation != "Studio Warehouse")
         {
-            ActivateLocationOption("Location2");
+            ActivateLocationOption("Studio");
         }
         else
         {
-            DeactivateLocationOption("Location2");
+            DeactivateLocationOption("Studio");
         }
 
         //Checks Progression for Villas unlock boolean
         if(progressionSingleton.hasVillas && progressionSingleton.currentLocation != "Villas")
         {
-            ActivateLocationOption("Location3");
+            ActivateLocationOption("Villas");
         }
         else
         {
-            DeactivateLocationOption("Location3");
+            DeactivateLocationOption("Villas");
         }
     }
 

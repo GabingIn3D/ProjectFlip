@@ -82,8 +82,7 @@ public class OptionButtonBehaviour : MonoBehaviour
                 }
                 else
                 {
-                    //      SceneManager.TravelToScene(selectedLocation);
-                    Debug.Log("TRAVEL: You are travelling to " +  selectedLocation);
+                    FindAnyObjectByType<SceneChanger>().TravelToScene(selectedLocation);
                 }
                 break;
 

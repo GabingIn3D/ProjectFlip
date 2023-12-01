@@ -9,9 +9,14 @@ public class PhotoInfoDatabase : MonoBehaviour
     public int photoMemoryCount = 20;
     public List<PhotoInfo> photos;
 
+    private void Awake()
+    {
+        Load();
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Showinfo();
         }
@@ -26,7 +31,7 @@ public class PhotoInfoDatabase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             RemoveAllPhoto();
-        }
+        }*/
     }
 
     public void AddPhoto(PhotoInfo photoData)

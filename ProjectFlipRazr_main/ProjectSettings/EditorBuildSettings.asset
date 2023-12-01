@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Old Gym Scenes/Picture UI.unity
     guid: 29026ac104fac4448b753c901e847723
+  - enabled: 1
+    path: Assets/Scenes/Playtest Scenes/Kimmie's House.unity
+    guid: 765975d105d463e42ac5364f2d487cbb
+  - enabled: 1
+    path: Assets/Scenes/Playtest Scenes/Studio Warehouse.unity
+    guid: 93b33082528c7fb4d8d8e51c05b010b2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6bd2f6995a2c0c749a4d10721b229eff, type: 2}
