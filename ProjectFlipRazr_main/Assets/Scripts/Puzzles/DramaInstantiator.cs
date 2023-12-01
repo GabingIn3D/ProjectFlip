@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class DramaInstantiator : MonoBehaviour
 {
     public GameObject prefabToInstantiate;
+    public bool requireCamera;
+    public FlipPhoneManager flipPhoneManager;
     public enum whichPlayer
     {
         FirstPerson,
