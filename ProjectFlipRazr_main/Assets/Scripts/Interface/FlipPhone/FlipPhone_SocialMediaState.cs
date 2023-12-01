@@ -56,7 +56,7 @@ public class FlipPhone_SocialMediaState : FlipPhone_BaseState
 
     public override void ExitState(FlipPhoneManager flipPhone)
     {
-        ///////
+        /*
         if (flipPhone.options != null)
         {
             var contextMenu = flipPhone.options.GetComponentInChildren<OptionsContextMenu>();
@@ -73,6 +73,6 @@ public class FlipPhone_SocialMediaState : FlipPhone_BaseState
         {
             Debug.LogError("flipPhone.options is null");
         }
-        //////////////
+        */
     }
 }

@@ -78,6 +78,7 @@ public class FlipPhoneManager : MonoBehaviour
 
     public void SwitchState(FlipPhone_BaseState state)
     {
+        currentState.ExitState(this);
         currentState = state;
         state.EnterState(this);
     }

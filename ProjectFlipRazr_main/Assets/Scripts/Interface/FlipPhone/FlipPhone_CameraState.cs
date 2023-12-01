@@ -47,6 +47,9 @@ public class FlipPhone_CameraState : FlipPhone_BaseState
         flipPhone.NavigationButton_R(PhoneNavi.whichNaviButton.Back);
         // L Button: "Options"
         // R Button: "Back"
+
+        //UnfreezeMovement
+        GameObject.FindAnyObjectByType<ControllerManager>().UnFreezeMovement();
     }
 
     public override void UpdateState(FlipPhoneManager flipPhone)
@@ -56,6 +59,6 @@ public class FlipPhone_CameraState : FlipPhone_BaseState
 
     public override void ExitState(FlipPhoneManager flipPhone)
     {
-
+        GameObject.FindAnyObjectByType<ControllerManager>().FreezeMovement();
     }
 }

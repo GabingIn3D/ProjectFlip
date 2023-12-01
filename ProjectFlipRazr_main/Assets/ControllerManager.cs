@@ -76,6 +76,7 @@ public class ControllerManager : MonoBehaviour
             firstPController.enabled = true;
             firstPCam.Priority = 15;
             isFirstPersonMode = true;
+            FreezeMovement();
         }
         else if (isFirstPersonMode == true)
         {
@@ -89,7 +90,7 @@ public class ControllerManager : MonoBehaviour
         }
     }
 
-    void FreezeMovement()
+    public void FreezeMovement()
     {
         if (isFirstPersonMode == false)
         {
@@ -105,7 +106,7 @@ public class ControllerManager : MonoBehaviour
         }
     }
 
-    void UnFreezeMovement()
+    public void UnFreezeMovement()
     {
         if (isFirstPersonMode == false)
         {
