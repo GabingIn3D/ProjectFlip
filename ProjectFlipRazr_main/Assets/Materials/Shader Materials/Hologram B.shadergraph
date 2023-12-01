@@ -19,7 +19,11 @@
             "m_Id": "2f67029bc0494af48a16c3684d0a7c22"
         }
     ],
-    "m_Keywords": [],
+    "m_Keywords": [
+        {
+            "m_Id": "50bc4264793b48599bd9d6a6963c13ac"
+        }
+    ],
     "m_Dropdowns": [],
     "m_CategoryData": [
         {
@@ -1194,6 +1198,31 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.ShaderKeyword",
+    "m_ObjectId": "50bc4264793b48599bd9d6a6963c13ac",
+    "m_Guid": {
+        "m_GuidSerialized": "60e90200-68cd-4bab-b8b8-11f52ba1af00"
+    },
+    "m_Name": "Shadows",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Shadows",
+    "m_DefaultReferenceName": "_SHADOWS",
+    "m_OverrideReferenceName": "_RECEIVE_SHADOWS_OFF",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_KeywordType": 0,
+    "m_KeywordDefinition": 0,
+    "m_KeywordScope": 0,
+    "m_KeywordStages": 63,
+    "m_Entries": [],
+    "m_Value": 0,
+    "m_IsEditable": true
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "51425b7df86845be85ad97463b2cbc43",
@@ -2346,6 +2375,9 @@
         },
         {
             "m_Id": "2f67029bc0494af48a16c3684d0a7c22"
+        },
+        {
+            "m_Id": "50bc4264793b48599bd9d6a6963c13ac"
         }
     ]
 }
