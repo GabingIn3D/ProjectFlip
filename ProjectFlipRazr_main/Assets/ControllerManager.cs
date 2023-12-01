@@ -15,6 +15,7 @@ public class ControllerManager : MonoBehaviour
 
     [Header("Third Person Mode")]
     public MoveInputManager thirdPController;
+    public PlayerManager playerManager;
     public CinemachineFreeLook thirdPCam; // optional for playtesting
     public bool freeLookCamera; // optional for playtesting
     //public CinemachineVirtualCamera lastFixedCamera;
@@ -30,6 +31,7 @@ public class ControllerManager : MonoBehaviour
     {
         //Start as third person controller
         thirdPController.enabled = true;
+        playerManager.enabled = true;
         if(freeLookCamera && thirdPCam != null)
         {
             thirdPCam.Priority = 15;
@@ -72,7 +74,8 @@ public class ControllerManager : MonoBehaviour
             thirdPController.enabled = false;
             thirdPController.movementInput.x = 0;
             thirdPController.movementInput.y = 0;
-            if(freeLookCamera && thirdPCam != null) { thirdPCam.Priority = 10; }
+            playerManager.enabled = false;
+            if (freeLookCamera && thirdPCam != null) { thirdPCam.Priority = 10; }
             firstPController.enabled = true;
             firstPCam.Priority = 15;
             isFirstPersonMode = true;
@@ -82,6 +85,7 @@ public class ControllerManager : MonoBehaviour
         {
             //Switching to third person controller
             thirdPController.enabled = true;
+            playerManager.enabled = true;
             if (freeLookCamera && thirdPCam != null) { thirdPCam.Priority = 15; }
             // if (lastFixedCamera != null && != freeLookCamera) { lastFixedCamera.Priority = 15;}
             firstPController.enabled = false;
@@ -98,6 +102,7 @@ public class ControllerManager : MonoBehaviour
             thirdPController.enabled = false;
             thirdPController.movementInput.x = 0;
             thirdPController.movementInput.y = 0;
+            playerManager.enabled = false;
         }
         else if (isFirstPersonMode == true)
         {
@@ -112,6 +117,7 @@ public class ControllerManager : MonoBehaviour
         {
             //Unfreeze third person
             thirdPController.enabled = true;
+            playerManager.enabled = true;
         }
         else if (isFirstPersonMode == true)
         {

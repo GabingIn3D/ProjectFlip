@@ -20170,6 +20170,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 422624824445303918, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_Name
+      value: Studio
+      objectReference: {fileID: 0}
+    - target: {fileID: 704392557322414623, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_text
+      value: Villas
+      objectReference: {fileID: 0}
+    - target: {fileID: 728022512587073947, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_text
+      value: Kimmie's House
+      objectReference: {fileID: 0}
     - target: {fileID: 836355991795296492, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: normalColor.a
       value: 0
@@ -20533,6 +20545,10 @@ PrefabInstance:
     - target: {fileID: 2684468261922930773, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 0.32941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 2687720631441526853, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_Name
+      value: House
       objectReference: {fileID: 0}
     - target: {fileID: 2692144429004881858, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: m_Color.a
@@ -21050,6 +21066,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4633458707775962545, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_text
+      value: Studio
+      objectReference: {fileID: 0}
     - target: {fileID: 4656235015862454243, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -21333,6 +21353,10 @@ PrefabInstance:
     - target: {fileID: 5727903600242503557, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5846831955634342055, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_Name
+      value: Villas
       objectReference: {fileID: 0}
     - target: {fileID: 6068292642892741183, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -26821,6 +26845,7 @@ MonoBehaviour:
   defaultFPcameraPriority: 0
   isFirstPersonMode: 0
   thirdPController: {fileID: 881115987}
+  playerManager: {fileID: 881115990}
   thirdPCam: {fileID: 848948857}
   freeLookCamera: 0
   PhotoRealmToHere: {fileID: 0}
@@ -49549,7 +49574,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dc0cef311b905fc468923b89e222b6e1, type: 2}
+  - {fileID: 2100000, guid: 705aef5155360aa40a20d1f0bbf85532, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -58724,7 +58749,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dc0cef311b905fc468923b89e222b6e1, type: 2}
+  - {fileID: 2100000, guid: 705aef5155360aa40a20d1f0bbf85532, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -66614,7 +66639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849826091}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09252102, y: 0.000000017659763, z: -0.0000000016409378, w: 0.99571073}
+  m_LocalRotation: {x: 0.09252102, y: 0.000000017659854, z: -0.0000000016409462, w: 0.99571073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -68125,7 +68150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897764190}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.11559233, y: 0.000000017090956, z: -0.0000000019889157, w: 0.99329674}
+  m_LocalRotation: {x: 0.11559233, y: -0.000000017091047, z: 0.0000000019889261, w: 0.99329674}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -70640,7 +70665,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dc0cef311b905fc468923b89e222b6e1, type: 2}
+  - {fileID: 2100000, guid: 705aef5155360aa40a20d1f0bbf85532, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -72454,7 +72479,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: dc0cef311b905fc468923b89e222b6e1, type: 2}
+  - {fileID: 2100000, guid: 705aef5155360aa40a20d1f0bbf85532, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
