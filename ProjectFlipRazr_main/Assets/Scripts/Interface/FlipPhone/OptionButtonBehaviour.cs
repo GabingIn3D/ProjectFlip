@@ -119,6 +119,7 @@ public class OptionButtonBehaviour : MonoBehaviour
 
             //Settings
             case buttonFunction.EnableDebug:
+                SceneManager.LoadScene("Title");
                 //if(!GlobalPlayTestSettings.EnableDebug) {
                 //      GlobalPlayTestSettings.EnableDebug == true;
                 //      Change displayed text object to indicate it's 'ON'
@@ -173,7 +174,7 @@ public class OptionButtonBehaviour : MonoBehaviour
 
             //Settings
             case buttonFunction.EnableDebug:
-                displayedText.text = "Enable Debug (N/A)";
+                displayedText.text = "Return to Title";
                 break;
 
             //SaveQuit
