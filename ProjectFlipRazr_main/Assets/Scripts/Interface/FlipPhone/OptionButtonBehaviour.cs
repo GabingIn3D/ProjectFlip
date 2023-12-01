@@ -106,6 +106,7 @@ public class OptionButtonBehaviour : MonoBehaviour
                 photoInfoDatabase.photos.Remove(selectedPhotoInfo);
                 FindAnyObjectByType<TextureHolder>().RefreshGallery();
                 FindAnyObjectByType<PopulateGallery>().ShowImagesInAlbum();
+                FindAnyObjectByType<PuzzleManager>().CheckPhotoItemInHand();
                 //if (PhotoInfoDatabase.photos contains selectedPhotoInfo) {
                 // append selectedPhotoInfo from List PhotoInfoDatabase
                 //}

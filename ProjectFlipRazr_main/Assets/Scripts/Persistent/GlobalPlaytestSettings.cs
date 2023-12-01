@@ -22,6 +22,11 @@ public class GlobalPlaytestSettings : MonoBehaviour
     public bool hasStudio;
     public bool hasVillas;
 
+    [Header("StudioPhotoItems")]
+    public bool hasRingImprint;
+    public bool hasOfficeKey;
+    public bool hasDirectorPhotoFrame;
+
     [Header("Public Strings")]
     public string currentLocation;
 

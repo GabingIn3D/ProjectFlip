@@ -119,9 +119,8 @@ public class CaptureScreen2 : MonoBehaviour
         photoInfo.fileLocation = Application.dataPath.ToString() + filePath.ToString();
 
         //Record gameLocation
-        if (SceneManager.GetActiveScene().name == "House") { photoInfo.gameLocation = PhotoInfo.Location.House; }
-        else if (SceneManager.GetActiveScene().name == "Warehouse") { photoInfo.gameLocation = PhotoInfo.Location.Warehouse; }
-        else if (SceneManager.GetActiveScene().name == "Studio") { photoInfo.gameLocation = PhotoInfo.Location.Studio; }
+        if (SceneManager.GetActiveScene().name == "Kimmie's House") { photoInfo.gameLocation = PhotoInfo.Location.KimmieHouse; }
+        else if (SceneManager.GetActiveScene().name == "Studio Warehouse") { photoInfo.gameLocation = PhotoInfo.Location.StudioStage56; }
         else if (SceneManager.GetActiveScene().name == "Villas") { photoInfo.gameLocation = PhotoInfo.Location.Villas; }
         else { photoInfo.gameLocation = PhotoInfo.Location.Unknown; }
 
@@ -169,6 +168,7 @@ public class CaptureScreen2 : MonoBehaviour
                                 if (item.GetComponent<PhotoItem>() != null)
                                 {
                                     photoItemsToRecord.Add(item.GetComponent<PhotoItem>().photoItem);
+                                    FindAnyObjectByType<PuzzleManager>().CheckPhotoItemProgression(item.GetComponent<PhotoItem>().photoItem);
                                     Debug.Log("PhotoItem Accepted");
                                 }
                             }

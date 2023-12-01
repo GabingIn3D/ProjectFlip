@@ -16,16 +16,22 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 7;
     public float rotationSpeed = 15;
 
+    private CharacterController characterController;
 
     public void Awake()
     {
         moveInputManager = GetComponent<MoveInputManager>();
         playerRigid = GetComponent<Rigidbody>();
         //cameraObject = Camera.main.transform;
+        characterController = GetComponent<CharacterController>();
     }
     private void ControlMovement()
     {
-        moveDirection = cameraObject.forward * moveInputManager.inputVertical;
+        moveDirection = transform.forward * Input.GetAxis("Vertical") * movementSpeed;
+
+        characterController.Move(moveDirection * Time.deltaTime - Vector3.up * 0.1f);
+
+        /*moveDirection = cameraObject.forward * moveInputManager.inputVertical;
         //moveDirection = new Vector3(cameraObject.forward.x, 0f, cameraObject.forward.z) * moveInputManager.inputVertical;
 
         moveDirection = moveDirection + cameraObject.right * moveInputManager.inputHorizontal;
@@ -36,12 +42,14 @@ public class PlayerMovement : MonoBehaviour
         moveDirection *= movementSpeed;
 
         Vector3 movementVelocity = moveDirection;
-        playerRigid.velocity = movementVelocity;
+        playerRigid.velocity = movementVelocity;*/
     }
 
     private void ControlRotation()
     {
-        Vector3 targetDirection = Vector3.zero;
+        transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime, 0);
+
+        /*Vector3 targetDirection = Vector3.zero;
 
         targetDirection = cameraObject.forward * moveInputManager.inputVertical;
         targetDirection = targetDirection + cameraObject.right * moveInputManager.inputHorizontal;
@@ -56,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
         Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-        transform.rotation = playerRotation;
+        transform.rotation = playerRotation;*/
     }
 
     public void HandleAllMovement()

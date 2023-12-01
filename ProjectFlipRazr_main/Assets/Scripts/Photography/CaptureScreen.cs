@@ -112,11 +112,11 @@ public class CaptureScreen : MonoBehaviour
         photoInfo.fileLocation = Application.dataPath.ToString() + filePath.ToString();
 
         //Record gameLocation
-        if (SceneManager.GetActiveScene().name == "House") { photoInfo.gameLocation = PhotoInfo.Location.House; }
-        else if (SceneManager.GetActiveScene().name == "Warehouse") { photoInfo.gameLocation = PhotoInfo.Location.Warehouse; }
-        else if (SceneManager.GetActiveScene().name == "Studio") { photoInfo.gameLocation = PhotoInfo.Location.Studio; }
-        else if (SceneManager.GetActiveScene().name == "Villas") { photoInfo.gameLocation = PhotoInfo.Location.Villas; }
-        else { photoInfo.gameLocation = PhotoInfo.Location.Unknown; }
+        //if (SceneManager.GetActiveScene().name == "House") { photoInfo.gameLocation = PhotoInfo.Location.House; }
+        //else if (SceneManager.GetActiveScene().name == "Warehouse") { photoInfo.gameLocation = PhotoInfo.Location.Warehouse; }
+        //else if (SceneManager.GetActiveScene().name == "Studio") { photoInfo.gameLocation = PhotoInfo.Location.Studio; }
+        //else if (SceneManager.GetActiveScene().name == "Villas") { photoInfo.gameLocation = PhotoInfo.Location.Villas; }
+        //else { photoInfo.gameLocation = PhotoInfo.Location.Unknown; }
 
         //Record photoItems
         photoInfo.photoItems = photoItemsToRecord.ToArray();

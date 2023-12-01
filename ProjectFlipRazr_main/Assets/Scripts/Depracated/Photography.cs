@@ -73,9 +73,9 @@ public class Photography : MonoBehaviour
     {
         PhotoInfo photoInfo = new PhotoInfo();
         //Record gameLocation
-        if (SceneManager.GetActiveScene().name == "House") { photoInfo.gameLocation = PhotoInfo.Location.House; }
-        else if (SceneManager.GetActiveScene().name == "Warehouse") { photoInfo.gameLocation = PhotoInfo.Location.Warehouse; }
-        else { photoInfo.gameLocation = PhotoInfo.Location.Unknown; }
+        //if (SceneManager.GetActiveScene().name == "House") { photoInfo.gameLocation = PhotoInfo.Location.House; }
+        //else if (SceneManager.GetActiveScene().name == "Warehouse") { photoInfo.gameLocation = PhotoInfo.Location.Warehouse; }
+        //else { photoInfo.gameLocation = PhotoInfo.Location.Unknown; }
         FindAnyObjectByType<PhotoInfoDatabase>().AddPhoto(photoInfo);
         Debug.Log("Oh Yeah it's runnin");
     }

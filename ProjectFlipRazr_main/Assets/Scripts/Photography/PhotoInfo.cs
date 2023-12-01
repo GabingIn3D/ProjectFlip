@@ -9,9 +9,8 @@ public class PhotoInfo
     public enum Location
     {
         Unknown,
-        House,
-        Warehouse,
-        Studio,
+        KimmieHouse,
+        StudioStage56,
         Villas,
     }
 
