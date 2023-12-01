@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8216595691518064265
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,16 +20,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Test Mat B
-  m_Shader: {fileID: -6465566751694194690, guid: 23e9f5107b6d25f43894cb33b81afd14, type: 3}
+  m_Name: Test Mat Shade A
+  m_Shader: {fileID: -6465566751694194690, guid: 5504f8237fe1e7f4abdc80286721e090, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _BUILTIN_ALPHATEST_ON
-  - _BUILTIN_AlphaClip
   - _BUILTIN_SURFACE_TYPE_TRANSPARENT
-  m_InvalidKeywords:
-  - _
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -34,7 +44,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BUILTIN_AlphaClip: 1
+    - _BUILTIN_AlphaClip: 0
     - _BUILTIN_Blend: 3
     - _BUILTIN_CullMode: 2
     - _BUILTIN_DstBlend: 0
@@ -45,26 +55,9 @@ Material:
     - _BUILTIN_ZTest: 4
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 0
-    - _Glitch_Strength: 0.1
-    - _Noise_Scale: 500
-    - _Noise_Strength: 0.5
-    - _RECEIVE_SHADOWS_OFF: 0
     - _Scroll_Speed: 0.05
     m_Colors:
-    - _Fresnel_Color: {r: 3.375481, g: 0, b: 0, a: 0.6862745}
+    - _Fresnel_Color: {r: 4, g: 0, b: 0, a: 0.6862745}
     - _Hologram_Tile: {r: 302.4, g: -1.7, b: 0, a: 0}
-    - _Main_Color: {r: 0.17130084, g: 0, b: 0.21698111, a: 0.15686275}
+    - _Main_Color: {r: 0.46073297, g: 0, b: 0.57591623, a: 0.15686275}
   m_BuildTextureStacks: []
---- !u!114 &8160706285142488213
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 639247ca83abc874e893eb93af2b5e44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 0

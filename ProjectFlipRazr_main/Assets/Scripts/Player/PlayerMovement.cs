@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed = 7;
     public float rotationSpeed = 15;
 
-    private CharacterController characterController;
+    public CharacterController characterController;
 
     public void Awake()
     {
