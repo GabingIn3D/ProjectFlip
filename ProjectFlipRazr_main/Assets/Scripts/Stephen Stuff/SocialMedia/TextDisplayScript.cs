@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.UI;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
 using Unity.Properties;
-using UnityEditor.PackageManager.Requests;
 
 public class TextDisplayScript : MonoBehaviour
 {
