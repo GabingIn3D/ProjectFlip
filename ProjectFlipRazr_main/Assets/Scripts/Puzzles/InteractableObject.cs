@@ -9,6 +9,7 @@ public class InteractableObject : MonoBehaviour
     public enum Object
     {
         Door,
+        AccessToStudio,
     }
 
     public Object obj;
@@ -52,6 +53,10 @@ public class InteractableObject : MonoBehaviour
                         }
                     }
                 }
+                break;
+            case Object.AccessToStudio:
+                GlobalPlaytestSettings.instance.hasStudio = true;
+                Destroy(gameObject);
                 break;
         }
     }
