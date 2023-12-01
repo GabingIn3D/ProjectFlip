@@ -47,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void ControlRotation()
     {
-        transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime, 0);
+        transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed, 0);
+       // transform.Rotate(0, Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime, 0);
 
         /*Vector3 targetDirection = Vector3.zero;
 

@@ -6,16 +6,20 @@ using UnityEngine;
 
 public class ControllerManager : MonoBehaviour
 {
-    //First person mode references
+    [Header("First Person Mode")]
     public GameObject firstPersonPlayer;
     public InputSystemFirstPersonCharacter firstPController;
     public CinemachineVirtualCamera firstPCam;
-
-    //Third Person mode references
-    public MoveInputManager thirdPController;
-    public CinemachineFreeLook thirdPCam;
-
+    public int defaultFPcameraPriority;
     public bool isFirstPersonMode;
+
+    [Header("Third Person Mode")]
+    public MoveInputManager thirdPController;
+    public CinemachineFreeLook thirdPCam; // optional for playtesting
+    public bool freeLookCamera; // optional for playtesting
+    //public CinemachineVirtualCamera lastFixedCamera;
+
+    [Header("Photo Realm")]
     public Transform PhotoRealmToHere;
     public Transform EmptyPhotoRealm;
 
@@ -26,7 +30,10 @@ public class ControllerManager : MonoBehaviour
     {
         //Start as third person controller
         thirdPController.enabled = true;
-        thirdPCam.Priority = 15;
+        if(freeLookCamera && thirdPCam != null)
+        {
+            thirdPCam.Priority = 15;
+        }
         firstPController.enabled = false;
         firstPCam.Priority = 10;
         isFirstPersonMode = false;
@@ -65,7 +72,7 @@ public class ControllerManager : MonoBehaviour
             thirdPController.enabled = false;
             thirdPController.movementInput.x = 0;
             thirdPController.movementInput.y = 0;
-            thirdPCam.Priority = 10;
+            if(freeLookCamera && thirdPCam != null) { thirdPCam.Priority = 10; }
             firstPController.enabled = true;
             firstPCam.Priority = 15;
             isFirstPersonMode = true;
@@ -74,7 +81,8 @@ public class ControllerManager : MonoBehaviour
         {
             //Switching to third person controller
             thirdPController.enabled = true;
-            thirdPCam.Priority = 15;
+            if (freeLookCamera && thirdPCam != null) { thirdPCam.Priority = 15; }
+            // if (lastFixedCamera != null && != freeLookCamera) { lastFixedCamera.Priority = 15;}
             firstPController.enabled = false;
             firstPCam.Priority = 10;
             isFirstPersonMode = false;
