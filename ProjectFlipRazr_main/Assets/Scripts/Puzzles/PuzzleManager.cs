@@ -145,6 +145,7 @@ public class PuzzleManager : MonoBehaviour
             case PuzzleLocation.StudioStage56:
                 //Code to run when puzzle completed
                 Debug.Log("Puzzle Completed");
+                //Completion Canvas Set Active
                 break;
         }
     }
