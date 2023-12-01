@@ -26,9 +26,13 @@ public class ControllerManager : MonoBehaviour
 
     private float thirdPPlayerSpeed;
 
+    private FlipPhoneManager flipManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        flipManager = FindAnyObjectByType<FlipPhoneManager>();
+
         //Start as third person controller
         thirdPController.enabled = true;
         playerManager.enabled = true;
@@ -48,14 +52,14 @@ public class ControllerManager : MonoBehaviour
         {
             SwitchControllerMode();
         }
-        if (Input.GetKeyDown(KeyCode.O))
+        /*if (Input.GetKeyDown(KeyCode.O))
         {
             FreezeMovement();
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
             UnFreezeMovement();
-        }
+        }*/
     }
 
     void SwitchControllerMode()
@@ -80,6 +84,7 @@ public class ControllerManager : MonoBehaviour
             firstPCam.Priority = 15;
             isFirstPersonMode = true;
             FreezeMovement();
+            flipManager.SwitchState(flipManager.homeScreenState);
         }
         else if (isFirstPersonMode == true)
         {
