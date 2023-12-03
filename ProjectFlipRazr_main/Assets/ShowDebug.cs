@@ -13,8 +13,13 @@ public class ToggleObjectButton : MonoBehaviour
         {
             Debug.LogError("Please assign the GameObject to toggle in the inspector.");
         }
+
     }
 
+    public void Awake()
+    {
+        objectToToggle.SetActive(false);
+    }
     public void OnButtonClick()
     {
         // Toggle the active state of the GameObject

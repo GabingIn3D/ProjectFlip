@@ -11,6 +11,7 @@ public class SceneChanger : MonoBehaviour
     void Start()
     {
         photoInfoDatabase = FindAnyObjectByType<PhotoInfoDatabase>();
+        photoInfoDatabase.Load();
     }
 
     // Update is called once per frame

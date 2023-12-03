@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.IO;
+using System.Collections.Generic;
 
 public class FolderManagement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class FolderManagement : MonoBehaviour
         if (isBuild)
         {
             CreateFolders();
+            //creates blank pdata (maybe overwrites? idk)
+            SaveSystem.SavePhotos(FindObjectOfType<PhotoInfoDatabase>().photos);
         }
     }
 

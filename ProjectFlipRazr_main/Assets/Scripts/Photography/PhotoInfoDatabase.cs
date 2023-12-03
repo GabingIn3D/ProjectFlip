@@ -11,17 +11,18 @@ public class PhotoInfoDatabase : MonoBehaviour
 
     private void Awake()
     {
-        Load();
+        //Load();
     }
 
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Showinfo();
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.H))
         {
+            Debug.Log("does this button work?");
             Save();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -31,7 +32,7 @@ public class PhotoInfoDatabase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             RemoveAllPhoto();
-        }*/
+        }
     }
 
     public void AddPhoto(PhotoInfo photoData)
