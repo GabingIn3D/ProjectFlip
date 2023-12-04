@@ -72,4 +72,9 @@ public class FlipPhone_SaveQuitState : FlipPhone_BaseState
         }
         */
     }
+
+    public static void QuitGame()
+    {
+        Application.Quit();
+    }
 }

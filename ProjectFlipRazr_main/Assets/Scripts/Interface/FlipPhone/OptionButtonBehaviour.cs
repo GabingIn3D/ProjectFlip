@@ -13,6 +13,7 @@ public class OptionButtonBehaviour : MonoBehaviour
     private GameObject ListBehaviourSelected;
     private PhotoInfo selectedPhotoInfo;
     public PhotoInfoDatabase photoInfoDatabase;
+
     //Possible buttons
     public enum buttonFunction
     {
@@ -120,24 +121,24 @@ public class OptionButtonBehaviour : MonoBehaviour
             //Settings
             case buttonFunction.EnableDebug:
                 SceneManager.LoadScene("Title");
-                //if(!GlobalPlayTestSettings.EnableDebug) {
-                //      GlobalPlayTestSettings.EnableDebug == true;
-                //      Change displayed text object to indicate it's 'ON'
-                //}
-                //else {
-                //      GlobalPlayTestSettings.EnableDebug == false;
-                //      Change displayed text object to indicate it's 'OFF'
-                //}
                 break;
+
             //SaveQuit
             case buttonFunction.SaveAndQuit:
+                Debug.Log("Saved and Quit.");
+                photoInfoDatabase.Save();
+                //Insert code to actually write the images to the HDD NOW (when that functionality exists)
+                SceneManager.LoadScene("Title");
                 //Run Toma's PhotoInfo saving and return to Title Screen using SceneManager reference
                 //      SceneManager.TravelToScene(string sceneName);
                 break;
             case buttonFunction.ExitWithoutSaving:
+                photoInfoDatabase.RemoveAllPhoto();
+                Invoke("InvokeApplicationQuit", 1.0f);
                 //Close game application without doing anything
                 // WARNING: We will likely need to create a middleman in the game to hold onto the images before writing them to the disk during 'SaveAndQuit'
                 break;
+
             //HomeScreen
             case buttonFunction.ChangeWallpaper:
                 //a whole buncha shit to change wallpaper (TBD)
@@ -200,5 +201,11 @@ public class OptionButtonBehaviour : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void InvokeApplicationQuit()
+    {
+        //Make sure all the shit you want done is done before this happens <3
+        FlipPhone_SaveQuitState.QuitGame();
     }
 }

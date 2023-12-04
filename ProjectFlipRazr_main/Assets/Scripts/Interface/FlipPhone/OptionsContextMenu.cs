@@ -171,7 +171,19 @@ public class OptionsContextMenu : MonoBehaviour
                 Debug.Log("Successfully picking up that this should show options relevant to a SaveQuit button.");
                 if (SaveQuitListTargetBehaviour != null && SaveQuitListTargetBehaviour.currentlySelected != null)
                 {
-                    ActivateButtons(3, activeButtonCount);
+                    ActivateButtons(1, activeButtonCount);
+
+                    if (SaveQuitListTargetBehaviour.currentlySelected == "SaveQuitButton")
+                    {
+                        var thisButton = buttons[0].gameObject.GetComponent<OptionButtonBehaviour>();
+                        thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.SaveAndQuit;
+                    }
+                    else if(SaveQuitListTargetBehaviour.currentlySelected == "ExitGameButton")
+                    {
+                        var thisButton = buttons[0].gameObject.GetComponent<OptionButtonBehaviour>();
+                        thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.ExitWithoutSaving;
+                    }
+
                 }
                 break;
 

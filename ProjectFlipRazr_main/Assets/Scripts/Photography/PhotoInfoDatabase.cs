@@ -20,9 +20,8 @@ public class PhotoInfoDatabase : MonoBehaviour
         {
             Showinfo();
         }
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log("does this button work?");
             Save();
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
