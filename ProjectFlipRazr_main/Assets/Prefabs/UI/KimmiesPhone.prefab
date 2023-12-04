@@ -1562,7 +1562,7 @@ MonoBehaviour:
   LocationListTargetBehaviour: {fileID: 3916772736995758855}
   PhotoListTargetBehaviour: {fileID: 4972692735404688150}
   SettingsListTargetBehaviour: {fileID: 8266633362720974052}
-  SaveQuitListTargetBehaviour: {fileID: 0}
+  SaveQuitListTargetBehaviour: {fileID: 3607579487085485003}
 --- !u!1 &926335665763275928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3845,7 +3845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0246c83abb1a24996b828afbdff170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextMenu: {fileID: 0}
+  contextMenu: {fileID: 7003483924754138090}
   photoInfoDatabase: {fileID: 0}
   buttonfunction: 0
 --- !u!1 &2649697910395555121
@@ -5902,7 +5902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Save & Quit
+  m_text: Save & Return to Title
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 456a1dd7d5a8c134a93c78491d6da3e3, type: 2}
   m_sharedMaterial: {fileID: -755515026804681384, guid: 456a1dd7d5a8c134a93c78491d6da3e3, type: 2}
@@ -8519,7 +8519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0246c83abb1a24996b828afbdff170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextMenu: {fileID: 0}
+  contextMenu: {fileID: 7003483924754138090}
   photoInfoDatabase: {fileID: 0}
   buttonfunction: 0
 --- !u!1 &6144900514760797389
@@ -10189,7 +10189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0246c83abb1a24996b828afbdff170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextMenu: {fileID: 0}
+  contextMenu: {fileID: 7003483924754138090}
   photoInfoDatabase: {fileID: 0}
   buttonfunction: 0
 --- !u!1 &7643283332044992754
@@ -10750,7 +10750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be0246c83abb1a24996b828afbdff170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextMenu: {fileID: 0}
+  contextMenu: {fileID: 7003483924754138090}
   photoInfoDatabase: {fileID: 0}
   buttonfunction: 3
 --- !u!1 &7898708430519777500
