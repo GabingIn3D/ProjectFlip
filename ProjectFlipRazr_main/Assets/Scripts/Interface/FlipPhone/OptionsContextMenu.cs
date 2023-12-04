@@ -40,7 +40,7 @@ public class OptionsContextMenu : MonoBehaviour
     }
     public void OnEnable()
     {
-        CollectButtons();
+        CollectButtons(); // this is collecting the four OptionsButton gameobjects as part of the context menu, from 1-4 (as designed)
         SetButtonsVisibility();
         foreach (Button button in buttons)
         {
@@ -53,8 +53,9 @@ public class OptionsContextMenu : MonoBehaviour
 
     public void OnDisable()
     {
-        // Array.Clear(buttons, 0, buttons.Length);
-        //CollectButtons();
+        //When the player closes the phone, this will reset the Options Button Menu to "Nothing" so options don't linger (i.e. 'Delete')
+        currentButtonType = ButtonType.Nothing;
+        SetButtonsVisibility();
     }
 
     void CollectButtons()
