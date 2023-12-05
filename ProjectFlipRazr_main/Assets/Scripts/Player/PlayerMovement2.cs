@@ -58,14 +58,22 @@ public class PlayerMovement2 : MonoBehaviour
     private void OnEnable()
     {
         moveInputManager.Enable();
-            // Subscribe to the events for movement controls
+        // Subscribe to the events for movement controls
+        moveInputManager.PlayerMovement.Movement.started += OnMovementStarted;
             moveInputManager.PlayerMovement.Movement.performed += OnMovementPerformed;
             moveInputManager.PlayerMovement.Movement.canceled += OnMovementCanceled;
+
+        UpdateForwardDirection(GetActiveCameraTransform());
     }
 
     private void OnDisable()
     {
         moveInputManager.Disable();
+    }
+
+    private void OnMovementStarted(InputAction.CallbackContext context)
+    {
+        UpdateForwardDirection(GetActiveCameraTransform());
     }
 
     private void OnMovementPerformed(InputAction.CallbackContext context)
@@ -78,13 +86,17 @@ public class PlayerMovement2 : MonoBehaviour
         // Movement controls are released
         // Call the function to update forward direction
         Debug.Log("Movement controls are released.");
-        UpdateForwardDirection(GetActiveCameraTransform());
+        
     }
 
     private void ControlMovement()
     {
         Vector2 inputVector = moveInputManager.PlayerMovement.Movement.ReadValue<Vector2>();
-        moveDirection = playerObject.forward * inputVector.y * movementSpeed;
+
+        Vector3 viewRelativeInputVector = new Vector3(inputVector.x, 0, inputVector.y);
+        viewRelativeInputVector = currentViewFrame.InverseTransformDirection(viewRelativeInputVector);
+
+        moveDirection =  viewRelativeInputVector * movementSpeed;
 
         characterController.Move(moveDirection * Time.deltaTime - Vector3.up * 0.1f);
     }
@@ -101,10 +113,14 @@ public class PlayerMovement2 : MonoBehaviour
         ControlRotation();
     }
 
-    public void UpdateForwardDirection(Transform newForward)
+    Transform currentViewFrame;
+    public void UpdateForwardDirection(Transform newViewFrame)
     {
-        playerObject.forward = newForward.forward;
-        Debug.Log("UpdateForwardDirection" + " newForward.forward is " + newForward.forward);
+        currentViewFrame = newViewFrame;
+
+        //playerObject.forward = newViewFrame.forward;
+
+        Debug.Log("UpdateForwardDirection" + " newForward.forward is " + newViewFrame.forward);
     }
 
     private Transform GetActiveCameraTransform()

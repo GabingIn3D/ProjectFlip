@@ -20,7 +20,7 @@ public class PhoneNavi : MonoBehaviour
     // SHORTCUTS
     // "STRAIGHT TO CAMERA" - KEY SHORTCUT THAT GOES STRAIGHT TO THE CAMERA
     // "EXIT PHONE" - KEY SHORTCUT THAT PUTS AWAY PHONE/EXITS FIRST PERSON PHONE VIEW
-    
+
     // BUTTONS
     // Back, Options, Main Menu
 
@@ -30,7 +30,7 @@ public class PhoneNavi : MonoBehaviour
 
     // STATES
     // Home Screen, Camera, Apps (Main Menu), Gallery, Photo (Individual), Map (Fast Travel List), Settings
-    
+
     // HOME SCREEN - PHONE BACKGROUND WITH TIME AND TEXT STRING 'HOME SCREEN'
     // --- Navi Buttons: "Options / Main Menu"
     // CAMERA - FOR TAKING PICS AND SHOWS THE VIEWFINDER
@@ -89,8 +89,8 @@ public class PhoneNavi : MonoBehaviour
         {
             case whichNaviButton.Options:
                 Debug.Log("you clicked on 'Options'");
-               // if the Options context menu is already open and player hits the button again, it will be set to inactive
-                if(flipPhone.options.activeSelf)
+                // if the Options context menu is already open and player hits the button again, it will be set to inactive
+                if (flipPhone.options.activeSelf)
                 {
                     flipPhone.options.SetActive(false);
                 }
