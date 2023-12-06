@@ -200,16 +200,19 @@ public class PlayerControl : MonoBehaviour
 
     void HandleRotation()
     {
-        //Vector3 playerDirection = Vector3.right * movement.x + Vector3.forward * movement.y;
-        Vector3 playerDirection = Vector3.right * movement.x + Vector3.forward * movement.y;
-        if (playerDirection.sqrMagnitude > 0.0f)
+        if(storedActiveCam != null)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(playerDirection);
-            Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            transform.rotation = playerRotation;
+            Vector3 playerDirection = Quaternion.Euler(0, storedActiveCam.eulerAngles.y, 0) * move;
+            if (playerDirection.sqrMagnitude > 0.0f)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(playerDirection);
+                Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                transform.rotation = playerRotation;
+            }
         }
-    }
 
+    }
+    //Vector3 playerDirection = Vector3.right * movement.x + Vector3.forward * movement.y;
     private void LookAt(Vector3 lookPoint)
     {
         Vector3 heightCorrectedPoint = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
