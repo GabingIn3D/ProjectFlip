@@ -11,6 +11,7 @@ public class FlipPhone_CameraState : FlipPhone_BaseState
     public override void EnterState(FlipPhoneManager flipPhone)
     {
         //Sets every phone page except THIS one to inactive
+        flipPhone.cameraOpen = true;
         IEnumerable<GameObject> objectsExceptOne = flipPhone.GetObjectsExceptOne(pageBelongingToState);
         foreach (GameObject obj in objectsExceptOne)
         {
@@ -60,5 +61,6 @@ public class FlipPhone_CameraState : FlipPhone_BaseState
     public override void ExitState(FlipPhoneManager flipPhone)
     {
         GameObject.FindAnyObjectByType<ControllerManager>().FreezeMovement();
+        flipPhone.cameraOpen = false;
     }
 }

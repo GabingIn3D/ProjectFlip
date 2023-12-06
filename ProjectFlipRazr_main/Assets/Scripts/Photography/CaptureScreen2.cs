@@ -15,6 +15,7 @@ public class CaptureScreen2 : MonoBehaviour
     public string photoNameVariable;
     public bool isBuild;
 
+    public FlipPhoneManager flipPhoneManager;
     public int snapResWidth = 1600;
     public int snapResHeight = 1200;
 
@@ -40,7 +41,7 @@ public class CaptureScreen2 : MonoBehaviour
 
     public void Capture()
     {
-        if (controllerManager.isFirstPersonMode == true)
+        if (controllerManager.isFirstPersonMode == true && flipPhoneManager.cameraOpen == true)
         {
             CheckItemsInPhoto();
             StartCoroutine(AsyncCapture());

@@ -20,6 +20,7 @@ public class PhotographyInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // snapCam.CallTakeSnapshot();
+            Debug.Log("you pressed space!");
             captureScreen.Capture();
         }
     }

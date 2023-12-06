@@ -12,13 +12,7 @@ public class FlipPhoneManager : MonoBehaviour
 {
     public FlipPhone_BaseState currentState;
 
-    //Phone pages
-    //public GameObject home;
-    //public GameObject gallery;
-    //public GameObject photoIndividual;
-    //public GameObject appMenu;
-    //public GameObject map;
-    //public GameObject settings;
+    [Header("Array of Apps")]
     public string[] objectNames = { "Home", "PhoneViewfinder", "Gallery", "PhotoIndividual", "AppMenu", "Map", "SocialMedia", "Settings", "SaveQuit" };
 
     //Game Object Dictionary (Phone Pages)
@@ -27,14 +21,17 @@ public class FlipPhoneManager : MonoBehaviour
     //State Machine Dictionary (Phone Pages)
     public Dictionary<string, Type> stateMap = new Dictionary<string, Type>();
 
-    //"Options" context menu overlay
+    [Header("Options Context Menu")]
     public GameObject options;
-    
-    //PhoneNavi buttons
+
+    [Header("Phone Navigation Buttons")]
     public GameObject lButton;
     public GameObject rButton;
     public PhoneNavi phoneNaviL;
     public PhoneNavi phoneNaviR;
+
+    [Header("Booleans")]
+    public bool cameraOpen;
 
     //States
     public FlipPhone_HomeScreenState homeScreenState = new FlipPhone_HomeScreenState();

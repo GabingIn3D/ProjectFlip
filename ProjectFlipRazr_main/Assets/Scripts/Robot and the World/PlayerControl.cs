@@ -90,6 +90,7 @@ public class PlayerControl : MonoBehaviour
     private void OnMovementStarted(InputAction.CallbackContext context)
     {
         Debug.Log("MovementStarted");
+        // Change forward to direction relative to current active Cinemachine Camera.
         storedActiveCam = currentActiveCam;
     }
 
@@ -101,8 +102,9 @@ public class PlayerControl : MonoBehaviour
     private void OnMovementCanceled(InputAction.CallbackContext context)
     {
         Debug.Log("MovementCanceled");
-        storedActiveCam = currentActiveCam;
         // Change forward to direction relative to current active Cinemachine Camera.
+        storedActiveCam = currentActiveCam;
+
     }
 
     private void OnEnable()
