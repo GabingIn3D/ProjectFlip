@@ -6,6 +6,7 @@ using Unity.Collections;
 using System;
 using System.IO;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class CaptureScreen2 : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class CaptureScreen2 : MonoBehaviour
     public string filePath;
     public string photoNameVariable;
     public bool isBuild;
-
+    public Camera targetCamera;
     public FlipPhoneManager flipPhoneManager;
     public int snapResWidth = 1600;
     public int snapResHeight = 1200;
@@ -51,63 +52,63 @@ public class CaptureScreen2 : MonoBehaviour
     IEnumerator AsyncCapture()
     {
         yield return new WaitForEndOfFrame();
-        //var rt = RenderTexture.GetTemporary(Screen.width, Screen.height, 0, RenderTextureFormat.ARGB32);
-        var rt = RenderTexture.GetTemporary(snapResWidth, snapResHeight, 0, RenderTextureFormat.ARGB32);
-        ScreenCapture.CaptureScreenshotIntoRenderTexture(rt);
-        AsyncGPUReadback.Request(rt, 0, TextureFormat.RGBA32, OnCompleteReadback);
-        RenderTexture.ReleaseTemporary(rt);
+
+        // Create a temporary RenderTexture for capturing the screenshot
+        var captureRT = new RenderTexture(snapResWidth, snapResHeight, 0, RenderTextureFormat.ARGB32);
+        captureRT.Create();
+
+        // Store the current active RenderTexture
+        RenderTexture currentActiveRT = RenderTexture.active;
+
+        // Set the temporary RenderTexture as the active RenderTexture
+        RenderTexture.active = captureRT;
+
+        // Copy the content of the camera's target RenderTexture to the temporary RenderTexture
+        Graphics.Blit(targetCamera.GetComponent<Camera>().targetTexture, captureRT);
+
+        // Reset the active RenderTexture to the original one
+        RenderTexture.active = currentActiveRT;
+
+        // Perform AsyncGPUReadback on the temporary RenderTexture
+        AsyncGPUReadback.Request(captureRT, 0, TextureFormat.RGBA32, OnCompleteReadback);
+
+        // Release the temporary RenderTexture
+        captureRT.Release();
     }
+
+
 
     void OnCompleteReadback(AsyncGPUReadbackRequest asyncGPUReadbackRequest)
     {
-        // get screenshot data as nativearray or handle error
         if (asyncGPUReadbackRequest.hasError)
         {
             Debug.LogError("Error Capturing Screenshot: With AsyncGPUReadbackRequest.");
             return;
         }
+
         var rawData = asyncGPUReadbackRequest.GetData<byte>();
-        // Grab screen dimensions
-        //var width = Screen.width;
-        //var height = Screen.height;
         var width = snapResWidth;
         var height = snapResHeight;
+
         var texture = new Texture2D(width, height, TextureFormat.RGBA32, false);
         var processedData = texture.GetRawTextureData<byte>();
-        // now flip vertical pixels
-        for (int i = 0; i < rawData.Length; i += 4)
-        {
-            var arrayIndex = i / 4;
-            var x = arrayIndex % width;
-            var y = arrayIndex / width;
-            var flippedY = (height - 1 - y);
-            var flippedIndex = x + flippedY * width;
-            // flip the data
-            processedData[i] = rawData[flippedIndex * 4];
-            processedData[i + 1] = rawData[flippedIndex * 4 + 1];
-            processedData[i + 2] = rawData[flippedIndex * 4 + 2];
-            processedData[i + 3] = rawData[flippedIndex * 4 + 3];
-        }
-        // create texture and save as png using Guid as name
-		newID = photoNameVariable + Guid.NewGuid().ToString();
-        if (isBuild)
-        {
-            File.WriteAllBytes(Application.persistentDataPath + filePath + newID + ".png", ImageConversion.EncodeToPNG(texture));
-            Debug.Log("BUILD: Capture written! To " + Application.persistentDataPath + filePath + newID + ".png");
-        }
-        else
-        {
-            File.WriteAllBytes(Application.dataPath + filePath + newID + ".png", ImageConversion.EncodeToPNG(texture));
-            Debug.Log("EDITOR: Capture written! To " + Application.dataPath + filePath + newID + ".png");
-        }
-        //capture the information from (string path) above, send it to the entry in the class for fileLocation/fileName)
-        Debug.Log("Capture written! To " + filePath);
-        Destroy(texture);
-        RecordPhotoInfo();
 
+        // Copy the data directly without flipping
+        rawData.CopyTo(processedData);
+
+        // Save the screenshot using Guid as the name
+        newID = photoNameVariable + Guid.NewGuid().ToString();
+
+        string savePath = isBuild ? Application.persistentDataPath : Application.dataPath;
+        File.WriteAllBytes(savePath + filePath + newID + ".png", ImageConversion.EncodeToPNG(texture));
+        Debug.Log((isBuild ? "BUILD: " : "EDITOR: ") + "Capture written! To " + savePath + filePath + newID + ".png");
+
+        Destroy(texture);
+
+        RecordPhotoInfo();
         textureHolder.RefreshGallery();
-        // gameObject.SendMessage("RefreshGallery", SendMessageOptions.DontRequireReceiver);
     }
+
 
     public void RecordPhotoInfo() // Adds a PhotoInfo to the list in the database with the info inside
     {
