@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4307145477617391073}
   - component: {fileID: 8411438271680303589}
   - component: {fileID: 5945603393604382437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SaveQuit_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5694236352066368212}
   - component: {fileID: 3090479503144726443}
   - component: {fileID: 728022512587073947}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Location1_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2981867689158635174}
   - component: {fileID: 3641224720761335482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 4543310612861676526}
   - component: {fileID: 3634495808312488352}
   - component: {fileID: 4567057021838246064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gallery_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 5464250601538133448}
   - component: {fileID: 8037592424153738605}
   - component: {fileID: 7485639944424497079}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Setting2_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 7612810676957234610}
   - component: {fileID: 6714710005876017441}
   - component: {fileID: 5109617393719490376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Studio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 2186403367790460796}
   - component: {fileID: 2797064316310979927}
   - component: {fileID: 4036793127321304149}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 3691739674531163709}
   - component: {fileID: 9015292487050966329}
   - component: {fileID: 1347664638242954548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: All Pictures_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1104,7 +1104,7 @@ GameObject:
   - component: {fileID: 281566071594689472}
   - component: {fileID: 1385796734997180964}
   - component: {fileID: 673516205016733603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1179,7 @@ GameObject:
   - component: {fileID: 1839019492556448826}
   - component: {fileID: 6262430614322355312}
   - component: {fileID: 8112373570879644564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SocialMedia_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 5919698296514983342}
   - component: {fileID: 5336981756022375904}
   - component: {fileID: 704392557322414623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Location3_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1449,7 +1449,7 @@ GameObject:
   - component: {fileID: 2200482474429469806}
   - component: {fileID: 6752745826425124461}
   - component: {fileID: 7003483924754138090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Options_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1574,7 +1574,7 @@ GameObject:
   - component: {fileID: 4275419023416006257}
   - component: {fileID: 5200615837217516933}
   - component: {fileID: 6299930509748127465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CurrentLocation_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1708,7 +1708,7 @@ GameObject:
   - component: {fileID: 1483568550173106703}
   - component: {fileID: 8202119107480992967}
   - component: {fileID: 4567624128740420104}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: App2_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1843,7 +1843,7 @@ GameObject:
   - component: {fileID: 8512552522178876703}
   - component: {fileID: 4225385695713095589}
   - component: {fileID: 6121651698410825061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CurrentLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1963,7 +1963,7 @@ GameObject:
   - component: {fileID: 1804303258193993952}
   - component: {fileID: 632310757379989851}
   - component: {fileID: 7596078467275862131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: App1_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2097,7 +2097,7 @@ GameObject:
   - component: {fileID: 4146233796975959513}
   - component: {fileID: 1982175572415609653}
   - component: {fileID: 3901329139952950118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Setting3_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2233,7 +2233,7 @@ GameObject:
   - component: {fileID: 5093033100540982530}
   - component: {fileID: 8681741398482802515}
   - component: {fileID: 7994505206640262617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2370,6 +2370,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &1327050889468827978
 GameObject:
@@ -2384,7 +2385,7 @@ GameObject:
   - component: {fileID: 4619287563198250447}
   - component: {fileID: 1847758633286949784}
   - component: {fileID: 9166322220570950290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2521,6 +2522,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &1439255367909585548
 GameObject:
@@ -2535,7 +2537,7 @@ GameObject:
   - component: {fileID: 8963782162628106386}
   - component: {fileID: 7542616038888512532}
   - component: {fileID: 8730702615233348282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2672,6 +2674,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &1677192375971901735
 GameObject:
@@ -2684,7 +2687,7 @@ GameObject:
   - component: {fileID: 5392107532717893749}
   - component: {fileID: 6742583668073136067}
   - component: {fileID: 4398343130650313234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HomeScreen_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2818,7 +2821,7 @@ GameObject:
   - component: {fileID: 7790624676234919946}
   - component: {fileID: 9186161497563947292}
   - component: {fileID: 3272590841199174128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SaveQuitHeader_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2954,7 +2957,7 @@ GameObject:
   - component: {fileID: 1349157758635338905}
   - component: {fileID: 640778190846084976}
   - component: {fileID: 5048166297407034364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3101,7 +3104,7 @@ GameObject:
   - component: {fileID: 9012118555256786535}
   - component: {fileID: 8043792203108456615}
   - component: {fileID: 7449298464668657985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3178,7 +3181,7 @@ GameObject:
   - component: {fileID: 4259717209905352107}
   - component: {fileID: 6692410135238942308}
   - component: {fileID: 3863851317676392640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3315,6 +3318,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &2344197025736958588
 GameObject:
@@ -3328,7 +3332,7 @@ GameObject:
   - component: {fileID: 1208462002703898223}
   - component: {fileID: 7150922632997826817}
   - component: {fileID: 7373422099126993054}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3441,7 +3445,7 @@ GameObject:
   - component: {fileID: 8535802766989887909}
   - component: {fileID: 3074355075719660419}
   - component: {fileID: 4972692735404688150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3572,7 +3576,7 @@ GameObject:
   - component: {fileID: 2701193392938242329}
   - component: {fileID: 7762131949995912835}
   - component: {fileID: 1416147780186296923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ExitGameButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3724,7 +3728,7 @@ GameObject:
   - component: {fileID: 4954651284915722844}
   - component: {fileID: 3794497934074628468}
   - component: {fileID: 163646917225585007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OptionsButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3861,7 +3865,7 @@ GameObject:
   - component: {fileID: 2371159867167841658}
   - component: {fileID: 5237971969698496001}
   - component: {fileID: 3607579487085485003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SaveQuitList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3978,7 +3982,7 @@ GameObject:
   - component: {fileID: 6094895936953106822}
   - component: {fileID: 2020752025525199720}
   - component: {fileID: 4297165774950132866}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4130,7 +4134,7 @@ GameObject:
   - component: {fileID: 8214419190753795188}
   - component: {fileID: 4505976800587901036}
   - component: {fileID: 5697608592527963897}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4267,6 +4271,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &2906009353269868121
 GameObject:
@@ -4279,7 +4284,7 @@ GameObject:
   - component: {fileID: 8051603363091555966}
   - component: {fileID: 8103354067198340094}
   - component: {fileID: 4574750910480305264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RButton_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4416,7 +4421,7 @@ GameObject:
   - component: {fileID: 5649302473018811378}
   - component: {fileID: 8233491982443646207}
   - component: {fileID: 3916772736995758855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MapList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4547,7 +4552,7 @@ GameObject:
   - component: {fileID: 4054236155211944826}
   - component: {fileID: 1594249653897730024}
   - component: {fileID: 3128002538992655464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OptionsButton3_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4680,7 +4685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 173803606110761119}
   - component: {fileID: 6467626336453771631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4732,7 +4737,7 @@ GameObject:
   - component: {fileID: 4044321220102356696}
   - component: {fileID: 6869531842690838105}
   - component: {fileID: 3660663899035779668}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OptionsButton1_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4865,7 +4870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992436128391116792}
   - component: {fileID: 8591827874313971483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SaveQuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4916,7 +4921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6575601305126540926}
   - component: {fileID: 2713264346717884762}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4972,7 +4977,7 @@ GameObject:
   - component: {fileID: 2126166448477516458}
   - component: {fileID: 5334386879301342840}
   - component: {fileID: 836355991795296492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5109,6 +5114,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &3461733708487059445
 GameObject:
@@ -5123,7 +5129,7 @@ GameObject:
   - component: {fileID: 407589448143762425}
   - component: {fileID: 841441033843164709}
   - component: {fileID: 4946810452644100915}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5260,6 +5266,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &3617168369068939876
 GameObject:
@@ -5274,7 +5281,7 @@ GameObject:
   - component: {fileID: 2384717351315590247}
   - component: {fileID: 8059419311467014539}
   - component: {fileID: 2534673723378309924}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SocialMedia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5411,7 +5418,7 @@ GameObject:
   - component: {fileID: 6755434150781915475}
   - component: {fileID: 4731697020701463269}
   - component: {fileID: 4237576186197055381}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5548,7 +5555,7 @@ GameObject:
   - component: {fileID: 847380070620631314}
   - component: {fileID: 4462350178645005911}
   - component: {fileID: 6137956927432811256}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5685,6 +5692,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &4052026402462069389
 GameObject:
@@ -5699,7 +5707,7 @@ GameObject:
   - component: {fileID: 965196453699097359}
   - component: {fileID: 4225618430856156232}
   - component: {fileID: 3661095401234662499}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5836,6 +5844,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &4145447602677018558
 GameObject:
@@ -5848,7 +5857,7 @@ GameObject:
   - component: {fileID: 4100950124386128683}
   - component: {fileID: 582862798057521923}
   - component: {fileID: 1989584166628432977}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SaveQuit_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5982,7 +5991,7 @@ GameObject:
   - component: {fileID: 3383188161548577236}
   - component: {fileID: 969194926052380137}
   - component: {fileID: 4633458707775962545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Location2_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6115,7 +6124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179996197476115791}
   - component: {fileID: 396983956336827413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AppMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6169,7 +6178,7 @@ GameObject:
   - component: {fileID: 6162726124424845640}
   - component: {fileID: 2684468261922930773}
   - component: {fileID: 3237190614855112186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6306,6 +6315,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &5023419316501371073
 GameObject:
@@ -6320,7 +6330,7 @@ GameObject:
   - component: {fileID: 4718057178644301409}
   - component: {fileID: 5214062761095485878}
   - component: {fileID: 4333110237588586441}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SaveQuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6470,7 +6480,7 @@ GameObject:
   - component: {fileID: 9171486391820547947}
   - component: {fileID: 4913189398497354861}
   - component: {fileID: 5328289203179042102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Settings_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6545,7 +6555,7 @@ GameObject:
   - component: {fileID: 5646406158529314682}
   - component: {fileID: 343997039873071955}
   - component: {fileID: 1989098390789788180}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SettingsHeader_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6681,7 +6691,7 @@ GameObject:
   - component: {fileID: 2692144429004881858}
   - component: {fileID: 2080511321204667305}
   - component: {fileID: 5573096137997513967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6818,6 +6828,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &5369041450598663440
 GameObject:
@@ -6830,7 +6841,7 @@ GameObject:
   - component: {fileID: 1283830089710187365}
   - component: {fileID: 9126906571043283819}
   - component: {fileID: 1755141218726195926}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ExitGame_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6966,7 +6977,7 @@ GameObject:
   - component: {fileID: 5408970440447722825}
   - component: {fileID: 6916244231729538504}
   - component: {fileID: 7738718607770509434}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Setting2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7118,7 +7129,7 @@ GameObject:
   - component: {fileID: 3825608109360922542}
   - component: {fileID: 2473644203110710026}
   - component: {fileID: 8418453785476802790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Settings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7255,7 +7266,7 @@ GameObject:
   - component: {fileID: 760040082309038289}
   - component: {fileID: 6692777874999755954}
   - component: {fileID: 2067215438995481202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Setting1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7405,7 +7416,7 @@ GameObject:
   - component: {fileID: 4520604247707995398}
   - component: {fileID: 4399007947385640470}
   - component: {fileID: 659765812167614557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MapHeader_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7538,7 +7549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 656774030383878429}
   - component: {fileID: 3560061792353561041}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7588,7 +7599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9166823094807578689}
   - component: {fileID: 4746087640513302108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7641,7 +7652,7 @@ GameObject:
   - component: {fileID: 8817510565442714740}
   - component: {fileID: 6555837796428495291}
   - component: {fileID: 6908226119964663901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AppsList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7765,7 +7776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8201646807017200391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PhoneNavi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7807,7 +7818,7 @@ GameObject:
   - component: {fileID: 4143178304657660584}
   - component: {fileID: 3912199711946931363}
   - component: {fileID: 5581095963388684009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7944,6 +7955,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &5846831955634342055
 GameObject:
@@ -7958,7 +7970,7 @@ GameObject:
   - component: {fileID: 8758469910853651567}
   - component: {fileID: 969334123033057599}
   - component: {fileID: 5995529433832360508}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Villas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8110,7 +8122,7 @@ GameObject:
   - component: {fileID: 4192429981910777680}
   - component: {fileID: 5349712264381626568}
   - component: {fileID: 3414313919159023976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8247,6 +8259,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &6101549699435875353
 GameObject:
@@ -8261,7 +8274,7 @@ GameObject:
   - component: {fileID: 6454658525700568861}
   - component: {fileID: 3185973933931472214}
   - component: {fileID: 8545607560832460253}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SaveQuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8398,7 +8411,7 @@ GameObject:
   - component: {fileID: 4106972101995823331}
   - component: {fileID: 2286747908171301612}
   - component: {fileID: 1941281313962896180}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OptionsButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8533,7 +8546,7 @@ GameObject:
   - component: {fileID: 9016934933446335680}
   - component: {fileID: 4312303058616826810}
   - component: {fileID: 3301353298640624947}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SocialMedia_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8608,7 +8621,7 @@ GameObject:
   - component: {fileID: 5764436810955375059}
   - component: {fileID: 3356168029102569471}
   - component: {fileID: 6431180272635332160}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: App6_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8741,7 +8754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6055260176215007324}
   - component: {fileID: 7927278822264296638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8793,7 +8806,7 @@ GameObject:
   - component: {fileID: 6168288456527537171}
   - component: {fileID: 8201247838167727497}
   - component: {fileID: 7547688614671507510}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8930,6 +8943,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &6637682259937662398
 GameObject:
@@ -8941,7 +8955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3091498053774544249}
   - component: {fileID: 423980789239873455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FlipPhoneStateManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8989,6 +9003,7 @@ MonoBehaviour:
   rButton: {fileID: 7764212149023215713}
   phoneNaviL: {fileID: 5048166297407034364}
   phoneNaviR: {fileID: 4818922156746206179}
+  cameraOpen: 0
 --- !u!1 &6716553144959766284
 GameObject:
   m_ObjectHideFlags: 0
@@ -9000,7 +9015,7 @@ GameObject:
   - component: {fileID: 8570841115537089676}
   - component: {fileID: 7478910297540799184}
   - component: {fileID: 2022175255144046692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OptionButton4_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9136,7 +9151,7 @@ GameObject:
   - component: {fileID: 6342033467320090580}
   - component: {fileID: 2980379562093416950}
   - component: {fileID: 380335575174580307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Setting3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9286,7 +9301,7 @@ GameObject:
   - component: {fileID: 643294444860270817}
   - component: {fileID: 6939923208632129996}
   - component: {fileID: 8072923502745718823}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: App4_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9420,7 +9435,7 @@ GameObject:
   - component: {fileID: 6375541487966262708}
   - component: {fileID: 2320949664699167160}
   - component: {fileID: 6542834617867807923}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LButton_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9554,7 +9569,7 @@ GameObject:
   - component: {fileID: 6483370876694589383}
   - component: {fileID: 708577403072203683}
   - component: {fileID: 4641922955274363848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OptionsButton2_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9688,7 +9703,7 @@ GameObject:
   - component: {fileID: 3869444011159186767}
   - component: {fileID: 4176490124991047339}
   - component: {fileID: 2966954500946735257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: App3_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9823,7 +9838,7 @@ GameObject:
   - component: {fileID: 2951379960294300131}
   - component: {fileID: 2470849480324500137}
   - component: {fileID: 7135655439315107346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: KimmiesPhone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9932,7 +9947,7 @@ GameObject:
   - component: {fileID: 2373622339521073513}
   - component: {fileID: 6351078897012511173}
   - component: {fileID: 6546208478035366214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HighlightAppHeader_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10068,7 +10083,7 @@ GameObject:
   - component: {fileID: 9127360918483674909}
   - component: {fileID: 2411163863895240184}
   - component: {fileID: 5443644704198875175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OptionsButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10204,7 +10219,7 @@ GameObject:
   - component: {fileID: 8956055759364870424}
   - component: {fileID: 581634085122899533}
   - component: {fileID: 5421388179382417018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HomeScreen_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10294,7 +10309,7 @@ GameObject:
   - component: {fileID: 2550347777774245158}
   - component: {fileID: 8662885995957560033}
   - component: {fileID: 5772775816213668804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Setting1_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10427,7 +10442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6716056660108139073}
   - component: {fileID: 630469367603156245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SocialMedia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10480,7 +10495,7 @@ GameObject:
   - component: {fileID: 5872627629134052705}
   - component: {fileID: 1240746200297987147}
   - component: {fileID: 4818922156746206179}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10629,7 +10644,7 @@ GameObject:
   - component: {fileID: 5572266090919550982}
   - component: {fileID: 4505462375907360831}
   - component: {fileID: 1781124254607681234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OptionsButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10764,7 +10779,7 @@ GameObject:
   - component: {fileID: 8621734062112440860}
   - component: {fileID: 1967006553563015396}
   - component: {fileID: 3239193682366825245}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gallery_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10839,7 +10854,7 @@ GameObject:
   - component: {fileID: 3319202857694790741}
   - component: {fileID: 427327013756760745}
   - component: {fileID: 482581810818759606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: App5_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10975,7 +10990,7 @@ GameObject:
   - component: {fileID: 1980877551754365495}
   - component: {fileID: 8304064031716251099}
   - component: {fileID: 174354286356074692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11112,6 +11127,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &8617358393164430997
 GameObject:
@@ -11123,7 +11139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3128063025329633798}
   - component: {fileID: 6672250915484793483}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PhoneViewfinder_VCam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -11207,7 +11223,7 @@ GameObject:
   - component: {fileID: 4114104976960150167}
   - component: {fileID: 3932694759745667286}
   - component: {fileID: 5524772950425051226}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PicTitle_Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11341,7 +11357,7 @@ GameObject:
   - component: {fileID: 1779822582665839253}
   - component: {fileID: 925729789372572944}
   - component: {fileID: 3757974680054841012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PhoneNavi_BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11418,7 +11434,7 @@ GameObject:
   - component: {fileID: 7954535285273771951}
   - component: {fileID: 130817953980927205}
   - component: {fileID: 2490604121724109946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GalleryHoleOfficial13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11555,6 +11571,7 @@ MonoBehaviour:
   selectedColor: {r: 0.3339056, g: 0.6536621, b: 0.9622642, a: 1}
   targetBehaviour: {fileID: 4972692735404688150}
   optionsMenu: {fileID: 7003483924754138090}
+  picTitle_txt: {fileID: 5524772950425051226}
   optionType: 1
 --- !u!1 &8997945694189349142
 GameObject:
@@ -11569,7 +11586,7 @@ GameObject:
   - component: {fileID: 8749715160997255270}
   - component: {fileID: 6874699560066198532}
   - component: {fileID: 8027254997856102401}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gallery
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11706,7 +11723,7 @@ GameObject:
   - component: {fileID: 882197761410970119}
   - component: {fileID: 3767564253115639633}
   - component: {fileID: 8266633362720974052}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SettingsList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11915,6 +11932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Phone Screen Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2d4e99277886c5b44a2bf059c22858dd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1868943564088446172, guid: 2d4e99277886c5b44a2bf059c22858dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0043556336
@@ -11950,6 +11971,10 @@ PrefabInstance:
     - target: {fileID: 1868943564088446172, guid: 2d4e99277886c5b44a2bf059c22858dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615550401445699708, guid: 2d4e99277886c5b44a2bf059c22858dd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8681500031093347623, guid: 2d4e99277886c5b44a2bf059c22858dd, type: 3}
       propertyPath: m_Materials.Array.data[0]

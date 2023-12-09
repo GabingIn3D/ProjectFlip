@@ -15,7 +15,15 @@ public class PhotoStickyButton : MonoBehaviour
     public OptionsContextMenu optionsMenu;
     public PhotoInfo containedPhotoInfo;
 
+
+
+    [Header("Highlighted Photo")]
+    public TextMeshProUGUI picTitle_txt;
     private FlipPhoneManager flipPhone;
+    // Define three different colors
+    Color nothingSelected = new Color(0.75f, 0.75f, 0.75f, 1f);      // Grey
+    Color importantColour = new Color(1f, 0.45f, 0f, 1f);    // Red/Orange
+    Color uncategorizedColour = new Color(1f, 1f, 1f, 1f);     // White
 
     private ColorBlock colors;
 
@@ -30,6 +38,7 @@ public class PhotoStickyButton : MonoBehaviour
 
     public void Awake()
     {
+        picTitle_txt.text = "Select a photo";
         flipPhone = FindObjectOfType<FlipPhoneManager>();
         btn = gameObject.GetComponent<Button>();
         colors = btn.colors;
@@ -41,6 +50,8 @@ public class PhotoStickyButton : MonoBehaviour
         selected = !selected;
         if (alreadySelected)
         {
+            picTitle_txt.color = nothingSelected;
+            picTitle_txt.text = "Select a photo";
             // makes all buttons selectable again after clicking the already-selected button
             if(targetBehaviour != null)
             {
@@ -60,6 +71,29 @@ public class PhotoStickyButton : MonoBehaviour
 
         if (selected)
         {
+            Debug.Log("Name: " + containedPhotoInfo.photoName + ", Location: " + containedPhotoInfo.gameLocation + ", Items: " + containedPhotoInfo.photoItems);
+            if(containedPhotoInfo.photoItems.Length != 0)
+            {
+                //Make the text the "important colour"
+                picTitle_txt.color = importantColour;
+                //if there is an item in the photo, change the 'Highlighted Photo' text to the name of Item(s) contained in it
+                picTitle_txt.text = containedPhotoInfo.photoItems[0].ToString();
+                if (containedPhotoInfo.photoItems.Length > 1)
+                {
+                    picTitle_txt.text = containedPhotoInfo.photoItems[1].ToString() + ", " + containedPhotoInfo.photoItems[0].ToString();
+                }
+                if (containedPhotoInfo.photoItems.Length >= 2)
+                {
+                    picTitle_txt.text = containedPhotoInfo.photoItems[2].ToString() + ", " + containedPhotoInfo.photoItems[1].ToString() + ", More...";
+                }
+            }
+            else
+            {
+                //make the text a different colour to distinguish that it's an unimportant photo
+                picTitle_txt.color = uncategorizedColour;
+                //if there are no items in the photo, change the 'Highlighted Photo' text to the name of the location it was taken in
+                picTitle_txt.text = containedPhotoInfo.gameLocation.ToString();
+            }
             //var colors = btn.colors;
             colors.normalColor = selectedColor;
             colors.selectedColor = selectedColor;
