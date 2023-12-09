@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ToggleObjectButton : MonoBehaviour
+public class ShowDebug : MonoBehaviour
 {
     public GameObject objectToToggle;
 

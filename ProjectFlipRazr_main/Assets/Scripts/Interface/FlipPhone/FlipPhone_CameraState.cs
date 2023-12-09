@@ -50,7 +50,7 @@ public class FlipPhone_CameraState : FlipPhone_BaseState
         // R Button: "Back"
 
         //UnfreezeMovement
-        GameObject.FindAnyObjectByType<ControllerManager>().UnFreezeMovement();
+        GameObject.FindAnyObjectByType<PhoneSwitcher>().UnFreezeMovement();
     }
 
     public override void UpdateState(FlipPhoneManager flipPhone)
@@ -60,7 +60,7 @@ public class FlipPhone_CameraState : FlipPhone_BaseState
 
     public override void ExitState(FlipPhoneManager flipPhone)
     {
-        GameObject.FindAnyObjectByType<ControllerManager>().FreezeMovement();
+        GameObject.FindAnyObjectByType<PhoneSwitcher>().FreezeMovement();
         flipPhone.cameraOpen = false;
     }
 }

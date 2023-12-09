@@ -22,8 +22,10 @@ public class CaptureScreen2 : MonoBehaviour
 
     private string newID;
 
+    private LayerMask rayIgnore = (1 << 13);
+
     //public PopulateGallery populateGallery;
-    public ControllerManager controllerManager;
+    public PhoneSwitcher phoneSwitcher;
 
     //Changes the angle of where the photo item needs to be to be accepted as an item
     public float photoItemAngleCheckX = 20;
@@ -42,7 +44,7 @@ public class CaptureScreen2 : MonoBehaviour
 
     public void Capture()
     {
-        if (controllerManager.isFirstPersonMode == true && flipPhoneManager.cameraOpen == true)
+        if (phoneSwitcher.isFirstPersonMode == true && flipPhoneManager.cameraOpen == true)
         {
             CheckItemsInPhoto();
             StartCoroutine(AsyncCapture());
@@ -163,7 +165,7 @@ public class CaptureScreen2 : MonoBehaviour
                         Debug.Log("X is clear");
 
                         Ray ray = new Ray(transform.position, (item.transform.position - transform.position).normalized);
-                        if (Physics.Raycast(ray, out RaycastHit hit))
+                        if (Physics.Raycast(ray, out RaycastHit hit, ~rayIgnore))
                         {
                             if (hit.collider.gameObject == item.gameObject)
                             {

@@ -14,12 +14,12 @@ TagManager:
   - UI
   - PhoneScreen
   - Ground
-  - Second
+  - OnlyVisibleOnCamera
   - CameraRange
   - PhotoItem
   - PhotoRealmArea
   - PhotoAreaFinder
-  - 
+  - NotVisibleOnCamera
   - 
   - 
   - 
