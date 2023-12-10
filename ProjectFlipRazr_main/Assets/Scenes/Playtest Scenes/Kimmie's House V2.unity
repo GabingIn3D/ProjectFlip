@@ -43837,7 +43837,7 @@ GameObject:
   - component: {fileID: 6925339154163355329}
   - component: {fileID: 4371419977227569468}
   - component: {fileID: 8324264175972513407}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 03_UpperFloor_Region
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43918,7 +43918,7 @@ GameObject:
   - component: {fileID: 1484687726810149771}
   - component: {fileID: 8531336863401687409}
   - component: {fileID: 6317699731029660121}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 04_LowerFloor_Region (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43984,7 +43984,7 @@ GameObject:
   - component: {fileID: 2166482341544675019}
   - component: {fileID: 3576721656842405651}
   - component: {fileID: 2687067862128349349}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 05_NearFrontDoor_Region
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44131,7 +44131,7 @@ GameObject:
   - component: {fileID: 5844039099248954984}
   - component: {fileID: 83007257987677072}
   - component: {fileID: 8847273828346195120}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 06_Lounge_Region (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44450,7 +44450,7 @@ GameObject:
   - component: {fileID: 70339625926934843}
   - component: {fileID: 7396438392863754750}
   - component: {fileID: 4198853566184171226}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 02_Bedroom_Region (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44796,7 +44796,7 @@ GameObject:
   - component: {fileID: 3072696620729751211}
   - component: {fileID: 5425975554768418854}
   - component: {fileID: 6944742467340753521}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 02_Bedroom_Region
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44980,7 +44980,7 @@ GameObject:
   - component: {fileID: 8070322371900199822}
   - component: {fileID: 2112483132522410506}
   - component: {fileID: 6042917462635313950}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 03_UpperFloor_Region (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45471,7 +45471,7 @@ GameObject:
   - component: {fileID: 1209846141965454309}
   - component: {fileID: 4480623136220409374}
   - component: {fileID: 3735049779279949602}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 01_Bedroom_Region
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45596,7 +45596,7 @@ GameObject:
   - component: {fileID: 4142569155680095964}
   - component: {fileID: 4808917847721870020}
   - component: {fileID: 2620844629722725781}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 04_LowerFloor_Region (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45910,7 +45910,7 @@ GameObject:
   - component: {fileID: 1574545364988024253}
   - component: {fileID: 5052526550925164353}
   - component: {fileID: 50194952708259135}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 06_Lounge_Region
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45930,7 +45930,7 @@ GameObject:
   - component: {fileID: 3823495785410140237}
   - component: {fileID: 1651580777528098308}
   - component: {fileID: 363362700787269069}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 03_UpperFloor_Region (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45967,7 +45967,7 @@ GameObject:
   - component: {fileID: 1348870504663357630}
   - component: {fileID: 7150448410672099278}
   - component: {fileID: 4136860424686774522}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 04_LowerFloor_Region
   m_TagString: Untagged
   m_Icon: {fileID: 0}

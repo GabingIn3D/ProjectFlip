@@ -165,8 +165,9 @@ public class CaptureScreen2 : MonoBehaviour
                         Debug.Log("X is clear");
 
                         Ray ray = new Ray(transform.position, (item.transform.position - transform.position).normalized);
-                        if (Physics.Raycast(ray, out RaycastHit hit, ~rayIgnore))
+                        if (Physics.Raycast(ray, out RaycastHit hit, 10f, ~(rayIgnore), QueryTriggerInteraction.Collide))
                         {
+                            Debug.Log(hit.collider.name);
                             if (hit.collider.gameObject == item.gameObject)
                             {
                                 if (item.GetComponent<PhotoItem>() != null)

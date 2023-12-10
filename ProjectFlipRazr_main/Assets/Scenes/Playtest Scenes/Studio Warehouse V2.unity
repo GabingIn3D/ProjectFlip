@@ -14071,6 +14071,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 493001900305797945, guid: 3936d1269493a4e44bedc670743c44c1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 516596434097334057, guid: 3936d1269493a4e44bedc670743c44c1, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -21637,7 +21641,7 @@ GameObject:
   - component: {fileID: 634696526}
   - component: {fileID: 634696525}
   - component: {fileID: 634696524}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 03_Stage1_Region (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21666,7 +21670,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634696522}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -25513,7 +25517,7 @@ GameObject:
   - component: {fileID: 796371890}
   - component: {fileID: 796371892}
   - component: {fileID: 796371891}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33164,7 +33168,7 @@ GameObject:
   - component: {fileID: 897385169}
   - component: {fileID: 897385168}
   - component: {fileID: 897385167}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 06_Stage2_Region (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33193,7 +33197,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897385165}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -33621,7 +33625,7 @@ GameObject:
   - component: {fileID: 916267611}
   - component: {fileID: 916267610}
   - component: {fileID: 916267609}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 04_Stage1_Region (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33650,7 +33654,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916267607}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -34939,7 +34943,7 @@ GameObject:
   - component: {fileID: 966394914}
   - component: {fileID: 966394913}
   - component: {fileID: 966394912}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 02_Stage1_Region
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34968,7 +34972,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966394910}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -39165,6 +39169,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7373296452259343784, guid: 604d286c01bf09d4ab0fa2b535d81db0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7419230521950445371, guid: 604d286c01bf09d4ab0fa2b535d81db0, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -40114,7 +40122,7 @@ GameObject:
   - component: {fileID: 1011311424}
   - component: {fileID: 1011311423}
   - component: {fileID: 1011311422}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 08_Office_Region
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40143,7 +40151,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011311420}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -44979,7 +44987,7 @@ GameObject:
   - component: {fileID: 1155818980}
   - component: {fileID: 1155818979}
   - component: {fileID: 1155818978}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 06_Stage2_Region (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45008,7 +45016,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155818976}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -50748,7 +50756,7 @@ GameObject:
   - component: {fileID: 1357646183}
   - component: {fileID: 1357646182}
   - component: {fileID: 1357646181}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 06_Stage2_Region (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50777,7 +50785,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357646179}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -67365,7 +67373,7 @@ GameObject:
   - component: {fileID: 1812204484}
   - component: {fileID: 1812204483}
   - component: {fileID: 1812204482}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 07_Stage2_Region (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67394,7 +67402,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812204480}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -70640,7 +70648,7 @@ GameObject:
   - component: {fileID: 1927803040}
   - component: {fileID: 1927803039}
   - component: {fileID: 1927803038}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 05_Stage2_Region
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70669,7 +70677,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927803036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -76443,7 +76451,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7251196521629970920}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -76726,7 +76734,7 @@ GameObject:
   - component: {fileID: 2023508415252663531}
   - component: {fileID: 3670593717951801616}
   - component: {fileID: 4542796620034320428}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: 01_Hallway_Region
   m_TagString: Untagged
   m_Icon: {fileID: 0}
