@@ -13,6 +13,7 @@ public class OptionButtonBehaviour : MonoBehaviour
     private GameObject ListBehaviourSelected;
     private PhotoInfo selectedPhotoInfo;
     public PhotoInfoDatabase photoInfoDatabase;
+    public FlipPhoneManager flipPhone;
 
     //Possible buttons
     public enum buttonFunction
@@ -55,7 +56,7 @@ public class OptionButtonBehaviour : MonoBehaviour
     public void OnEnable()
     {
         contextMenu = FindObjectOfType<OptionsContextMenu>();
-
+        flipPhone = FindObjectOfType<FlipPhoneManager>();
         displayedText = GetComponentInChildren<TextMeshProUGUI>();
  
         SetText();
@@ -96,6 +97,8 @@ public class OptionButtonBehaviour : MonoBehaviour
                 {
                     Debug.Log(selectedPhotoInfo.photoItems[i]);
                 }
+                flipPhone.ChangeStates("FlipPhone_PhotoIndividualState", flipPhone);
+                
                 //Insert FlipPhoneStateManager reference, change phone state to FlipPhone_PhotoIndividualState
                 //      show selected gallery image but bigger + with metadata displayed in text for the player to read
                 break;

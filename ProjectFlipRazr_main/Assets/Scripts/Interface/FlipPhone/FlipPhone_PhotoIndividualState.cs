@@ -42,7 +42,7 @@ public class FlipPhone_PhotoIndividualState : FlipPhone_BaseState
         flipPhone.GetObject(pageBelongingToState).SetActive(true);
 
         flipPhone.NavigationButton_L(PhoneNavi.whichNaviButton.Options);
-        flipPhone.NavigationButton_R(PhoneNavi.whichNaviButton.MainMenu);
+        flipPhone.NavigationButton_R(PhoneNavi.whichNaviButton.Back);
         // L Button: "Options"
         // R Button: "Back"
     }

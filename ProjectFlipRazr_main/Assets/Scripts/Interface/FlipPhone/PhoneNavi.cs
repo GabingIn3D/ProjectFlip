@@ -109,8 +109,11 @@ public class PhoneNavi : MonoBehaviour
                 Debug.Log("previous state recorded is " + flipPhone.currentState);
                 if (flipPhoneState == flipPhone.mainMenuState)
                 {
-                    //if(flipPhoneState == flipPhone.photoIndividualState) { flipPhone.SwitchState(flipPhone.galleryState);
                     flipPhone.SwitchState(flipPhone.homeScreenState);
+                }
+                if (flipPhoneState == flipPhone.photoIndividualState)
+                {
+                    flipPhone.SwitchState(flipPhone.galleryState);
                 }
                 else
                 {
