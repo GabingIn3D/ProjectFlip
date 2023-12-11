@@ -35,6 +35,12 @@ public class CaptureScreen2 : MonoBehaviour
     public List<GameObject> photoItemsInRange;
     public List<PhotoInfo.PhotoItem> photoItemsToRecord;
 
+    [Header("Gizmos")]
+    public float lineLength;
+
+    [Header("Booleans")]
+    public bool requirePuzzleManager;
+
     void Awake()
     {
         instance = this;
@@ -123,8 +129,10 @@ public class CaptureScreen2 : MonoBehaviour
         photoInfo.fileLocation = Application.dataPath.ToString() + filePath.ToString();
 
         //Record gameLocation
-        if (SceneManager.GetActiveScene().name == "Kimmie's House") { photoInfo.gameLocation = PhotoInfo.Location.KimmieHouse; }
-        else if (SceneManager.GetActiveScene().name == "Studio Warehouse") { photoInfo.gameLocation = PhotoInfo.Location.StudioStage56; }
+        if (SceneManager.GetActiveScene().name == "Kimmie's House") { photoInfo.gameLocation = PhotoInfo.Location.KimmiesHouse; }
+        else if (SceneManager.GetActiveScene().name == "Kimmie's House V2") { photoInfo.gameLocation = PhotoInfo.Location.KimmiesHouse; }
+        else if (SceneManager.GetActiveScene().name == "Studio Warehouse ") { photoInfo.gameLocation = PhotoInfo.Location.StudioStage56; }
+        else if (SceneManager.GetActiveScene().name == "Studio Warehouse V2") { photoInfo.gameLocation = PhotoInfo.Location.StudioStage56; }
         else if (SceneManager.GetActiveScene().name == "Villas") { photoInfo.gameLocation = PhotoInfo.Location.Villas; }
         else { photoInfo.gameLocation = PhotoInfo.Location.Unknown; }
 
@@ -147,6 +155,34 @@ public class CaptureScreen2 : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         photoItemsInRange.Remove(other.gameObject);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (directionReference == null)
+        {
+            Debug.LogError("Direction Reference not assigned. Please assign it in the inspector.");
+            return;
+        }
+
+        Gizmos.color = Color.red;
+
+        // Visualize rotation around the local X-axis
+        DrawAngleLine(Vector3.right, photoItemAngleCheckX);
+
+        Gizmos.color = Color.green;
+
+        // Visualize rotation around the local Y-axis
+        DrawAngleLine(Vector3.up, photoItemAngleCheckY);
+    }
+
+    private void DrawAngleLine(Vector3 axis, float angle)
+    {
+        Vector3 startPoint = directionReference.position;
+        Quaternion rotation = Quaternion.AngleAxis(angle, axis);
+        Vector3 endPoint = directionReference.position + rotation * directionReference.forward;
+
+        Gizmos.DrawLine(startPoint, endPoint);
     }
 
     public void CheckItemsInPhoto()
@@ -173,7 +209,10 @@ public class CaptureScreen2 : MonoBehaviour
                                 if (item.GetComponent<PhotoItem>() != null)
                                 {
                                     photoItemsToRecord.Add(item.GetComponent<PhotoItem>().photoItem);
-                                    FindAnyObjectByType<PuzzleManager>().CheckPhotoItemProgression(item.GetComponent<PhotoItem>().photoItem);
+                                    if(requirePuzzleManager)
+                                    {
+                                        FindAnyObjectByType<PuzzleManager>().CheckPhotoItemProgression(item.GetComponent<PhotoItem>().photoItem);
+                                    }
                                     Debug.Log("PhotoItem Accepted");
                                 }
                             }

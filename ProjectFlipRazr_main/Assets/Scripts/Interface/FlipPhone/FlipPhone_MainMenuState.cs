@@ -9,6 +9,7 @@ public class FlipPhone_MainMenuState : FlipPhone_BaseState
 
     public override void EnterState(FlipPhoneManager flipPhone)
     {
+        Debug.Log("----------You are in Main Menu/App Menu State: " + pageBelongingToState + " is active.");
         //Sets every phone page except THIS one to inactive
         IEnumerable<GameObject> objectsExceptOne = flipPhone.GetObjectsExceptOne(pageBelongingToState);
         foreach (GameObject obj in objectsExceptOne)
@@ -56,23 +57,6 @@ public class FlipPhone_MainMenuState : FlipPhone_BaseState
 
     public override void ExitState(FlipPhoneManager flipPhone)
     {
-        /*
-        if (flipPhone.options != null)
-        {
-            var contextMenu = flipPhone.options.GetComponentInChildren<OptionsContextMenu>();
-            if (contextMenu != null)
-            {
-                contextMenu.currentButtonType = ButtonType.Nothing;
-            }
-            else
-            {
-                Debug.LogError("OptionsContextMenu component not found on flipPhone.options");
-            }
-        }
-        else
-        {
-            Debug.LogError("flipPhone.options is null");
-        }
-        */
+
     }
 }

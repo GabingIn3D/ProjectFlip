@@ -43,6 +43,8 @@ public class FlipPhoneManager : MonoBehaviour
     public FlipPhone_SocialMediaState socialMediaState = new FlipPhone_SocialMediaState();
     public FlipPhone_SettingsState settingsState = new FlipPhone_SettingsState();
 
+    [Header("App Page Objects")]
+    public GameObject appMenu;
     void Start()
     {
         // Add UI GameObjects to phone pages dictionary

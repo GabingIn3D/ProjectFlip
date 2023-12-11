@@ -148,6 +148,7 @@ public class PopulateGallery : MonoBehaviour
                 if (photoStickyButton != null)
                 {
                     photoStickyButton.containedPhotoInfo = photoDatabase.photos[i];
+                    photoStickyButton.MakeInteractable();
                 }
                 else
                 {

@@ -17,12 +17,13 @@ public class GalleryPageInstantiator : MonoBehaviour
 
     public void OnEnable()
     {
-        Invoke("InstantiatePrefab", 0.5f);
+        Invoke("InstantiatePrefab", 0.1f);
         Debug.Log("Invoking");
     }
 
     public void OnDisable()
     {
+        Debug.Log("GalleryPageInstantiator: Destroying image grid");
         DestroyAllChildren();
     }
 

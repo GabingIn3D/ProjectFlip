@@ -97,7 +97,7 @@ public class OptionButtonBehaviour : MonoBehaviour
                 {
                     Debug.Log(selectedPhotoInfo.photoItems[i]);
                 }
-                flipPhone.ChangeStates("FlipPhone_PhotoIndividualState", flipPhone);
+                flipPhone.SwitchState(flipPhone.photoIndividualState);
                 
                 //Insert FlipPhoneStateManager reference, change phone state to FlipPhone_PhotoIndividualState
                 //      show selected gallery image but bigger + with metadata displayed in text for the player to read

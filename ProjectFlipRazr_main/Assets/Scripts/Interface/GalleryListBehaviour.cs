@@ -9,6 +9,8 @@ public class GalleryListBehaviour : MonoBehaviour
     public int listItemCount;
     public Dictionary<string, GameObject> ListTargetEntries = new Dictionary<string, GameObject>();
     public string currentlySelected;
+    public TextureHolder textureHolder;
+    public GameObject galleryPage;
 
     void OnEnable()
     {
@@ -43,8 +45,15 @@ public class GalleryListBehaviour : MonoBehaviour
         foreach (GameObject gameObject in ListTargetEntries.Values)
         {
             var gameObjectsButton = gameObject.GetComponent<Button>();
-            gameObjectsButton.interactable = true;
+            //gameObjectsButton.interactable = true;
         }
+        RefreshButtonsInAlbum();
+    }
+
+    public void RefreshButtonsInAlbum()
+    {
+        galleryPage.SetActive(false);
+        galleryPage.SetActive(true);
     }
 
     public void DeselectAll()

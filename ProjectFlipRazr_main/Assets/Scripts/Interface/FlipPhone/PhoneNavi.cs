@@ -107,16 +107,18 @@ public class PhoneNavi : MonoBehaviour
                 Debug.Log("you clicked on 'Back'");
                 flipPhoneState = flipPhone.currentState;
                 Debug.Log("previous state recorded is " + flipPhone.currentState);
-                if (flipPhoneState == flipPhone.mainMenuState)
+                if (flipPhone.appMenu.activeSelf)
                 {
                     flipPhone.SwitchState(flipPhone.homeScreenState);
+                    flipPhone.appMenu.SetActive(false);
                 }
-                if (flipPhoneState == flipPhone.photoIndividualState)
+                else if (flipPhoneState == flipPhone.photoIndividualState)
                 {
                     flipPhone.SwitchState(flipPhone.galleryState);
                 }
                 else
                 {
+                    Debug.Log(flipPhone.currentState + "; none of the conditional statements for the 'Back' button are true, returning to Main Menu");
                     flipPhone.SwitchState(flipPhone.mainMenuState);
                 }
 
