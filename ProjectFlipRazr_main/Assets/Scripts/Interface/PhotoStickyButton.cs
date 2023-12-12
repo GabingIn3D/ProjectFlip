@@ -17,8 +17,6 @@ public class PhotoStickyButton : MonoBehaviour
     public OptionsContextMenu optionsMenu;
     public PhotoInfo containedPhotoInfo;
 
-
-
     [Header("Highlighted Photo")]
     public TextMeshProUGUI picTitle_txt;
     private FlipPhoneManager flipPhone;
@@ -34,15 +32,6 @@ public class PhotoStickyButton : MonoBehaviour
     public TextMeshProUGUI time_Txt;
 
     private ColorBlock colors;
-
-    public enum whatTypeOfListTarget
-    {
-        Location,
-        Photo,
-        Settings,
-        SaveQuit
-    }
-    public whatTypeOfListTarget optionType;
 
     public void Awake()
     {
@@ -168,38 +157,8 @@ public class PhotoStickyButton : MonoBehaviour
                 Debug.Log("targetBehaviour is null");
             }
             alreadySelected = true;
-            switch (optionType)
-            {
-                case whatTypeOfListTarget.Location:
-                    optionsMenu.currentButtonType = OptionsContextMenu.ButtonType.Location;
 
-                    OptionScreenToggle();
-
-                    //feed location string from this button
-                    break;
-                case whatTypeOfListTarget.Photo:
-                    optionsMenu.currentButtonType = OptionsContextMenu.ButtonType.Photo;
-
-                    OptionScreenToggle();
-                    //OptionsContextMenu.cs - enable Photo choices
-                    //feed photo name string/identifier
-                    break;
-                case whatTypeOfListTarget.Settings:
-                    optionsMenu.currentButtonType = OptionsContextMenu.ButtonType.Settings;
-
-                    OptionScreenToggle();
-                    //if(correspondingSettingID != null)
-                    //  tell OptionsContextMenu.cs what setting ID this list item is supposed to be from GlobalPlaytestSettings.cs script
-                    //  in MasterSettings script define what options should appear/what they do for each setting ID
-                    break;
-                case whatTypeOfListTarget.SaveQuit:
-                    optionsMenu.currentButtonType = OptionsContextMenu.ButtonType.SaveQuit;
-
-                    OptionScreenToggle();
-                    //options menu enable SaveQuit choices
-                    //
-                    break;
-            }
+            optionsMenu.currentButtonType = OptionsContextMenu.ButtonType.Photo;
 
         }
         else

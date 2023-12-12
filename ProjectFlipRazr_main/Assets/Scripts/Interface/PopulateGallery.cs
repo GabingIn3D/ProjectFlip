@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class PopulateGallery : MonoBehaviour
 {
@@ -22,16 +23,18 @@ public class PopulateGallery : MonoBehaviour
     public string imagePath;
     public string snapshotSavePath;
 
-    public int currentPage = 1;
-    int maxSlots = 16;
+    private GameObject newestPhoto;
 
-    public GameObject nextPageButton;
-    public GameObject previousPageButton;
+    //public int currentPage = 1;
+    //int maxSlots = 16;
 
-    public TextMeshProUGUI pageNumber;
+    //public GameObject nextPageButton;
+    //public GameObject previousPageButton;
 
-    bool nextPageActive;
-    bool previousPageActive;
+    //public TextMeshProUGUI pageNumber;
+
+    //bool nextPageActive;
+    //bool previousPageActive;
 
 
 
@@ -52,30 +55,30 @@ public class PopulateGallery : MonoBehaviour
 
             case WhichPath.Build:
 
-                int slotNumber = 0;
+                //int slotNumber = 0;
 
-                pageNumber.text = ("Page" + (currentPage.ToString()));
+                //pageNumber.text = ("Page" + (currentPage.ToString()));
 
-                // Calculate the slot number
-                for (int i = 0; i <= (maxSlots) * currentPage; i++)
-                {
-                    slotNumber = i - maxSlots;
-                }
+                //// Calculate the slot number
+                //for (int i = 0; i <= (maxSlots) * currentPage; i++)
+                //{
+                //    slotNumber = i - maxSlots;
+                //}
 
-                int amountOfSlots = slotNumber;
+                //int amountOfSlots = slotNumber;
 
-                for (int i = slotNumber; i < textureHolder.textures.Length; i++)
-                {
-                    amountOfSlots += 1;
+                //for (int i = slotNumber; i < textureHolder.textures.Length; i++)
+                //{
+                //    amountOfSlots += 1;
 
-                    if (amountOfSlots > (maxSlots * currentPage))
-                    {
-                        // Perhaps check the count of textureHolder.textures[] to ensure that this nextPageButton should exist, so that at least one texture would appear on the next page.
-                        nextPageButton.SetActive(true);
-                        nextPageActive = true;
-                        break;
-                    }
-                }
+                //    if (amountOfSlots > (maxSlots * currentPage))
+                //    {
+                //        // Perhaps check the count of textureHolder.textures[] to ensure that this nextPageButton should exist, so that at least one texture would appear on the next page.
+                //        nextPageButton.SetActive(true);
+                //        nextPageActive = true;
+                //        break;
+                //    }
+                //}
 
                 break;
         }
@@ -86,48 +89,51 @@ public class PopulateGallery : MonoBehaviour
     // Since at the moment I cannot click on buttons, I added these as temporary ways to change pages.
     private void Update()
     {
-        if (nextPageActive)
-        {
-            if (Input.GetKey(KeyCode.RightArrow)) NextPage();
-        }
-        
-        if (previousPageActive)
-        {
-            if (Input.GetKey(KeyCode.LeftArrow)) PreviousPage();
-        }
+        //if (nextPageActive)
+        //{
+        //    if (Input.GetKey(KeyCode.RightArrow)) NextPage();
+        //}
+
+        //if (previousPageActive)
+        //{
+        //    if (Input.GetKey(KeyCode.LeftArrow)) PreviousPage();
+        //}
     }
 
-    public void NextPage()
-    {
-        currentPage += 1;
-        ShowImagesInAlbum();
-    }
+    //public void NextPage()
+    //{
+    //    currentPage += 1;
+    //    ShowImagesInAlbum();
+    //}
 
-    public void PreviousPage()
-    {
-        currentPage -= 1;
-        ShowImagesInAlbum();
-    }
+    //public void PreviousPage()
+    //{
+    //    currentPage -= 1;
+    //    ShowImagesInAlbum();
+    //}
 
     public void ShowImagesInAlbum()
     {
-        Debug.Log("MaxSlots is " + maxSlots + ", ");
-        pageNumber.text = ("Page" + (currentPage.ToString()));
+        //Debug.Log("MaxSlots is " + maxSlots + ", ");
+        //pageNumber.text = ("Page" + (currentPage.ToString()));
 
-        // Destroy all from current grid before re-showing only the necessary ones, to simulate a new page.
-        for (var i = gridParent.childCount - 1; i >= 0; i--)
-        {
-            Object.Destroy(gridParent.GetChild(i).gameObject);
-        }
+        //// Destroy all from current grid before re-showing only the necessary ones, to simulate a new page.
+        //for (var i = gridParent.childCount - 1; i >= 0; i--)
+        //{
+        //    Object.Destroy(gridParent.GetChild(i).gameObject);
+        //}
 
         if (whichPath == WhichPath.Editor)
             textureHolder.textures = Resources.LoadAll<Texture2D>(resourcePath);
         // else textureHolder.textures = new Texture2D[photoDatabase.photoMemoryCount];
+        //int endIdx = Mathf.Min(currentPage * maxSlots, textureHolder.textures.Length);
 
-        int startIdx = (currentPage - 1) * maxSlots;
-        int endIdx = Mathf.Min(currentPage * maxSlots, textureHolder.textures.Length);
 
-        for (int i = startIdx; i < endIdx; i++)
+        int startIdx = 0; // this is the first photo in the list of textures from 'textureHolder'.
+        int endIdx = textureHolder.textures.Length - 1; // This is total number of photos taken
+
+        for (int i = endIdx; i >= startIdx; i--)
+        
         {
             Sprite sprite = Sprite.Create(textureHolder.textures[i], new Rect(0, 0, textureHolder.textures[i].width, textureHolder.textures[i].height), Vector2.one * 0.5f);
 
@@ -136,53 +142,77 @@ public class PopulateGallery : MonoBehaviour
             Image image = imageObject.GetComponent<Image>();
             image.sprite = sprite;
 
-            // Assuming the GameObjects are named "GalleryHoleOfficial1" to "GalleryHoleOfficial16"
-            string gameObjectName = $"GalleryHoleOfficial{i + 1}";
-
-            // Assuming ListTargetEntries is a Dictionary<string, GameObject>
-            if (galleryListBehaviour.ListTargetEntries.TryGetValue(gameObjectName, out GameObject gameObject))
+            if(i == endIdx)
             {
-                // Get the PhotoStickyButton component from the GameObject
-                PhotoStickyButton photoStickyButton = gameObject.GetComponent<PhotoStickyButton>();
+                newestPhoto = imageObject;
+                Debug.Log("PopulateGallery.cs: " + i + ": NewestPhoto is " + photoDatabase.photos[i].photoName + "/" + imageObject.name);
+            }
+            ///WE NEED TO REMAKE THE BUTTON SYSTEM RN
 
-                if (photoStickyButton != null)
-                {
-                    photoStickyButton.containedPhotoInfo = photoDatabase.photos[i];
-                    photoStickyButton.MakeInteractable();
-                }
-                else
-                {
-                    Debug.LogError($"Could not find PhotoStickyButton component on {gameObjectName}.");
-                }
-            }
-            else
-            {
-                Debug.LogError($"Could not find {gameObjectName} in ListTargetEntries.");
-            }
+
+            //PhotoStickyButton photoStickyButton = imageObject.AddComponent<PhotoStickyButton>();
+
+            //photoStickyButton.containedPhotoInfo = photoDatabase.photos[i];
+
+            //    // Assuming the GameObjects are named "GalleryHoleOfficial1" to "GalleryHoleOfficial16"
+            //    string gameObjectName = $"GalleryHoleOfficial{i + 1}";
+
+            //    // Assuming ListTargetEntries is a Dictionary<string, GameObject>
+            //    if (galleryListBehaviour.ListTargetEntries.TryGetValue(gameObjectName, out GameObject gameObject))
+            //    {
+            //        // Get the PhotoStickyButton component from the GameObject
+            //        PhotoStickyButton photoStickyButton = gameObject.GetComponent<PhotoStickyButton>();
+
+            //        if (photoStickyButton != null)
+            //        {
+            //            photoStickyButton.containedPhotoInfo = photoDatabase.photos[i];
+            //            photoStickyButton.MakeInteractable();
+            //        }
+            //        else
+            //        {
+            //            Debug.LogError($"Could not find PhotoStickyButton component on {gameObjectName}.");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Debug.LogError($"Could not find {gameObjectName} in ListTargetEntries.");
+            //    }
+            //}
+
+
+            //for (int i = startIdx; i < endIdx; i++)
+            //{
+            //    Sprite sprite = Sprite.Create(textureHolder.textures[i], new Rect(0, 0, textureHolder.textures[i].width, textureHolder.textures[i].height), Vector2.one * 0.5f);
+
+            //    // Create UI Image object and add it to the grid
+            //    GameObject imageObject = Instantiate(imagePrefab, gridParent);
+            //    Image image = imageObject.GetComponent<Image>();
+            //    image.sprite = sprite;
+
+            //    // the new thing
+            //   galleryListBehaviour.ListTargetEntries
+            //        //take photoinfodatabase.photos[i] 
+            //        //ListTargetEntries: get component PhotoStickyButton and PhotoStickyButton.containedPhotoInfo
+            //        //photoStickyButton.containedPhotoInfo = photoInfoDatabase.photos[i];
+            //        //
+            //}
+
+            //previousPageActive = currentPage > 1;
+            //nextPageActive = endIdx < textureHolder.textures.Length; // Check if there are more images
+            //nextPageButton.SetActive(nextPageActive);
+            //previousPageButton.SetActive(previousPageActive);
         }
 
+        //ASSIGN THE FIRST SELECTABLE PHOTO TO THE EVENT SYSTE
+        if(newestPhoto != null)
+        {
+            EventSystem.current.SetSelectedGameObject(newestPhoto);
+            Debug.Log(newestPhoto.gameObject.name + " is becoming the first selectable through the " + EventSystem.current);
+        }
+        //TODO: 
+        //You are to make a new version of 'PhotoStickyButton.cs' but it doesn't need to be sticky, it just needs to open the Options Context Menu and bring the focus over there.
+        //The back button should ideally close the OptionsContextMenu and then have the photo in the gallery that was selected... still selected. If that's too hard, try to make it
+        //so at the very least the gallery reloads.
 
-        //for (int i = startIdx; i < endIdx; i++)
-        //{
-        //    Sprite sprite = Sprite.Create(textureHolder.textures[i], new Rect(0, 0, textureHolder.textures[i].width, textureHolder.textures[i].height), Vector2.one * 0.5f);
-
-        //    // Create UI Image object and add it to the grid
-        //    GameObject imageObject = Instantiate(imagePrefab, gridParent);
-        //    Image image = imageObject.GetComponent<Image>();
-        //    image.sprite = sprite;
-
-        //    // the new thing
-        //   galleryListBehaviour.ListTargetEntries
-        //        //take photoinfodatabase.photos[i] 
-        //        //ListTargetEntries: get component PhotoStickyButton and PhotoStickyButton.containedPhotoInfo
-        //        //photoStickyButton.containedPhotoInfo = photoInfoDatabase.photos[i];
-        //        //
-        //}
-
-        previousPageActive = currentPage > 1;
-        nextPageActive = endIdx < textureHolder.textures.Length; // Check if there are more images
-        nextPageButton.SetActive(nextPageActive);
-        previousPageButton.SetActive(previousPageActive);
     }
-
 }

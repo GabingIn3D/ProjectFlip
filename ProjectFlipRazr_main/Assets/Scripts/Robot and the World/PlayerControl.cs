@@ -109,12 +109,12 @@ public class PlayerControl : MonoBehaviour
 
     private void OnEnable()
     {
-
+        moveAction.Enable();
     }
 
     private void OnDisable()
     {
-
+        moveAction.Disable();
     }
 
 

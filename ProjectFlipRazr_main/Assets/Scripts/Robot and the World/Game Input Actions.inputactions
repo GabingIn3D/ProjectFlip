@@ -15,9 +15,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "AimButton",
+                    "name": "PhoneToggle",
                     "type": "Button",
                     "id": "8afd9e96-e800-4de6-84ca-ae0f2fad4afb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "a2685911-8f9e-4b93-9a1e-d92522ae067c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -31,15 +40,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Fire",
-                    "type": "Button",
-                    "id": "a2685911-8f9e-4b93-9a1e-d92522ae067c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 },
                 {
                     "name": "Pickup",
@@ -63,6 +63,15 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "812babea-1857-43cc-b145-fd8bebe92190",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PauseToggle",
+                    "type": "Button",
+                    "id": "39612dba-ddd8-42a1-b550-c0e13301edda",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -143,7 +152,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KBM",
-                    "action": "AimButton",
+                    "action": "PhoneToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -154,29 +163,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
-                    "action": "AimButton",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d87c92fa-4e07-4f16-9c21-b271ab5ccd9f",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "StickDeadzone",
-                    "groups": "Controller",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "49c73bdf-ae58-4c1b-9f46-7356cbb1c6a6",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Aim",
+                    "action": "PhoneToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -187,17 +174,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b535976c-b9ff-4b02-b456-8a3941117b1c",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -281,17 +257,6 @@
                 },
                 {
                     "name": "",
-                    "id": "2f18d802-4897-4ef3-aa8d-017836b3a160",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KBM",
-                    "action": "Cancel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "cc84fa28-c44e-416f-ba18-ee9f284c7a8e",
                     "path": "<Keyboard>/backspace",
                     "interactions": "",
@@ -320,6 +285,61 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d87c92fa-4e07-4f16-9c21-b271ab5ccd9f",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "Controller",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "49c73bdf-ae58-4c1b-9f46-7356cbb1c6a6",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5fbf1aad-101b-4edc-b84f-e52600575b59",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "Confirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3cd70d9b-ed4b-4099-915c-162637781049",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "PauseToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f18d802-4897-4ef3-aa8d-017836b3a160",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KBM",
+                    "action": "PauseToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
