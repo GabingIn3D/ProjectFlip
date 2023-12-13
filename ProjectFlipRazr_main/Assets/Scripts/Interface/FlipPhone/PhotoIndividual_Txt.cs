@@ -65,8 +65,8 @@ public class PhotoIndividual_Txt : MonoBehaviour
                     {
                         string itemString = containedPhotoInfo.GetPhotoItemString(item);
                         itemStrings.Add(itemString);
-                    }
 
+                    }
                     // Combine the item strings with commas
                     string concatenatedItems = string.Join(", ", itemStrings);
 

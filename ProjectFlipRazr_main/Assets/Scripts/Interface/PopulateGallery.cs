@@ -17,6 +17,7 @@ public class PopulateGallery : MonoBehaviour
     public string persistentResourcePath; // Folder containing PNGs (in build version)
     public GameObject imagePrefab; // Prefab for displaying sprites
     public TextureHolder textureHolder;
+    public PhotoInfo containedPhotoInfo;
     public PhotoInfoDatabase photoDatabase;
     public GalleryListBehaviour galleryListBehaviour;
     public WhichPath whichPath;
@@ -147,6 +148,29 @@ public class PopulateGallery : MonoBehaviour
                 newestPhoto = imageObject;
                 Debug.Log("PopulateGallery.cs: " + i + ": NewestPhoto is " + photoDatabase.photos[i].photoName + "/" + imageObject.name);
             }
+
+            imagePrefab.GetComponent<PhotoInfoContainer>().photoName = photoDatabase.photos[i].photoName;
+            
+            // Create a list to store the item strings
+            List<string> itemStrings = new List<string>();
+
+            // Iterate over the photoItems array and get the corresponding strings
+            foreach (PhotoInfo.PhotoItem item in photoDatabase.photos[i].photoItems)
+            {
+                string itemString = photoDatabase.photos[i].GetPhotoItemString(item);
+                itemStrings.Add(itemString);
+            }
+            string concatenatedItems = string.Join(", ", itemStrings);
+
+            if (photoDatabase.photos[i].photoItems.Length >= 3)
+            {
+                concatenatedItems += ", More...";
+            }
+
+            imagePrefab.GetComponent<PhotoInfoContainer>().photoItems = concatenatedItems;
+            imagePrefab.GetComponent<PhotoInfoContainer>().photoLocation = photoDatabase.photos[i].GetLocationString();
+            imagePrefab.GetComponent<PhotoInfoContainer>().photoTime = photoDatabase.photos[i].photoTime.ToString();
+
             ///WE NEED TO REMAKE THE BUTTON SYSTEM RN
 
 
