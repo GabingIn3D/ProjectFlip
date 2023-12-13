@@ -23,7 +23,6 @@ public class DialogueManager : MonoBehaviour
     public float rawImageFadeOutTime;
 
 
-
     private DefaultControls controls;
     private InputAction confirmAction;
 
@@ -37,7 +36,7 @@ public class DialogueManager : MonoBehaviour
         if (phoneNavigationMap != null)
         {
             // Assuming "Confirm" is the name of your action within that map
-            InputAction confirmAction = phoneNavigationMap.FindAction("Confirm");
+            confirmAction = phoneNavigationMap.FindAction("Confirm");
 
             if (confirmAction != null)
             {

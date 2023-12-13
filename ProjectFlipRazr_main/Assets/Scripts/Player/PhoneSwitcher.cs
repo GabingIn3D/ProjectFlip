@@ -23,12 +23,14 @@ public class PhoneSwitcher : MonoBehaviour
     private LayerMask currentLayerMask;
     private LayerMask phoneLayerToHide = (1 << 6);
     private LayerMask onlyVisibleOnCamera = (1 << 8);
+    private LayerMask onlyVisibleFirstPerson = (1 << 14);
 
     // Start is called before the first frame update
     void Start()
     {
         mainCamera.cullingMask &= ~phoneLayerToHide;
         mainCamera.cullingMask &= ~onlyVisibleOnCamera;
+        mainCamera.cullingMask &= ~onlyVisibleFirstPerson;
 
         flipManager = FindAnyObjectByType<FlipPhoneManager>();
 
@@ -56,6 +58,7 @@ public class PhoneSwitcher : MonoBehaviour
         {
             //Switching to first person controller
             mainCamera.cullingMask |= phoneLayerToHide;
+            mainCamera.cullingMask |= onlyVisibleFirstPerson;
             kimmieReidModel.SetActive(false);
             thirdPController.enabled = false;
             firstPController.enabled = true;
@@ -68,6 +71,7 @@ public class PhoneSwitcher : MonoBehaviour
         {
             //Switching to third person controller
             mainCamera.cullingMask &= ~phoneLayerToHide;
+            mainCamera.cullingMask &= ~onlyVisibleFirstPerson;
             kimmieReidModel.SetActive(true);
             thirdPController.enabled = true;
             firstPController.enabled = false;
