@@ -40,6 +40,10 @@ public class AudioManager : MonoBehaviour
         {
             Play("IncompleteBGM2");
         }
+        else if (SceneManager.GetActiveScene().name == "Kimmie's House")
+        {
+            Play("IncompleteBGM1");
+        }
     }
 
     public void Play(string name)

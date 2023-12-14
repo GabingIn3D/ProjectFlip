@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45130318, g: 0.5009563, b: 0.5732082, a: 1}
+  m_IndirectSpecularColor: {r: 0.45130265, g: 0.5009556, b: 0.5732071, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -751,7 +751,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 4897
-  field of view: 73
+  field of view: 60
   orthographic: 0
   orthographic size: -16
   m_Depth: -1
@@ -777,8 +777,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20732576}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.022735665, y: -0.6912888, z: 0.021795206, w: -0.7218919}
-  m_LocalPosition: {x: -5.378982, y: 6.479746, z: 23.871073}
+  m_LocalRotation: {x: -0.0002533656, y: 0.9995926, z: -0.0272962, w: -0.008334847}
+  m_LocalPosition: {x: 1.145546, y: 2.1998212, z: 17.431396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5675,6 +5675,69 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &339009477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339009479}
+  - component: {fileID: 339009478}
+  m_Layer: 5
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &339009478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339009477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f1f1b68bcc910148b4b91593203e1a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: CameraSnap
+    clip: {fileID: 8300000, guid: 021afa9bdc00d6140a50f84b71195891, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: IncompleteBGM1
+    clip: {fileID: 8300000, guid: 231ed7bb1cdc04245843efb198e21215, type: 3}
+    volume: 0.55
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: IncompleteBGM2
+    clip: {fileID: 8300000, guid: 9a957838f4f0116448b1c93ca3f81ade, type: 3}
+    volume: 0.55
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+--- !u!4 &339009479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339009477}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &360295952
 GameObject:
   m_ObjectHideFlags: 0
@@ -24221,8 +24284,6 @@ MonoBehaviour:
   rotationSpeed: 11
   currentSpeed: 4.7
   gravityValue: -9.81
-  controllerDeadzone: 0.1
-  gamepadRotateSmoothing: 1000
   isController: 0
   canTeleport: 1
   inCutscene: 0
@@ -45860,3 +45921,4 @@ SceneRoots:
   - {fileID: 1828764004}
   - {fileID: 953395204}
   - {fileID: 5837970849578836076}
+  - {fileID: 339009479}
