@@ -115,6 +115,7 @@ public class CaptureScreen2 : MonoBehaviour
 
         RecordPhotoInfo();
         textureHolder.RefreshGallery();
+        AudioManager.instance.Play("CameraSnap");
     }
 
 

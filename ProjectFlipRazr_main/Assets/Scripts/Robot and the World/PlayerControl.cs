@@ -14,8 +14,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float rotationSpeed = 15f;
     [SerializeField] private float currentSpeed = 6.0f;
     [SerializeField] private float gravityValue = -9.81f;
-    [SerializeField] private float controllerDeadzone = 0.1f;
-    [SerializeField] private float gamepadRotateSmoothing = 1000f;
+    //[SerializeField] private float controllerDeadzone = 0.1f;
+    //[SerializeField] private float gamepadRotateSmoothing = 1000f;
     [Header("Input Type")]
     [SerializeField] public bool isController;
 

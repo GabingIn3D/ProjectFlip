@@ -22,14 +22,14 @@ public class PhoneSwitcher : MonoBehaviour
 
     private LayerMask currentLayerMask;
     private LayerMask phoneLayerToHide = (1 << 6);
-    private LayerMask onlyVisibleOnCamera = (1 << 8);
+    private LayerMask onlyVisibleOnPhone = (1 << 8);
     private LayerMask onlyVisibleFirstPerson = (1 << 14);
 
     // Start is called before the first frame update
     void Start()
     {
         mainCamera.cullingMask &= ~phoneLayerToHide;
-        mainCamera.cullingMask &= ~onlyVisibleOnCamera;
+        mainCamera.cullingMask &= ~onlyVisibleOnPhone;
         mainCamera.cullingMask &= ~onlyVisibleFirstPerson;
 
         flipManager = FindAnyObjectByType<FlipPhoneManager>();
