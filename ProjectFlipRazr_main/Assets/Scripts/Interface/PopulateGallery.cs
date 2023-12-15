@@ -136,6 +136,7 @@ public class PopulateGallery : MonoBehaviour
         for (int i = endIdx; i >= startIdx; i--)
         
         {
+            Debug.Log(i);
             Sprite sprite = Sprite.Create(textureHolder.textures[i], new Rect(0, 0, textureHolder.textures[i].width, textureHolder.textures[i].height), Vector2.one * 0.5f);
 
             // Create UI Image object and add it to the grid
@@ -149,7 +150,7 @@ public class PopulateGallery : MonoBehaviour
                 Debug.Log("PopulateGallery.cs: " + i + ": NewestPhoto is " + photoDatabase.photos[i].photoName + "/" + imageObject.name);
             }
 
-            imagePrefab.GetComponent<PhotoInfoContainer>().photoName = photoDatabase.photos[i].photoName;
+            imageObject.GetComponent<PhotoInfoContainer>().photoName = photoDatabase.photos[i].photoName;
             
             // Create a list to store the item strings
             List<string> itemStrings = new List<string>();
@@ -167,9 +168,9 @@ public class PopulateGallery : MonoBehaviour
                 concatenatedItems += ", More...";
             }
 
-            imagePrefab.GetComponent<PhotoInfoContainer>().photoItems = concatenatedItems;
-            imagePrefab.GetComponent<PhotoInfoContainer>().photoLocation = photoDatabase.photos[i].GetLocationString();
-            imagePrefab.GetComponent<PhotoInfoContainer>().photoTime = photoDatabase.photos[i].photoTime.ToString();
+            imageObject.GetComponent<PhotoInfoContainer>().photoItems = concatenatedItems;
+            imageObject.GetComponent<PhotoInfoContainer>().photoLocation = photoDatabase.photos[i].GetLocationString();
+            imageObject.GetComponent<PhotoInfoContainer>().photoTime = photoDatabase.photos[i].photoTime.ToString();
 
             ///WE NEED TO REMAKE THE BUTTON SYSTEM RN
 

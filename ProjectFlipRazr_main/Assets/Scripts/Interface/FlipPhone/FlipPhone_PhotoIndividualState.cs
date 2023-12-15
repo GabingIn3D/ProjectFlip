@@ -17,6 +17,18 @@ public class FlipPhone_PhotoIndividualState : FlipPhone_BaseState
         {
             obj.SetActive(false);
         }
+
+        //Reactivates the Gallery Page so information can be received from "PhotoExpandOpener.cs"
+        var galleryPage = flipPhone.GetObject("GalleryPage");
+        if (galleryPage != null)
+        {
+            galleryPage.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning(galleryPage.name + " is null.");
+        }
+
         ///////
         if (flipPhone.options != null)
         {
@@ -54,6 +66,19 @@ public class FlipPhone_PhotoIndividualState : FlipPhone_BaseState
 
     public override void ExitState(FlipPhoneManager flipPhone)
     {
+        //When the Photo Individual page closes, we go back to the gallery and we refresh that grid.
+        var galleryPage = flipPhone.GetObject("GalleryPage");
+        var gridInstantiator = galleryPage.transform.GetChild(4);
+        if(gridInstantiator != null)
+        {
+            gridInstantiator.gameObject.SetActive(false);
+            gridInstantiator.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("PhotoIndividualState could not find the Gallery Page Instantiator on Child #4 of 'GalleryPage'. Please make sure this lines up.");
+        }
+
         /*
         if (flipPhone.options != null)
         {

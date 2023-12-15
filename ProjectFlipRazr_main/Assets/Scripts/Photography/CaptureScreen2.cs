@@ -125,6 +125,7 @@ public class CaptureScreen2 : MonoBehaviour
 
         //Record photoName
         photoInfo.photoName = newID + ".png";
+        photoInfo.name = newID + ".png";
 
         //Record fileLocation
         photoInfo.fileLocation = Application.dataPath.ToString() + filePath.ToString();

@@ -29,16 +29,13 @@ public class PhotoInfoContainer : MonoBehaviour
 
     public void OnButtonSelected()
     {
-        if (photoItems != null)
-        {
-            photoTitle = photoItems;
-        }
-        else
+        photoTitle = photoItems;
+        if (string.IsNullOrEmpty(photoItems))
         {
             photoTitle = photoLocation;
         }
 
-
+        expandOpener.selPhotoTime = photoTime;
         expandOpener.selPhotoName = photoName;
         expandOpener.selPhotoTitle = photoTitle;
         expandOpener.selPhotoLocation = photoLocation;

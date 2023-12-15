@@ -6,6 +6,13 @@ using UnityEngine;
 [System.Serializable]
 public class PhotoInfo
 {
+    public string name;
+    public string photoName { get; set; }
+    public string fileLocation { get; set; }
+    public Location gameLocation { get; set; }
+    public PhotoItem[] photoItems { get; set; }
+    public DateTime photoTime { get; set; }
+
     public enum Location
     {
         Unknown,
@@ -47,12 +54,6 @@ public class PhotoInfo
         { PhotoItem.HadronPointOfInterest2, "Hadron POI 2" },
         { PhotoItem.HadronPointOfInterest3, "Hadron POI 3" }
     };
-
-    public string photoName {  get; set; }
-    public string fileLocation {  get; set; }
-    public Location gameLocation {  get; set; }
-    public PhotoItem[] photoItems {  get; set; }
-    public DateTime photoTime { get; set; }
 
     public string GetLocationString()
     {

@@ -61,6 +61,7 @@ public class PhotoIndividual_Txt2 : MonoBehaviour
                         Sprite sprite = Sprite.Create(expandTexture2D, new Rect(0, 0, expandTexture2D.width, expandTexture2D.height), Vector2.one * 0.5f);
                         enlargedImage = enlargedImage.GetComponent<Image>();
                         enlargedImage.sprite = sprite;
+                        Debug.Log(selPhotoProperties.selPhotoName + " is the image being displayed by PhotoIndividual_Txt2.cs");
                     }
                     else
                     {
@@ -74,6 +75,7 @@ public class PhotoIndividual_Txt2 : MonoBehaviour
     private void OnDisable()
     {
         if (targetText != null) targetText.text = "";
+        if (enlargedImage != null) enlargedImage.sprite = null;
     }
 
     // Update is called once per frame

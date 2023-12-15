@@ -18,9 +18,22 @@ public class KeepButtonSelection : MonoBehaviour
         // Set the default button as selected initially
         if (isGallery)
         {
-            defaultButton = layoutParent.transform.GetChild(0).GetComponent<Button>();
+            layoutParent = GameObject.Find("PhotoGrid");
+            if(layoutParent.transform.childCount > 0) // childCount starts at 1 for the first object...
+            {
+                defaultButton = layoutParent.transform.GetChild(0).GetComponent<Button>(); // GetChild starts at 0. I hate it.
+                if (defaultButton != null)
+                {
+                    SetSelectedButton(defaultButton.gameObject);
+                }
+                else
+                {
+                    Debug.Log("KeepButtonSelection/isGallery: 'defaultButton' is null. This might just mean no photos have been taken.");
+                }
+            }
+
         }
-        SetSelectedButton(defaultButton.gameObject);
+
     }
 
     private void OnDisable()
