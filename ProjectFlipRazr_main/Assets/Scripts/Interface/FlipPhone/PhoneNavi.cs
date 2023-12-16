@@ -89,6 +89,7 @@ public class PhoneNavi : MonoBehaviour
         {
             case whichNaviButton.Options:
                 Debug.Log("you clicked on 'Options'");
+                AudioManager.instance.Play("Boop1");
                 // if the Options context menu is already open and player hits the button again, it will be set to inactive
                 if (flipPhone.options.activeSelf)
                 {
@@ -101,10 +102,12 @@ public class PhoneNavi : MonoBehaviour
                 break;
             case whichNaviButton.MainMenu:
                 Debug.Log("you clicked on 'Main Menu'");
+                AudioManager.instance.Play("Boop1");
                 flipPhone.SwitchState(flipPhone.mainMenuState);
                 break;
             case whichNaviButton.Back:
                 Debug.Log("you clicked on 'Back'");
+                AudioManager.instance.Play("Boop1");
                 flipPhoneState = flipPhone.currentState;
                 Debug.Log("previous state recorded is " + flipPhone.currentState);
                 if (flipPhone.appMenu.activeSelf)

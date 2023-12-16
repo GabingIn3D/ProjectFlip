@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45130318, g: 0.5009563, b: 0.5732082, a: 1}
+  m_IndirectSpecularColor: {r: 0.45130265, g: 0.5009556, b: 0.5732071, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7898,6 +7898,12 @@ MonoBehaviour:
     volume: 0.55
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: Boop1
+    clip: {fileID: 8300000, guid: 784a03499c0f66745832488061d91bcf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &438793357
 Transform:
