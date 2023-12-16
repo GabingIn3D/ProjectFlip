@@ -66,6 +66,7 @@ public class PhoneSwitcher : MonoBehaviour
             isFirstPersonMode = true;
             FreezeMovement();
             flipManager.SwitchState(flipManager.homeScreenState);
+            AudioManager.instance.Play("OpenPhone");
         }
         else if (isFirstPersonMode == true)
         {
@@ -77,6 +78,7 @@ public class PhoneSwitcher : MonoBehaviour
             firstPController.enabled = false;
             firstPCam.Priority = 9;
             isFirstPersonMode = false;
+            AudioManager.instance.Play("ClosePhone");
         }
     }
 

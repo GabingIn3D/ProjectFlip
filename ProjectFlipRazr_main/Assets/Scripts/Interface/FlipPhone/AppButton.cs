@@ -36,5 +36,7 @@ public class AppButton : MonoBehaviour
     public void OnClick()
     {
         flipPhone.ChangeStates(appStateToRun, flipPhone);
+        AudioManager.instance.Play("Boop3");
+
     }
 }

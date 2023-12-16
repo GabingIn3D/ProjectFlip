@@ -107,8 +107,8 @@ public class PhoneNavi : MonoBehaviour
                 break;
             case whichNaviButton.Back:
                 Debug.Log("you clicked on 'Back'");
-                AudioManager.instance.Play("Boop1");
                 flipPhoneState = flipPhone.currentState;
+                AudioManager.instance.Play("Boop2");
                 Debug.Log("previous state recorded is " + flipPhone.currentState);
                 if (flipPhone.appMenu.activeSelf)
                 {
