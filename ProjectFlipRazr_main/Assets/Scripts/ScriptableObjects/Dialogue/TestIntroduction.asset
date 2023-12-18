@@ -20,6 +20,8 @@ MonoBehaviour:
     hideDelay: 1.2
     manualClick: 1
     portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portraitRotation: 0
+    backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 1
     speakerName: Kafka
     text: Look at this place. The product of a devoted few's efforts.
@@ -27,6 +29,8 @@ MonoBehaviour:
     hideDelay: 1.1
     manualClick: 1
     portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portraitRotation: 0
+    backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 2
     speakerName: Kafka
     text: I'm actually quite impressed. It's been a while since my last visit.
@@ -34,6 +38,8 @@ MonoBehaviour:
     hideDelay: 1.1
     manualClick: 1
     portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portraitRotation: 0
+    backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 3
     speakerName: Kafka
     text: One suggestion, though...
@@ -41,6 +47,8 @@ MonoBehaviour:
     hideDelay: 1.1
     manualClick: 1
     portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portraitRotation: 0
+    backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 4
     speakerName: Kafka
     text: Don't you think it might be worth cracking open a window?
@@ -48,6 +56,8 @@ MonoBehaviour:
     hideDelay: 2
     manualClick: 1
     portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portraitRotation: 0
+    backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 5
     speakerName: Kafka
     text: Regardless, don't linger around here too long. There's a lot of work to
@@ -56,3 +66,5 @@ MonoBehaviour:
     hideDelay: 1.2
     manualClick: 1
     portrait: {fileID: 2800000, guid: 1b810e75ee279854a98e7d6b837cd105, type: 3}
+    portraitRotation: 0
+    backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}

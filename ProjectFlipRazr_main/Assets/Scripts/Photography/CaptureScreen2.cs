@@ -197,10 +197,10 @@ public class CaptureScreen2 : MonoBehaviour
                 directionReference.LookAt(item.transform);
                 if (directionReference.localEulerAngles.y <= photoItemAngleCheckY || directionReference.localEulerAngles.y >= 360 - photoItemAngleCheckY)
                 {
-                    Debug.Log("Y is clear");
+                    //Debug.Log("Y is clear");
                     if (transform.eulerAngles.x <= directionReference.eulerAngles.x + photoItemAngleCheckX || transform.eulerAngles.x >= directionReference.eulerAngles.x - photoItemAngleCheckX)
                     {
-                        Debug.Log("X is clear");
+                        //Debug.Log("X is clear");
 
                         Ray ray = new Ray(transform.position, (item.transform.position - transform.position).normalized);
                         if (Physics.Raycast(ray, out RaycastHit hit, 10f, ~(rayIgnore), QueryTriggerInteraction.Collide))

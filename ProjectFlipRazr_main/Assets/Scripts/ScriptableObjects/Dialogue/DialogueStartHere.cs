@@ -15,6 +15,8 @@ public class DialogueStartHere : ScriptableObject
         public float hideDelay;
         public bool manualClick;
         public Texture portrait;
+        public float portraitRotation = 0;
+        public Texture backdrop;
     }
 
     public DialogueLine[] dialogueLines;

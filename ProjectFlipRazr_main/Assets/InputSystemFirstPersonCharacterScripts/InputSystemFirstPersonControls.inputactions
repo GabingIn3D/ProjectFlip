@@ -251,6 +251,76 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Phone",
+            "id": "4cba66eb-088f-4f11-bbff-8ed65d08a3ac",
+            "actions": [
+                {
+                    "name": "LButtonPress",
+                    "type": "Button",
+                    "id": "df2d65df-d5d4-4359-a11b-8e36353bf9d3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RButtonPress",
+                    "type": "Button",
+                    "id": "9802cab8-0218-4b90-8a90-b521b746f0e2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d41b4a8f-ed18-4d5a-b714-8798d88a16fd",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "FPSControllerInputs",
+                    "action": "LButtonPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82bf87e0-4b1b-4f62-9de6-9c10d7b5b22d",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "FPSControllerInputs",
+                    "action": "LButtonPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c2b6992-4581-42c0-9373-9fbdb468d4d8",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "FPSControllerInputs",
+                    "action": "RButtonPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8cb90a2c-c129-460f-b8d0-84fbaff205e2",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "FPSControllerInputs",
+                    "action": "RButtonPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

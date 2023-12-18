@@ -11,17 +11,30 @@ public class DialogueManager : MonoBehaviour
     public float delayBeforePrinting;
     public DialogueStartHere dialogueSystem;
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI speakerNameText;
     public RawImage dialogueImage; // Assuming this is the RawImage component for the Sprite
+    public float customImageRotation = 0;
+    public RawImage dialogueBackdrop;
+    public RawImage manualclickImage;
     public bool manualClick;
 
-    // TextMeshPro fade times
+    [Header("TextMeshPro Fades")]
     public float textMeshProFadeInTime;
     public float textMeshProFadeOutTime;
 
-    // Sprite fade times
+    [Header("Sprite/Backdrop Fades")]
     public float rawImageFadeInTime;
     public float rawImageFadeOutTime;
+    public float backdropFadeInTime;
+    public float backdropFadeOutTime;
+    public float backdropAlpha = 0.33f;
 
+    [Header("Ease-in/Ease-out")]
+    public bool useAnimation;
+    public AnimationCurve easeInCurve; // Assign an easing in curve
+    public AnimationCurve easeOutCurve; // Assign an easing out curve
+    public Vector2 offset = new Vector2(100, 0); // Example offset
+    public float animDuration = 2f; // Duration of the movement
 
     private DefaultControls controls;
     private InputAction confirmAction;
@@ -73,7 +86,9 @@ public class DialogueManager : MonoBehaviour
             // Load and set the Sprite for portrait
             if (dialogueLine.portrait != null)
             {
-                dialogueImage.texture = dialogueLine.portrait;
+                customImageRotation = dialogueLine.portraitRotation;
+                dialogueImage.texture = dialogueLine.portrait; //this is the speaker portrait to display
+                dialogueImage.rectTransform.localEulerAngles = new Vector3(0, 0, customImageRotation); //set rotation, if any
             }
 
             // Set UI Sprite RawImage alpha to 0
@@ -83,13 +98,21 @@ public class DialogueManager : MonoBehaviour
             dialogueImage.color = rawImageColor;
 
             // Set UI text
-            dialogueText.text = $"{dialogueLine.speakerName}: {dialogueLine.text}";
+            dialogueText.text = dialogueLine.text;
+            speakerNameText.text = dialogueLine.speakerName;
 
             // Fade in TextMeshPro and Sprite independently
 
-            yield return StartCoroutine(FadeIn(dialogueImage, rawImageFadeInTime));
-            yield return StartCoroutine(FadeIn(dialogueText, textMeshProFadeInTime));
-
+            StartCoroutine(FadeIn(dialogueImage, rawImageFadeInTime));
+            StartCoroutine(FadeIn(dialogueBackdrop, backdropFadeOutTime));
+            StartCoroutine(FadeIn(dialogueText, textMeshProFadeInTime));
+            StartCoroutine(FadeIn(speakerNameText, textMeshProFadeInTime));
+            StartCoroutine(EaseIn(speakerNameText.rectTransform, offset, animDuration, easeInCurve));
+            StartCoroutine(EaseIn(dialogueText.rectTransform, offset, animDuration, easeInCurve));
+            if(useAnimation)
+            {
+                StartCoroutine(EaseIn(dialogueBackdrop.rectTransform, offset, animDuration, easeInCurve));
+            }
 
             // Wait for the specified duration
             yield return new WaitForSeconds(dialogueLine.durationInSeconds);
@@ -105,15 +128,24 @@ public class DialogueManager : MonoBehaviour
                     Debug.LogError("confirmAction is null. Manual click won't work!");
                     yield break; // exit the coroutine to avoid further issues
                 }
-
+                StartCoroutine(FadeIn(manualclickImage, rawImageFadeInTime));
                 Debug.Log("Waiting for Confirm button press...");
                 yield return new WaitUntil(() => confirmAction.triggered);
                 Debug.Log("Confirm button pressed. Continuing...");
             }
 
             // Fade out TextMeshPro and Sprite independently
-            yield return StartCoroutine(FadeOut(dialogueImage, rawImageFadeOutTime));
-            yield return StartCoroutine(FadeOut(dialogueText, textMeshProFadeOutTime));
+            StartCoroutine(FadeOut(dialogueImage, rawImageFadeOutTime));
+            StartCoroutine(FadeOut(dialogueBackdrop, backdropFadeOutTime));
+            StartCoroutine(FadeOut(dialogueText, textMeshProFadeOutTime));
+            StartCoroutine(FadeOut(speakerNameText, textMeshProFadeOutTime));
+            StartCoroutine(FadeOut(manualclickImage, rawImageFadeOutTime));
+            StartCoroutine(EaseOut(speakerNameText.rectTransform, offset, animDuration, easeOutCurve));
+            StartCoroutine(EaseOut(dialogueText.rectTransform, offset, animDuration, easeInCurve));
+            if (useAnimation)
+            {
+                StartCoroutine(EaseOut(dialogueBackdrop.rectTransform, offset, animDuration, easeInCurve));
+            }
 
 
             // Clear the UI text
@@ -148,7 +180,15 @@ public class DialogueManager : MonoBehaviour
     {
         float elapsedTime = 0f;
         Color startColor = rawImage.color;
-        float targetAlpha = 1f; // Set the target alpha
+        float targetAlpha;
+        if(rawImage.name == "DialogueBackdrop")
+        {
+            targetAlpha = backdropAlpha;
+        }
+        else
+        {
+            targetAlpha = 1f; // Set the target alpha to 1 (100%)
+        }
 
         while (startColor.a < targetAlpha)
         {
@@ -184,13 +224,55 @@ public class DialogueManager : MonoBehaviour
 
         while (startColor.a > targetAlpha)
         {
-            float alpha = Mathf.Lerp(1f, targetAlpha, elapsedTime / fadeOutTime);
+            float alpha;
+            if (rawImage.name == "DialogueBackdrop")
+            {
+                alpha = Mathf.Lerp(backdropAlpha, targetAlpha, elapsedTime / fadeOutTime);
+            }
+            else
+            {
+                alpha = Mathf.Lerp(1f, targetAlpha, elapsedTime / fadeOutTime);
+            }
             startColor.a = alpha;
             rawImage.color = startColor;
             elapsedTime += Time.deltaTime;
             yield return null;
         }
     }
+
+    IEnumerator EaseIn(RectTransform rectTransform, Vector2 offset, float animDuration, AnimationCurve easeInCurve)
+    {
+        Vector2 originalPosition = rectTransform.anchoredPosition;
+        Vector2 startPosition = originalPosition - offset; // Start from offset position
+
+        float time = 0;
+        while (time < animDuration)
+        {
+            time += Time.deltaTime;
+            float t = easeInCurve.Evaluate(time / animDuration);
+            rectTransform.anchoredPosition = Vector2.Lerp(startPosition, originalPosition, t);
+            yield return null;
+        }
+
+        // StartCoroutine(EaseOut(rectTransform, offset, animDuration, easeOutCurve)); // Uncomment if you want to chain to EaseOut
+    }
+
+    IEnumerator EaseOut(RectTransform rectTransform, Vector2 offset, float animDuration, AnimationCurve easeOutCurve)
+    {
+        Vector2 originalPosition = rectTransform.anchoredPosition;
+        Vector2 endPosition = originalPosition; // End at offset position
+
+        float time = 0;
+        while (time < animDuration)
+        {
+            time += Time.deltaTime;
+            float t = easeOutCurve.Evaluate(time / animDuration);
+            rectTransform.anchoredPosition = Vector2.Lerp(originalPosition, endPosition, t);
+            yield return null;
+        }
+    }
+
+
 
     public void ClearDialogue()
     {
