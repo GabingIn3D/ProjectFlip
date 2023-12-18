@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     public RawImage dialogueBackdrop;
     public RawImage manualclickImage;
     public bool manualClick;
+    public bool destroySelfAtEnd;
 
     [Header("TextMeshPro Fades")]
     public float textMeshProFadeInTime;
@@ -158,6 +159,8 @@ public class DialogueManager : MonoBehaviour
 
         // Clear the UI text after all dialogue lines
         ClearDialogue();
+        Destroy(gameObject);
+        Debug.Log(this.gameObject.name + " destroyed.");
     }
 
     IEnumerator FadeIn(Graphic graphic, float fadeInTime)

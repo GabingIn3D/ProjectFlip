@@ -45,7 +45,7 @@ public class OptionsContextMenu : MonoBehaviour
         foreach (Button button in buttons)
         {
             button.GetComponent<OptionButtonBehaviour>().SetText();
-            Debug.Log("Set Text on button " + button.name);
+            //Debug.Log("Set Text on button " + button.name);
 
         }
 
