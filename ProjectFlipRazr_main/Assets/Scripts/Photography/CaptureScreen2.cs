@@ -41,6 +41,9 @@ public class CaptureScreen2 : MonoBehaviour
     [Header("Booleans")]
     public bool requirePuzzleManager;
 
+    [Header("Dialogue")]
+    public GameObject dialoguePrefab;
+
     void Awake()
     {
         instance = this;
@@ -214,6 +217,11 @@ public class CaptureScreen2 : MonoBehaviour
                                     if(requirePuzzleManager)
                                     {
                                         FindAnyObjectByType<PuzzleManager>().CheckPhotoItemProgression(item.GetComponent<PhotoItem>().photoItem);
+                                    }
+                                    if (item.GetComponent<PhotoItem>().SpawnDialogue != null)
+                                    {
+                                        dialoguePrefab.GetComponent<DialogueManager>().dialogueSystem = item.GetComponent<PhotoItem>().SpawnDialogue;
+                                        Instantiate(dialoguePrefab);
                                     }
                                     Debug.Log("PhotoItem Accepted");
                                 }

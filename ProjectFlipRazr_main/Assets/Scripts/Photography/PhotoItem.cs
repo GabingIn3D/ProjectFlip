@@ -6,4 +6,5 @@ using UnityEngine;
 public class PhotoItem : MonoBehaviour
 {
     public PhotoInfo.PhotoItem photoItem;
+    public DialogueStartHere SpawnDialogue;
 }

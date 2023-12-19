@@ -27,6 +27,7 @@ public class PhotoInfo
         DirectorPhotoFrame,
         OfficeKey,
         RingImprint,
+        OldNewspaper,
         Cube,
         Sphere,
         HadronPointOfInterest1,

@@ -120,11 +120,7 @@ public class PhoneSwitcher : MonoBehaviour
     public void DialogueUnFreeze()
     {
         dialogueIsActive = false;
-        if (!isFirstPersonMode)
-        {
-            UnFreezeMovement();
-        }
-        else if (flipManager.currentState == flipManager.cameraState)
+        if (!isFirstPersonMode || flipManager.currentState == flipManager.cameraState)
         {
             UnFreezeMovement();
         }
