@@ -14,6 +14,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float rotationSpeed = 15f;
     [SerializeField] private float currentSpeed = 6.0f;
     [SerializeField] private float gravityValue = -9.81f;
+    public Animator animator;
     //[SerializeField] private float controllerDeadzone = 0.1f;
     //[SerializeField] private float gamepadRotateSmoothing = 1000f;
     [Header("Input Type")]
@@ -92,6 +93,8 @@ public class PlayerControl : MonoBehaviour
         Debug.Log("MovementStarted");
         // Change forward to direction relative to current active Cinemachine Camera.
         storedActiveCam = currentActiveCam;
+        animator.SetBool("IsWalking", true);
+        animator.SetBool("IsIdle", false);
     }
 
     private void OnMovementPerformed(InputAction.CallbackContext context)
@@ -104,12 +107,15 @@ public class PlayerControl : MonoBehaviour
         Debug.Log("MovementCanceled");
         // Change forward to direction relative to current active Cinemachine Camera.
         storedActiveCam = currentActiveCam;
+        animator.SetBool("IsWalking", false);
+        animator.SetBool("IsIdle", true);
 
     }
 
     private void OnEnable()
     {
         moveAction.Enable();
+        animator.SetBool("IsIdle", true);
     }
 
     private void OnDisable()

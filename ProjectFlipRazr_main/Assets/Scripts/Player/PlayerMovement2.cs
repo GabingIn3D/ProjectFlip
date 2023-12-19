@@ -7,6 +7,7 @@ public class PlayerMovement2 : MonoBehaviour
 {
     ThirdPersonControls moveInputManager;
     public CinemachineBrain cinemachineBrain;
+    public Animator animator;
 
     [Header("Transform References")]
     Vector3 moveDirection;
@@ -62,7 +63,7 @@ public class PlayerMovement2 : MonoBehaviour
         moveInputManager.PlayerMovement.Movement.started += OnMovementStarted;
             moveInputManager.PlayerMovement.Movement.performed += OnMovementPerformed;
             moveInputManager.PlayerMovement.Movement.canceled += OnMovementCanceled;
-
+        animator.SetBool(2, true);
         UpdateForwardDirection(GetActiveCameraTransform());
     }
 
@@ -74,6 +75,8 @@ public class PlayerMovement2 : MonoBehaviour
     private void OnMovementStarted(InputAction.CallbackContext context)
     {
         UpdateForwardDirection(GetActiveCameraTransform());
+        animator.SetBool(1, true);
+        animator.SetBool(2, false);
     }
 
     private void OnMovementPerformed(InputAction.CallbackContext context)
@@ -86,7 +89,8 @@ public class PlayerMovement2 : MonoBehaviour
         // Movement controls are released
         // Call the function to update forward direction
         Debug.Log("Movement controls are released.");
-        
+        animator.SetBool(1, false);
+        animator.SetBool(2, true);
     }
 
     private void ControlMovement()
