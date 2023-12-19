@@ -18,9 +18,9 @@ MonoBehaviour:
     progress:
     - objectiveDescription: Use WASD to move.
       prefabObjects:
-      - {fileID: 0}
+      - {fileID: 3714525864187851199, guid: b74ded210b2b2934289773754a7fae83, type: 3}
       spawnPositions:
-      - {x: 0, y: 0, z: 0}
+      - {x: -1.56, y: 4.7416353, z: 24.12}
       prefabActions: 01000000
     - objectiveDescription: Open the bedroom door using E.
       prefabObjects:
@@ -40,25 +40,7 @@ MonoBehaviour:
     isCompleted: 0
   - name: Kimmie figures out where to go
     totalProgressionStages: 2
-    progress:
-    - objectiveDescription: Use WASD to move.
-      prefabObjects:
-      - {fileID: 0}
-      spawnPositions:
-      - {x: 0, y: 0, z: 0}
-      prefabActions: 01000000
-    - objectiveDescription: Open the bedroom door using E.
-      prefabObjects:
-      - {fileID: 0}
-      spawnPositions:
-      - {x: 0, y: 0, z: 0}
-      prefabActions: 01000000
-    - objectiveDescription: Go downstairs
-      prefabObjects:
-      - {fileID: 0}
-      spawnPositions:
-      - {x: 0, y: 0, z: 0}
-      prefabActions: 01000000
+    progress: []
     uiCanvasPrefabs: []
     developerComments: 
     isCompleted: 0
