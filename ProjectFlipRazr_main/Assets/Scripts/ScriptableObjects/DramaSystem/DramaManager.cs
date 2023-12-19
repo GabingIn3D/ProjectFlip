@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
 using static DramaSystem;
+using Unity.VisualScripting;
 
 public class DramaManager : MonoBehaviour
 {
     public DramaSystem dramaSystem; // Assign in Inspector
+    public GameObject dialoguePrefab;
     private Dictionary<Quest, int> questProgressions = new Dictionary<Quest, int>();
 
     void Start()
@@ -24,6 +26,7 @@ public class DramaManager : MonoBehaviour
             foreach (var quest in dramaSystem.quests)
             {
                 UpdateQuestProgression(quest);
+                Debug.Log(questProgressions[quest]);
             }
         }
     }
@@ -50,6 +53,11 @@ public class DramaManager : MonoBehaviour
             GameObject prefab = progression.prefabObjects[i];
             Vector3 spawnPosition = progression.spawnPositions[i];
             ActionOption action = progression.prefabActions[i];
+
+            if (prefab == dialoguePrefab)
+            {
+                dialoguePrefab.GetComponent<DialogueManager>().dialogueSystem = progression.setDialogueTo;
+            }
 
             HandlePrefabAction(prefab, action, spawnPosition);
         }

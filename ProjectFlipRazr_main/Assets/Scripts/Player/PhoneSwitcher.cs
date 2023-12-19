@@ -1,11 +1,13 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PhoneSwitcher : MonoBehaviour
 {
     public bool isFirstPersonMode;
+    public bool dialogueIsActive;
 
     [Header("First Person Mode")]
     public GameObject firstPersonPlayer;
@@ -26,7 +28,7 @@ public class PhoneSwitcher : MonoBehaviour
     private LayerMask onlyVisibleFirstPerson = (1 << 14);
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         mainCamera.cullingMask &= ~phoneLayerToHide;
         mainCamera.cullingMask &= ~onlyVisibleOnPhone;
@@ -35,7 +37,6 @@ public class PhoneSwitcher : MonoBehaviour
         flipManager = FindAnyObjectByType<FlipPhoneManager>();
 
         //Start as third person controller
-        //firstPersonPlayer.SetActive(false);
         thirdPController.enabled = true;
         kimmieReidModel.SetActive(true);
         firstPController.enabled = false;
@@ -46,7 +47,7 @@ public class PhoneSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && !dialogueIsActive)
         {
             OpenPhone();
         }
@@ -107,6 +108,25 @@ public class PhoneSwitcher : MonoBehaviour
         {
             //Unfreeze first person
             firstPController.enabled = true;
+        }
+    }
+
+    public void DialogueFreeze()
+    {
+        dialogueIsActive = true;
+        FreezeMovement();
+    }
+
+    public void DialogueUnFreeze()
+    {
+        dialogueIsActive = false;
+        if (!isFirstPersonMode)
+        {
+            UnFreezeMovement();
+        }
+        else if (flipManager.currentState == flipManager.cameraState)
+        {
+            UnFreezeMovement();
         }
     }
 }

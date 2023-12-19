@@ -16,6 +16,7 @@ public class DramaSystem : ScriptableObject
         public GameObject[] prefabObjects; // These could be anything, i.e., triggers.
         public Vector3[] spawnPositions; // The location for the above prefab objects.
         public ActionOption[] prefabActions; // What to do with each of the prefabs above.
+        public DialogueStartHere setDialogueTo; // Changes the dialogue scriptable object for when dialogue prefab is spawned
     }
 
     [System.Serializable]

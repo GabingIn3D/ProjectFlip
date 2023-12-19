@@ -69,6 +69,11 @@ public class DialogueManager : MonoBehaviour
 
         controls.Enable();
         StartCoroutine(DisplayDialogue());
+
+        if (destroySelfAtEnd)
+        {
+            FindAnyObjectByType<PhoneSwitcher>().DialogueFreeze();
+        }
     }
 
     private void Update()
@@ -160,6 +165,7 @@ public class DialogueManager : MonoBehaviour
         // Clear the UI text after all dialogue lines
         ClearDialogue();
         Destroy(gameObject);
+        FindAnyObjectByType<PhoneSwitcher>().DialogueUnFreeze();
         Debug.Log(this.gameObject.name + " destroyed.");
     }
 
