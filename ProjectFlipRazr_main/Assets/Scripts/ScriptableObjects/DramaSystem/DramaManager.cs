@@ -28,7 +28,7 @@ public class DramaManager : MonoBehaviour
         }
     }
 
-    private void UpdateQuestProgression(Quest quest)
+    public void UpdateQuestProgression(Quest quest)
     {
         if (questProgressions[quest] < quest.totalProgressionStages && questProgressions[quest] < quest.progress.Length)
         {
