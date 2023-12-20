@@ -49,6 +49,7 @@ public class PhotoInfo
         { PhotoItem.DirectorPhotoFrame, "Director's Picture" },
         { PhotoItem.OfficeKey, "Key to Office" },
         { PhotoItem.RingImprint, "Ring Finger Tanline" },
+        { PhotoItem.OldNewspaper, "Grandma's Newspaper" },
         { PhotoItem.Cube, "Cubed" },
         { PhotoItem.Sphere, "Crazoonga" },
         { PhotoItem.HadronPointOfInterest1, "Hadron POI 1" },

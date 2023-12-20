@@ -745,7 +745,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 4897
-  field of view: 56.7
+  field of view: 60
   orthographic: 0
   orthographic size: -16
   m_Depth: -1
@@ -771,8 +771,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20732576}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.16618353, y: -0.52467674, z: 0.10525222, w: 0.8282628}
-  m_LocalPosition: {x: 0.41653827, y: 7.059206, z: 12.612152}
+  m_LocalRotation: {x: -0.0002533656, y: 0.9995926, z: -0.0272962, w: -0.008334847}
+  m_LocalPosition: {x: 1.145546, y: 2.1998212, z: 17.431396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28783,7 +28783,7 @@ MonoBehaviour:
   rotationSpeed: 11
   currentSpeed: 4.7
   gravityValue: -9.81
-  animator: {fileID: 0}
+  animator: {fileID: 206046371}
   isController: 0
   canTeleport: 1
   inCutscene: 0
@@ -46140,7 +46140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3714525864187851199, guid: b74ded210b2b2934289773754a7fae83, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8788741663288085383, guid: b74ded210b2b2934289773754a7fae83, type: 3}
       propertyPath: dialogueSystem

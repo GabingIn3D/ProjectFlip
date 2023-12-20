@@ -21,14 +21,14 @@ public class DramaManager : MonoBehaviour
     void Update()
     {
         // Example: Trigger next progression stage for a specific quest when space key is pressed
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             foreach (var quest in dramaSystem.quests)
             {
                 UpdateQuestProgression(quest);
                 Debug.Log(questProgressions[quest]);
             }
-        }
+        }*/
     }
 
     public void UpdateQuestProgression(Quest quest)
