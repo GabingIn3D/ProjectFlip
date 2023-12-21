@@ -328,8 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec63fa669a45e74aad9fabc21a644d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBeforePrinting: 3.3
-  dialogueSystem: {fileID: 11400000, guid: 14d903821c87694469068be117f11214, type: 2}
+  delayBeforePrinting: 0.5
+  dialogueSystem: {fileID: 11400000, guid: 3afc75c94fafba84493e118ec0cd85cd, type: 2}
   dialogueText: {fileID: 5887783759653561661}
   speakerNameText: {fileID: 8264910877058951131}
   dialogueImage: {fileID: 623907516681925879}

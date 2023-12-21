@@ -29,8 +29,8 @@ MonoBehaviour:
       spawnPositions:
       - {x: 0, y: 0, z: 0}
       prefabActions: 01000000
-      setDialogueTo: {fileID: 11400000, guid: 24c32f1e0222caf479a6c3b89aa97817, type: 2}
+      setDialogueTo: {fileID: 11400000, guid: 3afc75c94fafba84493e118ec0cd85cd, type: 2}
     uiCanvasPrefabs:
     - {fileID: 0}
     developerComments: 
-    isCompleted: 0
+    isCompleted: 1

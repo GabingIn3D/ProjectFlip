@@ -7,7 +7,7 @@ public class DramaManager : MonoBehaviour
 {
     public DramaSystem dramaSystem; // Assign in Inspector
     public GameObject dialoguePrefab;
-    private Dictionary<Quest, int> questProgressions = new Dictionary<Quest, int>();
+    public Dictionary<Quest, int> questProgressions = new Dictionary<Quest, int>();
 
     void Start()
     {
@@ -41,6 +41,7 @@ public class DramaManager : MonoBehaviour
             if (questProgressions[quest] >= quest.totalProgressionStages)
             {
                 quest.isCompleted = true;
+                OnQuestComplete();
             }
         }
     }
@@ -86,5 +87,10 @@ public class DramaManager : MonoBehaviour
                 // No action
                 break;
         }
+    }
+
+    void OnQuestComplete()
+    {
+        Debug.Log("Quest Complete write in script code to give reward");
     }
 }

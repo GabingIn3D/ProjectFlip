@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static OptionsContextMenu;
 
 
@@ -51,6 +52,15 @@ public class FlipPhone_CameraState : FlipPhone_BaseState
 
         //UnfreezeMovement
         GameObject.FindAnyObjectByType<PhoneSwitcher>().UnFreezeMovement();
+
+        if (SceneManager.GetActiveScene().name == "Kimmie's House")
+        {
+            var dramaManager = GameObject.FindAnyObjectByType<DramaManager>();
+            if (dramaManager.questProgressions[dramaManager.dramaSystem.quests[0]] == 1)
+            {
+                dramaManager.UpdateQuestProgression(dramaManager.dramaSystem.quests[0]);
+            }
+        }
     }
 
     public override void UpdateState(FlipPhoneManager flipPhone)

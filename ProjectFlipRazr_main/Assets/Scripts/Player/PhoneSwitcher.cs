@@ -24,6 +24,7 @@ public class PhoneSwitcher : MonoBehaviour
     public Camera mainCamera;
 
     private FlipPhoneManager flipManager;
+    private FlipPhone_BaseState flipPhoneState;
 
     private LayerMask currentLayerMask;
     private LayerMask phoneLayerToHide = (1 << 6);
@@ -130,7 +131,12 @@ public class PhoneSwitcher : MonoBehaviour
     public void DialogueUnFreeze()
     {
         dialogueIsActive = false;
-        if (!isFirstPersonMode || flipManager.currentState == flipManager.cameraState)
+        flipPhoneState = flipManager.currentState;
+        if (!isFirstPersonMode)
+        {
+            UnFreezeMovement();
+        }
+        else if (flipPhoneState == flipManager.cameraState)
         {
             UnFreezeMovement();
         }
