@@ -8,6 +8,7 @@ public class InteractableObject : MonoBehaviour
 {
     public enum Object
     {
+        SpawnDialogue,
         Door,
         AccessToStudio,
     }
@@ -15,6 +16,9 @@ public class InteractableObject : MonoBehaviour
     public Object obj;
     public GameObject player;
     public PhotoInfoDatabase photoInfoDatabase;
+    public DialogueStartHere setDialogueTo;
+    public GameObject dialoguePrefab;
+    public bool doorNeedsKey;
 
     private DefaultControls controls;
     private InputAction confirmAction;
@@ -60,23 +64,34 @@ public class InteractableObject : MonoBehaviour
 
     public void Interact()
     {
-        Debug.Log("Interacted");
         switch (obj)
         {
+            case Object.SpawnDialogue:
+                dialoguePrefab.GetComponent<DialogueManager>().dialogueSystem = setDialogueTo;
+                Instantiate(dialoguePrefab);
+                Destroy(this);
+                break;
             case Object.Door:
-                foreach (PhotoInfo info in photoInfoDatabase.photos)
+                if (doorNeedsKey)
                 {
-                    if (info.photoItems.Length > 0)
+                    foreach (PhotoInfo info in photoInfoDatabase.photos)
                     {
-                        for (int i = 0; i < info.photoItems.Length; i++)
+                        if (info.photoItems.Length > 0)
                         {
-                            if (info.photoItems[i] == PhotoInfo.PhotoItem.OfficeKey)
+                            for (int i = 0; i < info.photoItems.Length; i++)
                             {
-                                gameObject.GetComponent<LockedDoor>().Unlock();
-                                break;
+                                if (info.photoItems[i] == PhotoInfo.PhotoItem.OfficeKey)
+                                {
+                                    gameObject.GetComponent<LockedDoor>().Unlock();
+                                    break;
+                                }
                             }
                         }
                     }
+                }
+                else
+                {
+                    gameObject.GetComponent<LockedDoor>().Unlock();
                 }
                 break;
             case Object.AccessToStudio:

@@ -22018,9 +22018,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e563c5e115fd972449d621adc6b49084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: 1
+  obj: 2
   player: {fileID: 1373696146}
   photoInfoDatabase: {fileID: 1618725420}
+  setDialogueTo: {fileID: 0}
+  dialoguePrefab: {fileID: 0}
+  doorNeedsKey: 0
 --- !u!4 &1121631373
 Transform:
   m_ObjectHideFlags: 0
@@ -22991,9 +22994,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e563c5e115fd972449d621adc6b49084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: 0
+  obj: 1
   player: {fileID: 1373696146}
   photoInfoDatabase: {fileID: 1618725420}
+  setDialogueTo: {fileID: 11400000, guid: 14d903821c87694469068be117f11214, type: 2}
+  dialoguePrefab: {fileID: 3714525864187851199, guid: b74ded210b2b2934289773754a7fae83, type: 3}
+  doorNeedsKey: 0
 --- !u!4 &1159371162
 Transform:
   m_ObjectHideFlags: 0
@@ -39438,11 +39444,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f1182af9d17dee54cbb2415d6d17b27b, type: 2}
     - target: {fileID: 8108029756376337308, guid: 3f2d906078b97de4ba02de1cb59e69c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 65
+      value: 74.58333
       objectReference: {fileID: 0}
     - target: {fileID: 8108029756376337308, guid: 3f2d906078b97de4ba02de1cb59e69c4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 88.04293
       objectReference: {fileID: 0}
     - target: {fileID: 8108029756376337308, guid: 3f2d906078b97de4ba02de1cb59e69c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39490,7 +39496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9118056220149213636, guid: 3f2d906078b97de4ba02de1cb59e69c4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39530,7 +39536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dramaSystem: {fileID: 11400000, guid: 699b315b653778e41bdd9c38846db5a8, type: 2}
-  dialoguePrefab: {fileID: 0}
+  dialoguePrefab: {fileID: 3714525864187851199, guid: b74ded210b2b2934289773754a7fae83, type: 3}
 --- !u!4 &1679667325
 Transform:
   m_ObjectHideFlags: 0

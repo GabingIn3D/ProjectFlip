@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PhoneSwitcher : MonoBehaviour
 {
     public bool isFirstPersonMode;
     public bool dialogueIsActive;
+
+    private int phoneOpenedCount;
 
     [Header("First Person Mode")]
     public GameObject firstPersonPlayer;
@@ -68,6 +71,13 @@ public class PhoneSwitcher : MonoBehaviour
             FreezeMovement();
             flipManager.SwitchState(flipManager.homeScreenState);
             AudioManager.instance.Play("OpenPhone");
+
+            phoneOpenedCount++;
+            if (SceneManager.GetActiveScene().name == "Kimmie's House" && phoneOpenedCount == 1)
+            {
+                var dramaManager = FindAnyObjectByType<DramaManager>();
+                dramaManager.UpdateQuestProgression(dramaManager.dramaSystem.quests[0]);
+            }
         }
         else if (isFirstPersonMode == true)
         {

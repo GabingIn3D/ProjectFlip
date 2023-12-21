@@ -13,10 +13,17 @@ MonoBehaviour:
   m_Name: TutorielKimmieHouse
   m_EditorClassIdentifier: 
   quests:
-  - name: House Tutoriel
-    totalProgressionStages: 1
+  - name: Phone Tutoriel
+    totalProgressionStages: 2
     progress:
     - objectiveDescription: OpenPhone
+      prefabObjects:
+      - {fileID: 3714525864187851199, guid: b74ded210b2b2934289773754a7fae83, type: 3}
+      spawnPositions:
+      - {x: 0, y: 0, z: 0}
+      prefabActions: 01000000
+      setDialogueTo: {fileID: 11400000, guid: 24c32f1e0222caf479a6c3b89aa97817, type: 2}
+    - objectiveDescription: OpenCamera
       prefabObjects:
       - {fileID: 3714525864187851199, guid: b74ded210b2b2934289773754a7fae83, type: 3}
       spawnPositions:
@@ -26,4 +33,4 @@ MonoBehaviour:
     uiCanvasPrefabs:
     - {fileID: 0}
     developerComments: 
-    isCompleted: 1
+    isCompleted: 0
