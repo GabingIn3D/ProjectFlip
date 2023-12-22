@@ -213,15 +213,33 @@ public class CaptureScreen2 : MonoBehaviour
                             {
                                 if (item.GetComponent<PhotoItem>() != null)
                                 {
-                                    photoItemsToRecord.Add(item.GetComponent<PhotoItem>().photoItem);
+                                    var photoItem = item.GetComponent<PhotoItem>();
+                                    photoItemsToRecord.Add(photoItem.photoItem);
                                     if(requirePuzzleManager)
                                     {
                                         FindAnyObjectByType<PuzzleManager>().CheckPhotoItemProgression(item.GetComponent<PhotoItem>().photoItem);
                                     }
-                                    if (item.GetComponent<PhotoItem>().SpawnDialogue != null)
+                                    if (photoItem.SpawnDialogue != null)
                                     {
                                         dialoguePrefab.GetComponent<DialogueManager>().dialogueSystem = item.GetComponent<PhotoItem>().SpawnDialogue;
                                         Instantiate(dialoguePrefab);
+                                    }
+                                    if (photoItem.progressQuest && !photoItem.questProgressionDone)
+                                    {
+                                        var dramaManager = FindAnyObjectByType<DramaManager>();
+                                        dramaManager.UpdateQuestProgression(dramaManager.dramaSystem.quests[photoItem.questNumberToProgress]);
+                                        photoItem.questProgressionDone = true;
+                                    }
+                                    if (photoItem.destroyIfPhotoTaken)
+                                    {
+                                        if (transform.parent != null)
+                                        {
+                                            Destroy(item.transform.parent.gameObject);
+                                        }
+                                        else
+                                        {
+                                            Destroy(item.gameObject);
+                                        }
                                     }
                                     Debug.Log("PhotoItem Accepted");
                                 }

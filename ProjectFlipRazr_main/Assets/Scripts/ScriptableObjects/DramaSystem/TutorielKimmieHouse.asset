@@ -34,3 +34,26 @@ MonoBehaviour:
     - {fileID: 0}
     developerComments: 
     isCompleted: 1
+    GiveRewardOnCompletion: 0
+  - name: Quest to get access to Studio
+    totalProgressionStages: 2
+    progress:
+    - objectiveDescription: CheckNewsPaper
+      prefabObjects:
+      - {fileID: 5214425102274853660, guid: 4cab1ea58dff7eb43a0c549fc83f7165, type: 3}
+      spawnPositions:
+      - {x: 0, y: 1.845, z: 1.15}
+      prefabActions: 01000000
+      setDialogueTo: {fileID: 0}
+    - objectiveDescription: FindKey
+      prefabObjects:
+      - {fileID: 3714525864187851199, guid: b74ded210b2b2934289773754a7fae83, type: 3}
+      spawnPositions:
+      - {x: 0, y: 0, z: 0}
+      prefabActions: 01000000
+      setDialogueTo: {fileID: 11400000, guid: 348e78218ddf7a14bb1c7941508f7cea, type: 2}
+    uiCanvasPrefabs:
+    - {fileID: 0}
+    developerComments: 
+    isCompleted: 1
+    GiveRewardOnCompletion: 1

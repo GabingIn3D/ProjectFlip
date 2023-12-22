@@ -70,7 +70,7 @@ public class DialogueManager : MonoBehaviour
         controls.Enable();
         StartCoroutine(DisplayDialogue());
 
-        if (destroySelfAtEnd)
+        if (dialogueSystem.noMovementWhileDialogue)
         {
             FindAnyObjectByType<PhoneSwitcher>().DialogueFreeze();
         }
@@ -167,7 +167,10 @@ public class DialogueManager : MonoBehaviour
         Destroy(gameObject);
         var phoneSwitcher = FindAnyObjectByType<PhoneSwitcher>();
         phoneSwitcher.RefreshPhoneStateReference();
-        phoneSwitcher.DialogueUnFreeze();
+        if (dialogueSystem.noMovementWhileDialogue)
+        {
+            phoneSwitcher.DialogueUnFreeze();
+        }
         Debug.Log(this.gameObject.name + " destroyed.");
     }
 

@@ -28,6 +28,7 @@ public class DramaSystem : ScriptableObject
         public GameObject[] uiCanvasPrefabs; // Any UI stuff.
         public string developerComments; // Space to explain stuff that the player won't see.
         public bool isCompleted;
+        public bool GiveRewardOnCompletion;
     }
 
     public Quest[] quests;

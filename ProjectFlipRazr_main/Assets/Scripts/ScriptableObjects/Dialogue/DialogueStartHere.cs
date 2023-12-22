@@ -19,6 +19,7 @@ public class DialogueStartHere : ScriptableObject
         public Texture backdrop;
     }
 
+    public bool noMovementWhileDialogue;
     public DialogueLine[] dialogueLines;
 
     public int GetDialogueLineCount()

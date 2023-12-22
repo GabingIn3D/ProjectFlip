@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0a215d445d68a4f8286639a22b89d1, type: 3}
   m_Name: CameraOpenedFirstTime
   m_EditorClassIdentifier: 
+  noMovementWhileDialogue: 1
   dialogueLines:
   - id: 0
     speakerName: Kimmie

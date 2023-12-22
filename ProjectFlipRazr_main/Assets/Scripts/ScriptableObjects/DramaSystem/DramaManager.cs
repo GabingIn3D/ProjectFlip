@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using static DramaSystem;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class DramaManager : MonoBehaviour
 {
@@ -41,7 +42,10 @@ public class DramaManager : MonoBehaviour
             if (questProgressions[quest] >= quest.totalProgressionStages)
             {
                 quest.isCompleted = true;
-                OnQuestComplete();
+                if (quest.GiveRewardOnCompletion)
+                {
+                    OnQuestComplete();
+                }
             }
         }
     }
@@ -71,7 +75,7 @@ public class DramaManager : MonoBehaviour
         switch (action)
         {
             case ActionOption.Instantiate:
-                Instantiate(prefab, spawnPosition, Quaternion.identity);
+                Instantiate(prefab, spawnPosition, prefab.transform.rotation/*Quaternion.identity*/);
                 break;
             //case ActionOption.Activate:
             //    prefab.SetActive(true);
@@ -91,6 +95,9 @@ public class DramaManager : MonoBehaviour
 
     void OnQuestComplete()
     {
-        Debug.Log("Quest Complete write in script code to give reward");
+        if (SceneManager.GetActiveScene().name == "Kimmie's House")
+        {
+            GlobalPlaytestSettings.instance.hasStudio = true;
+        }
     }
 }
