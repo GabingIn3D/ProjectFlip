@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogueLines:
   - id: 0
     speakerName: Kimmie
-    text: Oh it's the director and... his family?
+    text: Oh! It's the director... with his family?
     durationInSeconds: 1
     hideDelay: 1
     manualClick: 1
@@ -25,8 +25,8 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 1
     speakerName: Kimmie
-    text: If he has a wife and even kids why was that scum laying his hands on the
-      actresse?
+    text: If he has a wife and even kids, why was that scum laying his hands on the
+      actress?
     durationInSeconds: 1
     hideDelay: 1
     manualClick: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 2
     speakerName: Kimmie
-    text: Could he be involved with the disappearence of grandma?
+    text: I wonder if this shady guy had anything to do with what happened to grandma.
     durationInSeconds: 1
     hideDelay: 1
     manualClick: 1
