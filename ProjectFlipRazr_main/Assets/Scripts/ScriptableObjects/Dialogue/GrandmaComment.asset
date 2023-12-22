@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogueLines:
   - id: 0
     speakerName: Kimmie
-    text: Grandma is that you!?
+    text: Grandma, is that you!?
     durationInSeconds: 1
     hideDelay: 1
     manualClick: 1
@@ -25,7 +25,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 1
     speakerName: Kimmie
-    text: She's not reacting... I guess it's just an illusion
+    text: She's not reacting... I guess it's just an illusion.
     durationInSeconds: 1
     hideDelay: 1
     manualClick: 1
@@ -34,7 +34,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 2
     speakerName: Kimmie
-    text: It's still great to see you
+    text: ...It's still great to see you.
     durationInSeconds: 1
     hideDelay: 1
     manualClick: 1
