@@ -9,6 +9,7 @@ public class MapList : MonoBehaviour
     // Public dictionary to store child objects by name
     public Dictionary<string, GameObject> locListEntry = new Dictionary<string, GameObject>();
     public GlobalPlaytestSettings progressionSingleton;
+    public string currentlySelected;
     public int numberOfLocations; // this is a value that keeps track of the number of locations that are listed while the MapList is open
 
 
@@ -136,4 +137,25 @@ public class MapList : MonoBehaviour
             locListEntry["CurrentLocation"].SetActive(false);
         }
     }
+
+    public GameObject FindFirstActiveChildAfterIndex(GameObject parent, int startIndex)
+    {
+        // Check if the parent object is valid
+        if (parent != null)
+        {
+            // Start from the specified index and iterate through the child objects
+            for (int i = startIndex; i < parent.transform.childCount; i++)
+            {
+                Transform child = parent.transform.GetChild(i);
+                // Check if the current child is active
+                if (child.gameObject.activeSelf)
+                {
+                    return child.gameObject;
+                }
+            }
+        }
+        // Return null if no active child is found after the specified index
+        return null;
+    }
+
 }

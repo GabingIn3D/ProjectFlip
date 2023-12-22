@@ -38,9 +38,12 @@ public class KeepButtonSelection : MonoBehaviour
         if(isMap)
         {
             layoutParent = GameObject.Find("MapList");
+            
             if(layoutParent.transform.childCount > 0)
             {
-                defaultButton = layoutParent.transform.GetChild(1).GetComponent<Button>(); //this is ONE and not 0 because the Map List begins with 'Current Location' which isn't a button. It's just a display.
+                var defaultButtonToPassIn = layoutParent.GetComponent<MapList>().FindFirstActiveChildAfterIndex(layoutParent, 1).GetComponent<Button>();
+                defaultButton = defaultButtonToPassIn;
+                //defaultButton = layoutParent.transform.GetChild(1).GetComponent<Button>(); //this is ONE and not 0 because the Map List begins with 'Current Location' which isn't a button. It's just a display.
                 if(defaultButton != null)
                 {
                     SetSelectedButton(defaultButton.gameObject);

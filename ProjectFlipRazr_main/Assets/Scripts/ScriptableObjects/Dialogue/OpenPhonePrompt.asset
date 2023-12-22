@@ -17,7 +17,7 @@ MonoBehaviour:
   - id: 0
     speakerName: Kimmie
     text: Huh... Why is it so quiet?
-    durationInSeconds: 3.1
+    durationInSeconds: 1
     hideDelay: 1.2
     manualClick: 1
     portrait: {fileID: 2800000, guid: 41b00e94d343e31428c9fd2e56fa7292, type: 3}
@@ -26,7 +26,7 @@ MonoBehaviour:
   - id: 1
     speakerName: Kimmie
     text: I should check my phone.
-    durationInSeconds: 3.1
+    durationInSeconds: 1
     hideDelay: 1.2
     manualClick: 1
     portrait: {fileID: 2800000, guid: 41b00e94d343e31428c9fd2e56fa7292, type: 3}
@@ -34,8 +34,8 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 2
     speakerName: 
-    text: Press P to open your flipphone
-    durationInSeconds: 3.1
+    text: Press P to open the phone.
+    durationInSeconds: 1
     hideDelay: 1.2
     manualClick: 1
     portrait: {fileID: 28268798066460806, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}

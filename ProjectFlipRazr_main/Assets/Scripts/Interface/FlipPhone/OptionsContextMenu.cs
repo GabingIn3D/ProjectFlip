@@ -29,7 +29,7 @@ public class OptionsContextMenu : MonoBehaviour
 
     public HomeScreenBehaviour HomeListTargetBehaviour;
     public AppList AppListBehaviour;
-    public ListTargetBehaviour LocationListTargetBehaviour;
+    public MapList MapListTargetBehaviour;
     public GalleryListBehaviour PhotoListTargetBehaviour;
     public ListTargetBehaviour SettingsListTargetBehaviour;
     public ListTargetBehaviour SaveQuitListTargetBehaviour;
@@ -105,15 +105,24 @@ public class OptionsContextMenu : MonoBehaviour
 
             case ButtonType.Location:
                 Debug.Log("Successfully picking up that this should show options relevant to a Location.");
-                if (LocationListTargetBehaviour != null && LocationListTargetBehaviour.currentlySelected != null)
+                if (MapListTargetBehaviour != null && MapListTargetBehaviour.currentlySelected != null)
                 {
                     activeButtonCount = 1;
                     ActivateButtons(0, activeButtonCount);
                     var thisButton = buttons[0].gameObject.GetComponent<OptionButtonBehaviour>();
                     thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.Travel;
-                    selectedLocation = LocationListTargetBehaviour.currentlySelected; // this is how the Options Menu will pick up where the 'Travel' button sends the player
-                    Debug.Log("You are viewing the button to travel to " +  selectedLocation);
+                    selectedLocation = MapListTargetBehaviour.currentlySelected;
+                    Debug.Log("You are viewing the button to travel to " + selectedLocation);
                 }
+                //if (LocationListTargetBehaviour != null && LocationListTargetBehaviour.currentlySelected != null)
+                //{
+                //    activeButtonCount = 1;
+                //    ActivateButtons(0, activeButtonCount);
+                //    var thisButton = buttons[0].gameObject.GetComponent<OptionButtonBehaviour>();
+                //    thisButton.buttonfunction = OptionButtonBehaviour.buttonFunction.Travel;
+                //    selectedLocation = LocationListTargetBehaviour.currentlySelected; // this is how the Options Menu will pick up where the 'Travel' button sends the player
+                //    Debug.Log("You are viewing the button to travel to " +  selectedLocation);
+                //}
                 break;
 
 
