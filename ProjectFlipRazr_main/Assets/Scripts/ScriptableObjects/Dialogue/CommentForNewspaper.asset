@@ -25,7 +25,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 1
     speakerName: Kimmie
-    text: With this camera maybe I can find some hints of what happended to her
+    text: Why is my phone showing me things from the time she lived here?
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 1
@@ -34,7 +34,8 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 2
     speakerName: Kimmie
-    text: Let's head to the studio she spent a lot of time there
+    text: Ugh, I just remembered I was expected at the studio today. I better head
+      over there quickly.
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 1
@@ -43,7 +44,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 3
     speakerName: Kimmie
-    text: I need to find my car key
+    text: And my car keys... During the party last night I lost them.
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 1
@@ -52,7 +53,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 4
     speakerName: Kimmie
-    text: I would always leave it near the door
+    text: I always kept them by the door and they're not there now... Unless...
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 1
