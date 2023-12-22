@@ -25,7 +25,9 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 1
     speakerName: Kimmie
-    text: Is this grandma's old wallpaper that I'm seeing through the camera?
+    text: The wallpaper shows up on camera differently. It looks like the pattern
+      I only remember seeing in old photos of this house... Could it have something
+      to do with the light?
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 1
@@ -34,7 +36,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 2
     speakerName: Kimmie
-    text: I should go check around the house for other anomalies through the camera
+    text: I wonder if other parts of the house show up differently on camera.
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 1
@@ -43,9 +45,9 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 3
     speakerName: 
-    text: 'Press the space button to take pictures of anything interesting. You can
-      always view your pictures in the gallery app and pressing enter on the selected
-      photo '
+    text: Press the Space button to take pictures of anything interesting. You can
+      always view photos you've taken in the Gallery app, pressing Enter to expand
+      them.
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 1
@@ -54,7 +56,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 4
     speakerName: 
-    text: To interact with objects like the door approach the object and press E
+    text: Some objects such as doors are interactable using the E key.
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 1
@@ -63,7 +65,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 5
     speakerName: 
-    text: Press P once again to close the phone
+    text: Press P once again to close the phone.
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 1
