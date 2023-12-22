@@ -17,7 +17,17 @@ public class SceneChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Temporary Travel button for game showcase
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Debug.Log("Just know that this is not the intended way to travel");
+            if (GlobalPlaytestSettings.instance.hasStudio)
+            {
+                TravelToScene("Studio");
+                AudioManager.instance.StopAll();
+                AudioManager.instance.Play("IncompleteBGM2");
+            }
+        }
     }
     public void TravelToScene(string sceneName)
     {
