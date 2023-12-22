@@ -33,7 +33,7 @@ MonoBehaviour:
     uiCanvasPrefabs:
     - {fileID: 0}
     developerComments: 
-    isCompleted: 1
+    isCompleted: 0
     GiveRewardOnCompletion: 0
   - name: Quest to get access to Studio
     totalProgressionStages: 2
@@ -55,5 +55,5 @@ MonoBehaviour:
     uiCanvasPrefabs:
     - {fileID: 0}
     developerComments: 
-    isCompleted: 1
+    isCompleted: 0
     GiveRewardOnCompletion: 1
