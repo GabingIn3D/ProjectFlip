@@ -202,11 +202,33 @@
                 },
                 {
                     "name": "",
+                    "id": "55ef38af-2ea1-4ed2-a230-97aa59eb8022",
+                    "path": "<DualShockGamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "10f87ec1-4490-497c-adfe-fd3ca83e6abc",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "KBM",
+                    "action": "Pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d10bdd19-9f43-4176-958c-5853730955da",
+                    "path": "<SwitchProControllerHID>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
                     "action": "Pickup",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -290,6 +312,28 @@
                 },
                 {
                     "name": "",
+                    "id": "be35ba89-6fab-4e75-8087-36e073cb3a29",
+                    "path": "<DualShockGamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "84e286d7-7f08-43b0-99d0-c1457ee45bc2",
+                    "path": "<SwitchProControllerHID>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d87c92fa-4e07-4f16-9c21-b271ab5ccd9f",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
@@ -317,6 +361,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KBM",
+                    "action": "Confirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "54cad63f-00bb-4125-8834-7c614a2096d6",
+                    "path": "<DualShockGamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "Confirm",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e402a29b-a740-4081-9185-a90ae7720cd5",
+                    "path": "<SwitchProControllerHID>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
                     "action": "Confirm",
                     "isComposite": false,
                     "isPartOfComposite": false
