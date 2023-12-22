@@ -48465,7 +48465,7 @@ GameObject:
   - component: {fileID: 2130090598}
   - component: {fileID: 2130090597}
   m_Layer: 10
-  m_Name: Cube
+  m_Name: EmptyShelfPhotoItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

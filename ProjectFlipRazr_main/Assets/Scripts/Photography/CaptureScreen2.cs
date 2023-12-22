@@ -53,7 +53,7 @@ public class CaptureScreen2 : MonoBehaviour
 
     public void Capture()
     {
-        if (phoneSwitcher.isFirstPersonMode == true && flipPhoneManager.cameraOpen == true)
+        if (phoneSwitcher.isFirstPersonMode == true && flipPhoneManager.cameraOpen == true && !phoneSwitcher.dialogueIsActive)
         {
             CheckItemsInPhoto();
             StartCoroutine(AsyncCapture());
@@ -234,11 +234,13 @@ public class CaptureScreen2 : MonoBehaviour
                                     {
                                         if (transform.parent != null)
                                         {
-                                            Destroy(item.transform.parent.gameObject);
+                                            item.transform.parent.gameObject.SetActive(false);
+                                            //Destroy(item.transform.parent.gameObject);
                                         }
                                         else
                                         {
-                                            Destroy(item.gameObject);
+                                            item.SetActive(false);
+                                            //Destroy(item.gameObject);
                                         }
                                     }
                                     Debug.Log("PhotoItem Accepted");
