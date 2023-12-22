@@ -25,7 +25,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 1
     speakerName: Kimmie
-    text: With this I can head to the studio
+    text: With this, I can finally head to the studio!
     durationInSeconds: 1
     hideDelay: 1
     manualClick: 1
@@ -34,7 +34,7 @@ MonoBehaviour:
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 2
     speakerName: 
-    text: Open the Map app on the flipphone and select the studio to travel
+    text: Open the Map app on the Flip Phone and select the studio to travel.
     durationInSeconds: 1
     hideDelay: 1
     manualClick: 1
