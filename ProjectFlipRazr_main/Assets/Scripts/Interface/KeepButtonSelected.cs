@@ -11,7 +11,9 @@ public class KeepButtonSelection : MonoBehaviour
 
     private GameObject lastSelectedButton;
     [SerializeField] private GameObject layoutParent;
+    [Header("Automatic modes")]
     public bool isGallery;
+    public bool isMap;
 
     void OnEnable()
     {
@@ -33,12 +35,34 @@ public class KeepButtonSelection : MonoBehaviour
             }
 
         }
+        if(isMap)
+        {
+            layoutParent = GameObject.Find("MapList");
+            if(layoutParent.transform.childCount > 0)
+            {
+                defaultButton = layoutParent.transform.GetChild(1).GetComponent<Button>(); //this is ONE and not 0 because the Map List begins with 'Current Location' which isn't a button. It's just a display.
+                if(defaultButton != null)
+                {
+                    SetSelectedButton(defaultButton.gameObject);
+                }
+                else
+                {
+                    Debug.Log("KeepButtonSelection/isMap: 'defaultButton' is null. Check Global Settings' 'Locations' boolean values.");
+                }
+            }
+        }
 
     }
 
     private void OnDisable()
     {
         if (isGallery)
+        {
+            defaultButton = null;
+            lastSelectedButton = null;
+        }
+
+        if(isMap)
         {
             defaultButton = null;
             lastSelectedButton = null;

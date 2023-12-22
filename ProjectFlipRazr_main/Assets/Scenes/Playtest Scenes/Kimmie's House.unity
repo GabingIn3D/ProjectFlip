@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45130265, g: 0.5009556, b: 0.5732071, a: 1}
+  m_IndirectSpecularColor: {r: 0.45130318, g: 0.5009563, b: 0.5732082, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25153,6 +25153,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiButton: {fileID: 1097025771}
   buttonPressAction: {fileID: -2722472744380402533, guid: ddefba2ccf2f2bd458662783ba975e2f, type: 3}
+--- !u!1 &1098171274 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2983556417364237930, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+  m_PrefabInstance: {fileID: 1377684375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1098171281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098171274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c56a9e0b5248d499f8f0f730ebe43e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultButton: {fileID: 1504544087}
+  layoutParent: {fileID: 1098171274}
+  isGallery: 0
+  isMap: 0
 --- !u!1 &1103482387
 GameObject:
   m_ObjectHideFlags: 0
@@ -33134,6 +33155,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 969334123033057599, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1208462002703898223, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: m_Camera
       value: 
@@ -33146,6 +33171,10 @@ PrefabInstance:
       propertyPath: photoInfoDatabase
       value: 
       objectReference: {fileID: 1618725420}
+    - target: {fileID: 2020752025525199720, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2311538185557064729, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -33288,6 +33317,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3906832012871110297, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916772736995758855, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4150390303763899711, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
@@ -33430,6 +33463,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6121651698410825061, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6570640776381709601, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -33457,6 +33494,10 @@ PrefabInstance:
     - target: {fileID: 6672250915484793483, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: field of view
       value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6714710005876017441, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6857085485056825455, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       propertyPath: m_AnchorMax.y
@@ -33610,6 +33651,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2983556417364237930, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1098171281}
     - targetCorrespondingSourceObject: {fileID: 2045628326094899088, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 609680803}
@@ -35009,6 +35053,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2067646272423687112, guid: 5d4dc9e7c0bebe542bbd3ddfae1360ab, type: 3}
   m_PrefabInstance: {fileID: 5837970849578836076}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504544087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6121651698410825061, guid: 732a6f67e52cf074aa4474cef105ebfb, type: 3}
+  m_PrefabInstance: {fileID: 1377684375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1512590016
 GameObject:
   m_ObjectHideFlags: 0
@@ -36737,8 +36792,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photoItem: 4
   SpawnDialogue: {fileID: 11400000, guid: 43b438312dc7b034395c4b319e172d85, type: 2}
-  progressQuest: 1
-  questNumberToProgress: 1
+  progressQuest: 0
+  questNumberToProgress: 0
   questProgressionDone: 0
   destroyIfPhotoTaken: 0
 --- !u!65 &1559851949
@@ -50701,7 +50756,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9177817988133147300}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.017531754, y: 0.9306239, z: -0.044973474, w: -0.36277986}
+  m_LocalRotation: {x: -0.017531686, y: 0.9306245, z: -0.0449735, w: -0.36277843}
   m_LocalPosition: {x: 3.8113432, y: 6.204802, z: 25.951544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
