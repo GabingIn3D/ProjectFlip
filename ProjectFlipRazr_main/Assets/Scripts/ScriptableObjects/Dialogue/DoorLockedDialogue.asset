@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogueLines:
   - id: 0
     speakerName: Kimmie
-    text: This door needs the office key
+    text: This door needs the office key.
     durationInSeconds: 3
     hideDelay: 1
     manualClick: 0
