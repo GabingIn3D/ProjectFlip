@@ -20,21 +20,19 @@ public class InteractableObject : MonoBehaviour
     public GameObject dialoguePrefab;
     public bool doorNeedsKey;
 
-    private DefaultControls controls;
     private InputAction confirmAction;
+    private PlayerInput playerInput;
 
     // Start is called before the first frame update
     void Start()
     {
-        controls = new DefaultControls();
+        playerInput = player.GetComponent<PlayerInput>();
 
-        // Assuming "PhoneNavigation" is the name of your action map
-        InputActionMap phoneNavigationMap = controls.PhoneNavigation;
+        InputActionMap gameInputActions = playerInput.currentActionMap;
 
-        if (phoneNavigationMap != null)
+        if (gameInputActions != null)
         {
-            // Assuming "Confirm" is the name of your action within that map
-            confirmAction = phoneNavigationMap.FindAction("Confirm");
+            confirmAction = gameInputActions.FindAction("Pickup");
 
             if (confirmAction != null)
             {
@@ -43,12 +41,12 @@ public class InteractableObject : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Confirm action not found!");
+                Debug.LogError("Pickup action not found!");
             }
         }
         else
         {
-            Debug.LogError("PhoneNavigation action map not found!");
+            Debug.LogError("gameInputActions action map not found!");
         }
     }
 
@@ -57,9 +55,9 @@ public class InteractableObject : MonoBehaviour
     {
         if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= 2f)
         {
-            controls.Enable();
+            confirmAction.Enable();
         }
-        else { controls.Disable(); }
+        else { confirmAction.Disable(); }
     }
 
     public void Interact()

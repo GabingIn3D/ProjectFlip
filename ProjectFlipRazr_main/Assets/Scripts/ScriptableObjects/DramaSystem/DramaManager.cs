@@ -9,6 +9,7 @@ public class DramaManager : MonoBehaviour
     public DramaSystem dramaSystem; // Assign in Inspector
     public GameObject dialoguePrefab;
     public Dictionary<Quest, int> questProgressions = new Dictionary<Quest, int>();
+    public GameObject rewardToInstantiate;
 
     void Start()
     {
@@ -99,5 +100,14 @@ public class DramaManager : MonoBehaviour
         {
             GlobalPlaytestSettings.instance.hasStudio = true;
         }
+        if (SceneManager.GetActiveScene().name == "Studio Warehouse")
+        {
+            InstantiateReward();
+        }
+    }
+
+    void InstantiateReward()
+    {
+        Instantiate(rewardToInstantiate, rewardToInstantiate.transform.position, rewardToInstantiate.transform.rotation);
     }
 }

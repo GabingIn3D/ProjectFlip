@@ -135,9 +135,7 @@ public class CaptureScreen2 : MonoBehaviour
 
         //Record gameLocation
         if (SceneManager.GetActiveScene().name == "Kimmie's House") { photoInfo.gameLocation = PhotoInfo.Location.KimmiesHouse; }
-        else if (SceneManager.GetActiveScene().name == "Kimmie's House V2") { photoInfo.gameLocation = PhotoInfo.Location.KimmiesHouse; }
-        else if (SceneManager.GetActiveScene().name == "Studio Warehouse ") { photoInfo.gameLocation = PhotoInfo.Location.StudioStage56; }
-        else if (SceneManager.GetActiveScene().name == "Studio Warehouse V2") { photoInfo.gameLocation = PhotoInfo.Location.StudioStage56; }
+        else if (SceneManager.GetActiveScene().name == "Studio Warehouse") { photoInfo.gameLocation = PhotoInfo.Location.StudioStage56; }
         else if (SceneManager.GetActiveScene().name == "Villas") { photoInfo.gameLocation = PhotoInfo.Location.Villas; }
         else { photoInfo.gameLocation = PhotoInfo.Location.Unknown; }
 

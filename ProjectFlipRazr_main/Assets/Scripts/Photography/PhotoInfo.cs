@@ -23,10 +23,12 @@ public class PhotoInfo
 
     public enum PhotoItem
     {
+        None,
         Knife,
         DirectorPhotoFrame,
         OfficeKey,
         RingImprint,
+        Cannon,
         OldNewspaper,
         EmptyBookshelf,
         HouseKey,
@@ -47,10 +49,12 @@ public class PhotoInfo
 
     private static readonly Dictionary<PhotoItem, string> photoItemStringMap = new Dictionary<PhotoItem, string>
     {
+        { PhotoItem.None, "" },
         { PhotoItem.Knife, "Chef's Knife" },
         { PhotoItem.DirectorPhotoFrame, "Director's Picture" },
         { PhotoItem.OfficeKey, "Key to Office" },
         { PhotoItem.RingImprint, "Ring Finger Tanline" },
+        { PhotoItem.Cannon, "Gold Cannon" },
         { PhotoItem.OldNewspaper, "Grandma's Newspaper" },
         { PhotoItem.EmptyBookshelf, "Empty Bookshelf" },
         { PhotoItem.HouseKey, "House Key" },

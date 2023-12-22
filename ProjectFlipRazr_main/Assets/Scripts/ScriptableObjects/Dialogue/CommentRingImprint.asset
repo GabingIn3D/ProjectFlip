@@ -10,51 +10,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d0a215d445d68a4f8286639a22b89d1, type: 3}
-  m_Name: CommentForNewspaper
+  m_Name: CommentRingImprint
   m_EditorClassIdentifier: 
   noMovementWhileDialogue: 1
   dialogueLines:
   - id: 0
     speakerName: Kimmie
-    text: That's the old newspaper about grandma's disappearance!?
-    durationInSeconds: 3.1
-    hideDelay: 1.2
+    text: That's the director and her actresse friend that my grandma used to work
+      with a lot
+    durationInSeconds: 1
+    hideDelay: 1
     manualClick: 1
     portrait: {fileID: 2800000, guid: 41b00e94d343e31428c9fd2e56fa7292, type: 3}
     portraitRotation: 0
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 1
     speakerName: Kimmie
-    text: With this camera maybe I can find some hints of what happended to her
-    durationInSeconds: 3.1
-    hideDelay: 1.2
+    text: They're awfully close...
+    durationInSeconds: 1
+    hideDelay: 1
     manualClick: 1
     portrait: {fileID: 2800000, guid: 41b00e94d343e31428c9fd2e56fa7292, type: 3}
     portraitRotation: 0
     backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
   - id: 2
     speakerName: Kimmie
-    text: Let's head to the studio she spent a lot of time there
-    durationInSeconds: 3.1
-    hideDelay: 1.2
-    manualClick: 1
-    portrait: {fileID: 2800000, guid: 41b00e94d343e31428c9fd2e56fa7292, type: 3}
-    portraitRotation: 0
-    backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
-  - id: 3
-    speakerName: Kimmie
-    text: I need to find my car key
-    durationInSeconds: 3.1
-    hideDelay: 1.2
-    manualClick: 1
-    portrait: {fileID: 2800000, guid: 41b00e94d343e31428c9fd2e56fa7292, type: 3}
-    portraitRotation: 0
-    backdrop: {fileID: 2800000, guid: 60b345856eb8d0546b60a2ffb58aac95, type: 3}
-  - id: 4
-    speakerName: Kimmie
-    text: I would always leave it near the door
-    durationInSeconds: 3.1
-    hideDelay: 1.2
+    text: Now that I look closely the director seems to have an ring imprint on his
+      left hand?
+    durationInSeconds: 1
+    hideDelay: 1
     manualClick: 1
     portrait: {fileID: 2800000, guid: 41b00e94d343e31428c9fd2e56fa7292, type: 3}
     portraitRotation: 0
