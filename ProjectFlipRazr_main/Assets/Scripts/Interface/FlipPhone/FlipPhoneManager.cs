@@ -6,6 +6,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 
 public class FlipPhoneManager : MonoBehaviour
@@ -42,6 +43,7 @@ public class FlipPhoneManager : MonoBehaviour
     public FlipPhone_MapState mapState = new FlipPhone_MapState();
     public FlipPhone_SocialMediaState socialMediaState = new FlipPhone_SocialMediaState();
     public FlipPhone_SettingsState settingsState = new FlipPhone_SettingsState();
+    public FlipPhone_SaveQuitState saveQuitState = new FlipPhone_SaveQuitState();
 
     [Header("App Page Objects")]
     public GameObject appMenu;
@@ -54,7 +56,7 @@ public class FlipPhoneManager : MonoBehaviour
         }
 
         // Add state types to the dictionary
-        stateMap = GetStates();
+        //stateMap = GetStates();
 
         // prints all dictionary entries gathered above for debugging purposes in debug.log
         foreach (var kvp in stateMap)
@@ -62,7 +64,7 @@ public class FlipPhoneManager : MonoBehaviour
             Debug.Log($"Key: {kvp.Key}, Value: {kvp.Value}");
         }
 
-        LogDictionaryItems(phonePages);
+        //LogDictionaryItems(phonePages);
 
 
         //starting state for the state machine
@@ -87,7 +89,7 @@ public class FlipPhoneManager : MonoBehaviour
     {
         if (!phonePages.ContainsKey(name))
         {
-             phonePages.Add(name, obj);
+            phonePages.Add(name, obj);
         }
         else
         {
@@ -130,72 +132,117 @@ public class FlipPhoneManager : MonoBehaviour
 
     public void ChangeStates(string stateName, FlipPhoneManager flipPhone)
     {
-        // Check if the state name exists in the dictionary
-        if (stateMap.ContainsKey(stateName))
+        FlipPhone_BaseState newState = null;
+
+        // Using a switch statement to select the state based on the stateName
+        switch (stateName)
         {
-            Debug.Log("weewoo " + stateName + " is the statename being pulled into ChangeStates()");
-            // Get the type from the dictionary
-            Type stateType = stateMap[stateName];
+            case "FlipPhone_HomeScreenState":
+                newState = flipPhone.homeScreenState;
+                break;
+            case "FlipPhone_CameraState":
+                newState = flipPhone.cameraState;
+                break;
+            case "FlipPhone_GalleryState":
+                newState = flipPhone.galleryState;
+                break;
+            case "FlipPhone_PhotoIndividualState":
+                newState = flipPhone.photoIndividualState;
+                break;
+            case "FlipPhone_MainMenuState":
+                newState = flipPhone.mainMenuState;
+                break;
+            case "FlipPhone_MapState":
+                newState = flipPhone.mapState;
+                break;
+            case "FlipPhone_SocialMediaState":
+                newState = flipPhone.socialMediaState;
+                break;
+            case "FlipPhone_SettingsState":
+                newState = flipPhone.settingsState;
+                break;
+            case "FlipPhone_SaveQuitState":
+                newState = flipPhone.saveQuitState;
+                break;
+                // Add more cases for other states
+        }
 
-            // Check if the type is derived from FlipPhone_BaseState
-            if (typeof(FlipPhone_BaseState).IsAssignableFrom(stateType))
-            {
-                // Create an instance of the state type
-                FlipPhone_BaseState newState = (FlipPhone_BaseState)Activator.CreateInstance(stateType);
-
-                // Check if the state has the required method signature
-                MethodInfo enterMethod = stateType.GetMethod("EnterState", new Type[] { typeof(FlipPhoneManager) });
-                if (enterMethod != null)
-                {
-                    // Invoke the EnterState method with the FlipPhoneManager parameter
-                    enterMethod.Invoke(newState, new object[] { flipPhone });
-                    currentState = newState;
-                    Debug.Log("currentState is " + currentState + " and newState is " + newState);
-                }
-                else
-                {
-                    Debug.LogError("State does not have the required EnterState method signature.");
-                }
-            }
-            else
-            {
-                Debug.LogError("Invalid state type: " + stateType);
-            }
+        if (newState != null)
+        {
+            // Switch to the new state
+            SwitchState(newState);
         }
         else
         {
             Debug.LogError("State not found: " + stateName);
         }
-    }
+        //    // Check if the state name exists in the dictionary
+        //    if (stateMap.ContainsKey(stateName))
+        //    {
+        //        Debug.Log("weewoo " + stateName + " is the statename being pulled into ChangeStates()");
+        //        // Get the type from the dictionary
+        //        Type stateType = stateMap[stateName];
 
-    Dictionary<string, Type> GetStates()
-    {
-        // Use reflection to find all types that derive from the FlipPhone_BaseState class
-        Type baseType = typeof(FlipPhone_BaseState);
-        IEnumerable<Type> stateTypes = AppDomain.CurrentDomain.GetAssemblies()
-            .SelectMany(s => s.GetTypes())
-            .Where(p => baseType.IsAssignableFrom(p) && p != baseType);
+        //        // Check if the type is derived from FlipPhone_BaseState
+        //        if (typeof(FlipPhone_BaseState).IsAssignableFrom(stateType))
+        //        {
+        //            // Create an instance of the state type
+        //            FlipPhone_BaseState newState = (FlipPhone_BaseState)Activator.CreateInstance(stateType);
 
-        // Instantiate each state type and add to the dictionary
-        Dictionary<string, Type> stateMap = new Dictionary<string, Type>();
-        foreach (Type type in stateTypes)
+        //            // Check if the state has the required method signature
+        //            MethodInfo enterMethod = stateType.GetMethod("EnterState", new Type[] { typeof(FlipPhoneManager) });
+        //            if (enterMethod != null)
+        //            {
+        //                // Invoke the EnterState method with the FlipPhoneManager parameter
+        //                enterMethod.Invoke(newState, new object[] { flipPhone });
+        //                currentState = newState;
+        //                Debug.Log("currentState is " + currentState + " and newState is " + newState);
+        //            }
+        //            else
+        //            {
+        //                Debug.LogError("State does not have the required EnterState method signature.");
+        //            }
+        //        }
+        //        else
+        //        {
+        //            Debug.LogError("Invalid state type: " + stateType);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError("State not found: " + stateName);
+        //    }
+        //}
+
+        Dictionary<string, Type> GetStates()
         {
-            stateMap.Add(type.Name, type);
+            // Use reflection to find all types that derive from the FlipPhone_BaseState class
+            Type baseType = typeof(FlipPhone_BaseState);
+            IEnumerable<Type> stateTypes = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(s => s.GetTypes())
+                .Where(p => baseType.IsAssignableFrom(p) && p != baseType);
+
+            // Instantiate each state type and add to the dictionary
+            Dictionary<string, Type> stateMap = new Dictionary<string, Type>();
+            foreach (Type type in stateTypes)
+            {
+                stateMap.Add(type.Name, type);
+            }
+
+            LogDictionaryItems(stateMap);
+            return stateMap;
         }
 
-        LogDictionaryItems(stateMap);
-        return stateMap;
-    }
-
-    void LogDictionaryItems<TKey, TValue>(Dictionary<TKey, TValue> dictionary)
-    {
-        string logString = "Dictionary Items:\n";
-
-        foreach (var kvp in dictionary)
+        void LogDictionaryItems<TKey, TValue>(Dictionary<TKey, TValue> dictionary)
         {
-            logString += $"{kvp.Key}: {kvp.Value}\n";
-        }
+            string logString = "Dictionary Items:\n";
 
-        Debug.Log(logString);
+            foreach (var kvp in dictionary)
+            {
+                logString += $"{kvp.Key}: {kvp.Value}\n";
+            }
+
+            Debug.Log(logString);
+        }
     }
 }

@@ -131,7 +131,7 @@ public class PhoneSwitcher : MonoBehaviour
     public void DialogueUnFreeze()
     {
         dialogueIsActive = false;
-        flipPhoneState = flipManager.currentState;
+
         if (!isFirstPersonMode)
         {
             UnFreezeMovement();
@@ -140,5 +140,12 @@ public class PhoneSwitcher : MonoBehaviour
         {
             UnFreezeMovement();
         }
+    }
+
+    public void RefreshPhoneStateReference()
+    {
+        flipManager = FindAnyObjectByType<FlipPhoneManager>();
+        flipPhoneState = flipManager.currentState;
+        Debug.Log("PhoneSwitcher: DialogueManager: RefreshPhoneStateReference: " +  flipPhoneState);
     }
 }

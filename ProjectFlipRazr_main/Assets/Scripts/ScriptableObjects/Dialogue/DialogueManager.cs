@@ -165,7 +165,9 @@ public class DialogueManager : MonoBehaviour
         // Clear the UI text after all dialogue lines
         ClearDialogue();
         Destroy(gameObject);
-        FindAnyObjectByType<PhoneSwitcher>().DialogueUnFreeze();
+        var phoneSwitcher = FindAnyObjectByType<PhoneSwitcher>();
+        phoneSwitcher.RefreshPhoneStateReference();
+        phoneSwitcher.DialogueUnFreeze();
         Debug.Log(this.gameObject.name + " destroyed.");
     }
 
