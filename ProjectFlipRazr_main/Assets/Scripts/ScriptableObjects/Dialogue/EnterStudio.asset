@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogueLines:
   - id: 0
     speakerName: Kimmie
-    text: Well here I am... I should try taking a look around
+    text: Well, here I am... I should try taking a look around.
     durationInSeconds: 1
     hideDelay: 1
     manualClick: 1
