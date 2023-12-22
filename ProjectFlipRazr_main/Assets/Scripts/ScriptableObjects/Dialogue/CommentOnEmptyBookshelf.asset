@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogueLines:
   - id: 0
     speakerName: Kimmie
-    text: Right... these bookshelves used to be so empty
+    text: Right... These bookshelves used to be so empty.
     durationInSeconds: 3.1
     hideDelay: 1.2
     manualClick: 0
